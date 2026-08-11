@@ -1,0 +1,5840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Learning Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🐍 Python Portal</h2>
+            <p>Learn • Practice • Master</p>
+        </div>
+
+        <nav>
+
+         <ul class="module-list">
+
+    <li><a href="#dashboard" class="active">🏠 Dashboard</a></li>
+
+    <li><a href="#python-intro">🐍 Introduction to Python</a></li>
+
+    <li><a href="#variables">📦 Variables & Data Types</a></li>
+
+    <li><a href="#operators">➕ Operators</a></li>
+
+    <li><a href="#input-output">⌨️ Input & Output</a></li>
+
+    <li><a href="#decision-making">🔀 Decision Making</a></li>
+
+    <li><a href="#loops">🔁 Loops</a></li>
+
+    <li><a href="#strings">📝 Strings</a></li>
+
+    <li><a href="#lists">📋 Lists</a></li>
+
+    <li><a href="#tuples">📦 Tuples</a></li>
+
+    <li><a href="#sets">🎯 Sets</a></li>
+
+    <li><a href="#dictionary">📖 Dictionaries</a></li>
+
+    <li><a href="#functions">📁 Functions</a></li>
+	<li><a href="#modules">🧩 Modules</a></li>
+	<li><a href="#filehandling">📂 File Handling</a></li>
+	<li><a href="#programs">💻 Program Library</a></li>
+	<li><a href="#quiz">📝 Quiz Centre</a></li>
+	<li><a href="#revision">🎯 Revision Centre</a></li>
+	<li><a href="programs.html">💻 Program Gallery</a></li>
+
+</ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div class="search-box">
+                <input type="text"
+                       id="searchInput"
+                       placeholder="Search Python topics...">
+            </div>
+
+            <div class="topbar-buttons">
+
+                <button id="themeToggle">
+                    🌙 Dark Mode
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard">
+
+            <div class="hero">
+
+                <h1>Python Learning Portal</h1>
+
+                <p>
+                    A complete offline Python learning system
+                    with theory, examples, programs, quizzes,
+                    revision notes and exam preparation.
+                </p>
+
+            </div>
+
+            <div class="progress-card">
+
+                <h3>Your Progress</h3>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill">
+                        0%
+                    </div>
+                </div>
+            </div>
+
+
+<div class="cards">
+
+    <a href="#python-intro" class="card">
+        <h3>📘 Python Basics</h3>
+        <p>Introduction, features and applications.</p>
+    </a>
+
+    <a href="#variables" class="card">
+        <h3>🔢 Variables</h3>
+        <p>Data types and variable handling.</p>
+    </a>
+
+    <a href="#operators" class="card">
+        <h3>➕ Operators</h3>
+        <p>Arithmetic, logical and relational operators.</p>
+    </a>
+
+    <a href="#input-output" class="card">
+        <h3>⌨️ Input / Output</h3>
+        <p>Using input() and print().</p>
+    </a>
+
+    <a href="#decision-making" class="card">
+        <h3>🔀 Decision Making</h3>
+        <p>If, if-else and nested if statements.</p>
+    </a>
+
+    <a href="#loops" class="card">
+        <h3>🔁 Loops</h3>
+        <p>For loop and while loop concepts.</p>
+    </a>
+
+    <a href="#strings" class="card">
+        <h3>📝 Strings</h3>
+        <p>Strings and Slicing concepts.</p>
+    </a>
+
+<a href="#lists" class="card">
+        <h3>📋 Lists</h3>
+        <p>List and Mutability concepts.</p>
+    </a>
+<a href="#tuples" class="card">
+        <h3>📦 Tuples</h3>
+        <p>Tuples methods and Mutability.</p>
+    </a>
+<a href="#sets" class="card">
+        <h3>🎯 Sets</h3>
+        <p>More about Sets.</p>
+    </a>
+
+   <a href="#dictionary" class="card">
+        <h3>📖 Dictionaries</h3>
+        <p>Concept of Dictonary </p>
+    </a>
+
+    <a href="#functions" class="card">
+        <h3>⚙️ Functions</h3>
+        <p>User-defined functions and arguments.</p>
+    </a>
+
+<a href="#modules" class="card">
+        <h3>🧩 Modules</h3>
+        <p>Modules and methods.</p>
+    </a>
+
+    <a href="#filehandling" class="card">
+        <h3>📂 File Handling</h3>
+        <p>How to handle permanent files.</p>
+    </a>
+
+    <a href="#programs" class="card">
+        <h3>💻 Program Library</h3>
+        <p>python common programs.</p>
+    </a>
+
+    <a href="#quiz" class="card">
+        <h3>📝 Quiz Centre</h3>
+        <p>Ready-to-use question answers</p>
+    </a>
+
+    <a href="#revision" class="card">
+        <h3>🎯 Revision Centre</h3>
+        <p>An overview on the topics.</p>
+    </a>
+
+ <a href="programs.html" class="card">
+        <h3>💻 Program Gallery</h3>
+        <p>Some useful Python programs.</p>
+    </a>
+
+</div>
+
+
+        </section>
+
+        <!-- PYTHON BASICS -->
+        <section id="python-intro" class="topic-section">
+
+    <h2>📘 Introduction to Python</h2>
+
+    <div class="content-box">
+
+        <h3>What is Python?</h3>
+
+        <p>
+            Python is a high-level, interpreted, general-purpose programming language.
+            It is one of the most popular programming languages in the world because of
+            its simple syntax, readability, and powerful features.
+        </p>
+
+        <p>
+            Python allows programmers to develop applications quickly and efficiently.
+            It is widely used in education, web development, artificial intelligence,
+            data science, automation, and software development.
+        </p>
+
+        <h3>👨‍💻 History of Python</h3>
+
+        <p>
+            Python was developed by <strong>Guido van Rossum</strong> in the late 1980s
+            and was officially released in <strong>1991</strong>.
+        </p>
+
+        <p>
+            Python was designed to be simple, easy to learn, and highly productive.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1989</td>
+                    <td>Development Started</td>
+                </tr>
+                <tr>
+                    <td>1991</td>
+                    <td>First Official Release</td>
+                </tr>
+                <tr>
+                    <td>2000</td>
+                    <td>Python 2.0 Released</td>
+                </tr>
+                <tr>
+                    <td>2008</td>
+                    <td>Python 3.0 Released</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>⭐ Features of Python</h3>
+
+        <ul>
+            <li>Simple and Easy to Learn</li>
+            <li>Interpreted Language</li>
+            <li>Platform Independent</li>
+            <li>Object-Oriented</li>
+            <li>Open Source</li>
+            <li>Large Standard Library</li>
+        </ul>
+
+        <h4>1. Simple and Easy</h4>
+
+        <p>
+            Python uses simple English-like statements, making it ideal for beginners.
+        </p>
+
+<pre><code>print("Hello World")</code></pre>
+
+        <h4>2. Interpreted Language</h4>
+
+        <p>
+            Python programs are executed line by line by an interpreter.
+            This makes debugging easier and development faster.
+        </p>
+
+        <h4>3. Platform Independent</h4>
+
+        <p>
+            Python programs can run on Windows, Linux, and macOS without major changes.
+        </p>
+
+        <h4>4. Object-Oriented</h4>
+
+        <p>
+            Python supports classes, objects, inheritance, and polymorphism.
+        </p>
+
+        <h4>5. Open Source</h4>
+
+        <p>
+            Python is freely available and can be used without licensing costs.
+        </p>
+
+        <h4>6. Large Standard Library</h4>
+
+        <p>
+            Python provides built-in modules for mathematics, file handling,
+            networking, graphics, and database applications.
+        </p>
+
+        <h3>🌍 Applications of Python</h3>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🌐 Web Development</h3>
+                <p>
+                    Used to build websites and web applications using Django and Flask.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🤖 Artificial Intelligence</h3>
+                <p>
+                    Used in Machine Learning, Deep Learning, Robotics, and Chatbots.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📊 Data Science</h3>
+                <p>
+                    Used for data analysis and visualization with Pandas and NumPy.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>⚙ Automation</h3>
+                <p>
+                    Automates repetitive tasks such as file management and reporting.
+                </p>
+            </div>
+
+        </div>
+
+        <h3>✅ Advantages of Python</h3>
+
+        <ul>
+            <li>Easy to Learn</li>
+            <li>Easy to Read</li>
+            <li>Free and Open Source</li>
+            <li>Platform Independent</li>
+            <li>Large Community Support</li>
+            <li>Huge Collection of Libraries</li>
+            <li>Suitable for Beginners</li>
+        </ul>
+
+        <h3>💻 First Python Program</h3>
+
+        <p>Example:</p>
+
+<pre><code>print("Welcome to Python Programming")</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Welcome to Python Programming</code></pre>
+
+        <h3>📝 Program Explanation</h3>
+
+        <ol>
+            <li>The <strong>print()</strong> function displays output on the screen.</li>
+            <li>The text inside quotation marks is called a string.</li>
+            <li>Python displays the string exactly as written.</li>
+        </ol>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Who developed Python?</strong></p>
+
+            <div class="quiz-option">A. Dennis Ritchie</div>
+            <div class="quiz-option">B. James Gosling</div>
+            <div class="quiz-option">C. Guido van Rossum ✅</div>
+            <div class="quiz-option">D. Bjarne Stroustrup</div>
+
+            <br>
+
+            <p><strong>2. Python was first released in?</strong></p>
+
+            <div class="quiz-option">A. 1985</div>
+            <div class="quiz-option">B. 1991 ✅</div>
+            <div class="quiz-option">C. 2000</div>
+            <div class="quiz-option">D. 2008</div>
+
+        </div>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Developer of Python: Guido van Rossum</li>
+            <li>First Release: 1991</li>
+            <li>Python is an interpreted language.</li>
+            <li>Python is platform independent.</li>
+            <li>Python is open source.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Define Python.</li>
+            <li>Explain the history of Python.</li>
+            <li>List important features of Python.</li>
+            <li>Describe applications of Python.</li>
+            <li>Write and execute a simple Python program.</li>
+        </ul>
+
+    </div>
+
+</section>
+        <!-- VARIABLES -->
+        <section id="variables" class="topic-section">
+
+    <h2>🔢 Variables and Data Types</h2>
+
+    <div class="content-box">
+
+        <h3>What is a Variable?</h3>
+
+        <p>
+            A variable is a named memory location used to store data temporarily
+            during the execution of a program. The value stored in a variable
+            can be changed whenever required.
+        </p>
+
+        <p>
+            Variables help programmers store and manipulate information such as
+            numbers, names, marks, and calculations.
+        </p>
+
+        <h3>Creating Variables in Python</h3>
+
+        <p>
+            In Python, a variable is created when a value is assigned to it using
+            the assignment operator (=).
+        </p>
+
+<pre><code>x = 10
+name = "Rahul"
+marks = 95.5</code></pre>
+
+        <h3>Variable Assignment</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Value Stored</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>x</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>Rahul</td>
+                </tr>
+                <tr>
+                    <td>marks</td>
+                    <td>95.5</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Rules for Naming Variables</h3>
+
+        <ul>
+            <li>Variable names can contain letters, digits and underscore (_).</li>
+            <li>Variable names cannot begin with a digit.</li>
+            <li>Spaces are not allowed.</li>
+            <li>Python keywords cannot be used as variable names.</li>
+            <li>Variable names are case-sensitive.</li>
+        </ul>
+
+        <h3>Valid Variable Names</h3>
+
+<pre><code>age = 17
+student_name = "Anu"
+totalMarks = 450
+_count = 25</code></pre>
+
+        <h3>Invalid Variable Names</h3>
+
+<pre><code>2age = 17        # Starts with digit
+student name     # Contains space
+class = 10       # Python keyword</code></pre>
+
+        <h3>Case Sensitivity</h3>
+
+        <p>
+            Python treats uppercase and lowercase letters differently.
+        </p>
+
+<pre><code>name = "Rahul"
+Name = "Anu"
+
+print(name)
+print(Name)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Rahul
+Anu</code></pre>
+
+        <h3>What are Data Types?</h3>
+
+        <p>
+            A data type specifies the type of value stored in a variable.
+            Python automatically identifies the data type based on the assigned value.
+        </p>
+
+        <h3>Common Data Types in Python</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>int</td>
+                    <td>Integer values</td>
+                    <td>25, 100, -8</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>Decimal values</td>
+                    <td>10.5, 98.25</td>
+                </tr>
+                <tr>
+                    <td>str</td>
+                    <td>Text/String values</td>
+                    <td>"Python"</td>
+                </tr>
+                <tr>
+                    <td>bool</td>
+                    <td>Logical values</td>
+                    <td>True, False</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Integer (int)</h3>
+
+        <p>
+            Integer values are whole numbers without decimal points.
+        </p>
+
+<pre><code>age = 17
+year = 2026
+
+print(age)
+print(year)</code></pre>
+
+        <h3>Float (float)</h3>
+
+        <p>
+            Float values contain decimal points.
+        </p>
+
+<pre><code>height = 5.8
+price = 125.50
+
+print(height)
+print(price)</code></pre>
+
+        <h3>String (str)</h3>
+
+        <p>
+            Strings are sequences of characters enclosed within quotation marks.
+        </p>
+
+<pre><code>name = "Python"
+city = "Kollam"
+
+print(name)
+print(city)</code></pre>
+
+        <h3>Boolean (bool)</h3>
+
+        <p>
+            Boolean values represent logical conditions.
+        </p>
+
+<pre><code>isStudent = True
+isPassed = False
+
+print(isStudent)
+print(isPassed)</code></pre>
+
+        <h3>Checking Data Type Using type()</h3>
+
+        <p>
+            The type() function is used to identify the data type of a variable.
+        </p>
+
+<pre><code>x = 10
+y = 12.5
+name = "Python"
+
+print(type(x))
+print(type(y))
+print(type(name))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</code></pre>
+
+        <h3>Type Conversion</h3>
+
+        <p>
+            Type conversion means changing one data type into another.
+        </p>
+
+<pre><code>x = "25"
+
+num = int(x)
+
+print(num)
+print(type(num))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>25
+&lt;class 'int'&gt;</code></pre>
+
+        <h3>Real-Life Example</h3>
+
+<pre><code>student = "Arun"
+age = 17
+mark = 95.5
+passed = True
+
+print(student)
+print(age)
+print(mark)
+print(passed)</code></pre>
+
+        <h3>Program Explanation</h3>
+
+        <ol>
+            <li>student stores a string value.</li>
+            <li>age stores an integer value.</li>
+            <li>mark stores a float value.</li>
+            <li>passed stores a boolean value.</li>
+            <li>All values are displayed using print().</li>
+        </ol>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which symbol is used for assignment in Python?</strong></p>
+
+            <div class="quiz-option">A. ==</div>
+            <div class="quiz-option">B. = ✅</div>
+            <div class="quiz-option">C. :=</div>
+            <div class="quiz-option">D. !=</div>
+
+            <br>
+
+            <p><strong>2. Which data type stores decimal values?</strong></p>
+
+            <div class="quiz-option">A. int</div>
+            <div class="quiz-option">B. bool</div>
+            <div class="quiz-option">C. float ✅</div>
+            <div class="quiz-option">D. str</div>
+
+            <br>
+
+            <p><strong>3. Which function is used to identify the data type?</strong></p>
+
+            <div class="quiz-option">A. print()</div>
+            <div class="quiz-option">B. input()</div>
+            <div class="quiz-option">C. type() ✅</div>
+            <div class="quiz-option">D. len()</div>
+
+        </div>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>A variable stores data temporarily in memory.</li>
+            <li>Python is case-sensitive.</li>
+            <li>Common data types are int, float, str and bool.</li>
+            <li>Use type() to identify the data type.</li>
+            <li>Type conversion can be done using int(), float() and str().</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Define a variable.</li>
+            <li>Write valid variable names.</li>
+            <li>Identify different data types.</li>
+            <li>Use the type() function.</li>
+            <li>Perform basic type conversion.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- OPERATORS -->
+        <section id="operators" class="topic-section">
+
+    <h2>➕ Operators in Python</h2>
+
+    <div class="content-box">
+
+        <h3>What is an Operator?</h3>
+
+        <p>
+            An operator is a special symbol used to perform operations on values
+            and variables. Operators help us perform calculations, comparisons,
+            logical decisions and assignments in a program.
+        </p>
+
+<pre><code>x = 10
+y = 5
+
+print(x + y)</code></pre>
+
+        <p>
+            In the above example, <strong>+</strong> is an operator used for addition.
+        </p>
+
+        <h3>Types of Operators in Python</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operator Type</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Arithmetic Operators</td>
+                    <td>Perform mathematical calculations</td>
+                </tr>
+                <tr>
+                    <td>Relational Operators</td>
+                    <td>Compare values</td>
+                </tr>
+                <tr>
+                    <td>Logical Operators</td>
+                    <td>Combine conditions</td>
+                </tr>
+                <tr>
+                    <td>Assignment Operators</td>
+                    <td>Assign values to variables</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>1️⃣ Arithmetic Operators</h3>
+
+        <p>
+            Arithmetic operators are used to perform mathematical calculations.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operator</th>
+                    <th>Operation</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+</td>
+                    <td>Addition</td>
+                    <td>10 + 5 = 15</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Subtraction</td>
+                    <td>10 - 5 = 5</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplication</td>
+                    <td>10 * 5 = 50</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>Division</td>
+                    <td>10 / 5 = 2.0</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Modulus</td>
+                    <td>10 % 3 = 1</td>
+                </tr>
+                <tr>
+                    <td>//</td>
+                    <td>Floor Division</td>
+                    <td>10 // 3 = 3</td>
+                </tr>
+                <tr>
+                    <td>**</td>
+                    <td>Exponent</td>
+                    <td>2 ** 3 = 8</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>a = 20
+b = 6
+
+print("Addition =", a + b)
+print("Subtraction =", a - b)
+print("Multiplication =", a * b)
+print("Division =", a / b)
+print("Modulus =", a % b)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Addition = 26
+Subtraction = 14
+Multiplication = 120
+Division = 3.3333333333333335
+Modulus = 2</code></pre>
+
+        <h3>2️⃣ Relational Operators</h3>
+
+        <p>
+            Relational operators compare two values and return either
+            <strong>True</strong> or <strong>False</strong>.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operator</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>==</td>
+                    <td>Equal To</td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>Not Equal To</td>
+                </tr>
+                <tr>
+                    <td>&gt;</td>
+                    <td>Greater Than</td>
+                </tr>
+                <tr>
+                    <td>&lt;</td>
+                    <td>Less Than</td>
+                </tr>
+                <tr>
+                    <td>&gt;=</td>
+                    <td>Greater Than or Equal To</td>
+                </tr>
+                <tr>
+                    <td>&lt;=</td>
+                    <td>Less Than or Equal To</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>x = 10
+y = 20
+
+print(x == y)
+print(x != y)
+print(x < y)
+print(x > y)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>False
+True
+True
+False</code></pre>
+
+        <h3>3️⃣ Logical Operators</h3>
+
+        <p>
+            Logical operators are used to combine two or more conditions.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>and</td>
+                    <td>True if both conditions are true</td>
+                </tr>
+                <tr>
+                    <td>or</td>
+                    <td>True if at least one condition is true</td>
+                </tr>
+                <tr>
+                    <td>not</td>
+                    <td>Reverses the result</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>a = 10
+b = 20
+
+print(a < b and b > 15)
+print(a > b or b > 15)
+print(not(a < b))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>True
+True
+False</code></pre>
+
+        <h3>Truth Table for AND Operator</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A and B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>True</td>
+                    <td>True</td>
+                    <td>True</td>
+                </tr>
+                <tr>
+                    <td>True</td>
+                    <td>False</td>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <td>False</td>
+                    <td>True</td>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <td>False</td>
+                    <td>False</td>
+                    <td>False</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4️⃣ Assignment Operators</h3>
+
+        <p>
+            Assignment operators are used to assign values to variables.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operator</th>
+                    <th>Example</th>
+                    <th>Equivalent To</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>=</td>
+                    <td>x = 5</td>
+                    <td>x = 5</td>
+                </tr>
+                <tr>
+                    <td>+=</td>
+                    <td>x += 3</td>
+                    <td>x = x + 3</td>
+                </tr>
+                <tr>
+                    <td>-=</td>
+                    <td>x -= 3</td>
+                    <td>x = x - 3</td>
+                </tr>
+                <tr>
+                    <td>*=</td>
+                    <td>x *= 3</td>
+                    <td>x = x * 3</td>
+                </tr>
+                <tr>
+                    <td>/=</td>
+                    <td>x /= 3</td>
+                    <td>x = x / 3</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>x = 10
+
+x += 5
+print(x)
+
+x *= 2
+print(x)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>15
+30</code></pre>
+
+        <h3>Operator Precedence</h3>
+
+        <p>
+            Operator precedence determines the order in which operations are performed.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Priority</th>
+                    <th>Operator</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>()</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>**</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>*, /, //, %</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>+, -</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Relational Operators</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Logical Operators</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>result = 10 + 5 * 2
+print(result)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>20</code></pre>
+
+        <p>
+            Multiplication is performed before addition.
+        </p>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which operator is used to find the remainder?</strong></p>
+
+            <div class="quiz-option">A. //</div>
+            <div class="quiz-option">B. % ✅</div>
+            <div class="quiz-option">C. **</div>
+            <div class="quiz-option">D. /</div>
+
+            <br>
+
+            <p><strong>2. What is the result of 10 // 3?</strong></p>
+
+            <div class="quiz-option">A. 3 ✅</div>
+            <div class="quiz-option">B. 3.33</div>
+            <div class="quiz-option">C. 1</div>
+            <div class="quiz-option">D. 30</div>
+
+            <br>
+
+            <p><strong>3. Which logical operator returns True if both conditions are True?</strong></p>
+
+            <div class="quiz-option">A. or</div>
+            <div class="quiz-option">B. not</div>
+            <div class="quiz-option">C. and ✅</div>
+            <div class="quiz-option">D. xor</div>
+
+        </div>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>% gives the remainder after division.</li>
+            <li>// gives the integer quotient.</li>
+            <li>** is used for exponentiation.</li>
+            <li>Relational operators return True or False.</li>
+            <li>Remember operator precedence for calculations.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Define an operator.</li>
+            <li>Use arithmetic operators in calculations.</li>
+            <li>Compare values using relational operators.</li>
+            <li>Combine conditions using logical operators.</li>
+            <li>Apply assignment operators effectively.</li>
+            <li>Understand operator precedence.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- INPUT OUTPUT -->
+        <section id="input-output" class="topic-section">
+
+    <h2>⌨ Input and Output in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction</h3>
+
+        <p>
+            Every computer program needs a way to receive data from the user
+            and display the results. In Python, this is achieved using
+            <strong>Input</strong> and <strong>Output</strong> operations.
+        </p>
+
+        <ul>
+            <li><strong>Input</strong> – Data entered by the user.</li>
+            <li><strong>Output</strong> – Information displayed to the user.</li>
+        </ul>
+
+        <h3>Output Using print()</h3>
+
+        <p>
+            The <strong>print()</strong> function is used to display output on
+            the screen.
+        </p>
+
+<pre><code>print("Hello World")</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Hello World</code></pre>
+
+        <h3>Printing Multiple Values</h3>
+
+<pre><code>name = "Anu"
+age = 17
+
+print(name, age)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Anu 17</code></pre>
+
+        <h3>Printing Messages and Variables</h3>
+
+<pre><code>name = "Rahul"
+
+print("Welcome", name)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Welcome Rahul</code></pre>
+
+        <h3>Input Using input()</h3>
+
+        <p>
+            The <strong>input()</strong> function is used to accept data from
+            the user through the keyboard.
+        </p>
+
+<pre><code>name = input("Enter your name: ")
+
+print("Hello", name)</code></pre>
+
+        <h3>Sample Output</h3>
+
+<pre><code>Enter your name: Arun
+Hello Arun</code></pre>
+
+        <h3>How input() Works</h3>
+
+        <ol>
+            <li>The program displays a message.</li>
+            <li>The user enters data.</li>
+            <li>The entered value is stored in a variable.</li>
+            <li>The program processes the value.</li>
+        </ol>
+
+        <h3>Important Note</h3>
+
+        <div class="quiz-card">
+
+            <p>
+                By default, the <strong>input()</strong> function stores data as
+                a <strong>string</strong>.
+            </p>
+
+        </div>
+
+<pre><code>age = input("Enter Age: ")
+
+print(type(age))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>&lt;class 'str'&gt;</code></pre>
+
+        <h3>Type Conversion</h3>
+
+        <p>
+            Type conversion is used to convert data from one type to another.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>int()</td>
+                    <td>Convert to Integer</td>
+                </tr>
+                <tr>
+                    <td>float()</td>
+                    <td>Convert to Float</td>
+                </tr>
+                <tr>
+                    <td>str()</td>
+                    <td>Convert to String</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Using int()</h3>
+
+<pre><code>age = int(input("Enter Age: "))
+
+print(age)
+print(type(age))</code></pre>
+
+        <h3>Sample Output</h3>
+
+<pre><code>Enter Age: 17
+17
+&lt;class 'int'&gt;</code></pre>
+
+        <h3>Using float()</h3>
+
+<pre><code>salary = float(input("Enter Salary: "))
+
+print(salary)</code></pre>
+
+        <h3>Sample Output</h3>
+
+<pre><code>Enter Salary: 25000.50
+25000.5</code></pre>
+
+        <h3>Program: Addition of Two Numbers</h3>
+
+<pre><code>num1 = int(input("Enter First Number: "))
+num2 = int(input("Enter Second Number: "))
+
+sum = num1 + num2
+
+print("Sum =", sum)</code></pre>
+
+        <h3>Sample Output</h3>
+
+<pre><code>Enter First Number: 10
+Enter Second Number: 20
+Sum = 30</code></pre>
+
+        <h3>Program Explanation</h3>
+
+        <ol>
+            <li>Read first number using input().</li>
+            <li>Convert it into integer using int().</li>
+            <li>Read second number.</li>
+            <li>Add the two numbers.</li>
+            <li>Display the result using print().</li>
+        </ol>
+
+        <h3>Reading Multiple Inputs</h3>
+
+<pre><code>name = input("Enter Name: ")
+age = int(input("Enter Age: "))
+mark = float(input("Enter Mark: "))
+
+print(name)
+print(age)
+print(mark)</code></pre>
+
+        <h3>Formatted Output</h3>
+
+        <p>
+            Output can be formatted to make it more readable.
+        </p>
+
+<pre><code>name = "Anu"
+mark = 95
+
+print("Student Name:", name)
+print("Mark:", mark)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Student Name: Anu
+Mark: 95</code></pre>
+
+        <h3>Using f-Strings</h3>
+
+        <p>
+            F-strings provide a modern and convenient way to format output.
+        </p>
+
+<pre><code>name = "Arun"
+mark = 98
+
+print(f"{name} scored {mark} marks")</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Arun scored 98 marks</code></pre>
+
+        <h3>Real-Life Example</h3>
+
+<pre><code>name = input("Enter Student Name: ")
+mark1 = int(input("Enter Mark 1: "))
+mark2 = int(input("Enter Mark 2: "))
+
+total = mark1 + mark2
+
+print("Student:", name)
+print("Total Marks:", total)</code></pre>
+
+        <h3>Sample Output</h3>
+
+<pre><code>Enter Student Name: Rahul
+Enter Mark 1: 75
+Enter Mark 2: 80
+
+Student: Rahul
+Total Marks: 155</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which function is used to display output?</strong></p>
+
+            <div class="quiz-option">A. show()</div>
+            <div class="quiz-option">B. print() ✅</div>
+            <div class="quiz-option">C. output()</div>
+            <div class="quiz-option">D. display()</div>
+
+            <br>
+
+            <p><strong>2. Which function is used to accept input?</strong></p>
+
+            <div class="quiz-option">A. get()</div>
+            <div class="quiz-option">B. read()</div>
+            <div class="quiz-option">C. input() ✅</div>
+            <div class="quiz-option">D. enter()</div>
+
+            <br>
+
+            <p><strong>3. By default, input() returns:</strong></p>
+
+            <div class="quiz-option">A. int</div>
+            <div class="quiz-option">B. float</div>
+            <div class="quiz-option">C. bool</div>
+            <div class="quiz-option">D. str ✅</div>
+
+        </div>
+
+        <h3>Common Errors</h3>
+
+        <ul>
+            <li>Forgetting to convert input values before calculations.</li>
+            <li>Using int() on non-numeric values.</li>
+            <li>Missing quotation marks in print().</li>
+            <li>Incorrect indentation.</li>
+        </ul>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>print() is used for output.</li>
+            <li>input() is used for input.</li>
+            <li>input() returns a string by default.</li>
+            <li>Use int() and float() for numeric calculations.</li>
+            <li>Practice writing programs using user input.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Use print() to display output.</li>
+            <li>Use input() to accept user data.</li>
+            <li>Perform type conversion.</li>
+            <li>Create simple interactive programs.</li>
+            <li>Format output effectively.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- DECISION -->
+        <section id="decision-making" class="topic-section">
+
+    <h2>🔀 Decision Making in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction</h3>
+
+        <p>
+            In real life, we make decisions every day. For example:
+        </p>
+
+        <ul>
+            <li>If it rains, take an umbrella.</li>
+            <li>If marks are above 90, award Grade A.</li>
+            <li>If age is 18 or above, allow voting.</li>
+        </ul>
+
+        <p>
+            Similarly, Python programs use decision-making statements to execute
+            different blocks of code based on conditions.
+        </p>
+
+        <h3>Conditional Statements in Python</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Statement</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>if</td>
+                    <td>Execute code when a condition is true</td>
+                </tr>
+                <tr>
+                    <td>if...else</td>
+                    <td>Choose between two alternatives</td>
+                </tr>
+                <tr>
+                    <td>if...elif...else</td>
+                    <td>Choose from multiple alternatives</td>
+                </tr>
+                <tr>
+                    <td>Nested if</td>
+                    <td>Use an if statement inside another if</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>1️⃣ The if Statement</h3>
+
+        <p>
+            The <strong>if</strong> statement executes a block of code only when
+            the specified condition is true.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>if condition:
+    statement</code></pre>
+
+        <h4>Example</h4>
+
+<pre><code>age = 18
+
+if age >= 18:
+    print("Eligible to Vote")</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>Eligible to Vote</code></pre>
+
+        <h3>Flowchart of if Statement</h3>
+
+<pre><code>
+        Condition?
+           |
+      +----+----+
+      |         |
+    True      False
+      |
+ Execute
+ Statement
+</code></pre>
+
+        <h3>2️⃣ The if...else Statement</h3>
+
+        <p>
+            The <strong>if...else</strong> statement is used when one action
+            should be performed if the condition is true and another action if
+            the condition is false.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>if condition:
+    statement1
+else:
+    statement2</code></pre>
+
+        <h4>Example</h4>
+
+<pre><code>num = int(input("Enter a Number: "))
+
+if num % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")</code></pre>
+
+        <h4>Sample Output</h4>
+
+<pre><code>Enter a Number: 12
+Even Number</code></pre>
+
+        <h3>Dry Run Table</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>num</th>
+                    <th>Condition (num % 2 == 0)</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12</td>
+                    <td>True</td>
+                    <td>Even Number</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>False</td>
+                    <td>Odd Number</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3️⃣ The if...elif...else Ladder</h3>
+
+        <p>
+            When there are multiple conditions to check, Python uses the
+            <strong>if...elif...else</strong> ladder.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>if condition1:
+    statement1
+
+elif condition2:
+    statement2
+
+elif condition3:
+    statement3
+
+else:
+    statement4</code></pre>
+
+        <h4>Example: Grade Calculation</h4>
+
+<pre><code>mark = int(input("Enter Mark: "))
+
+if mark >= 90:
+    print("Grade A")
+
+elif mark >= 75:
+    print("Grade B")
+
+elif mark >= 50:
+    print("Grade C")
+
+else:
+    print("Grade D")</code></pre>
+
+        <h4>Sample Output</h4>
+
+<pre><code>Enter Mark: 82
+Grade B</code></pre>
+
+        <h3>Flowchart of if-elif-else</h3>
+
+<pre><code>
+     Condition1?
+       /   \
+    Yes    No
+    |        |
+ Statement1  Condition2?
+             /      \
+          Yes       No
+          |          |
+      Statement2   Else Block
+</code></pre>
+
+        <h3>4️⃣ Nested if Statement</h3>
+
+        <p>
+            A nested if statement is an if statement placed inside another if statement.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>if condition1:
+
+    if condition2:
+        statement</code></pre>
+
+        <h4>Example</h4>
+
+<pre><code>age = int(input("Enter Age: "))
+
+if age >= 18:
+
+    if age <= 60:
+        print("Eligible for Employment")</code></pre>
+
+        <h4>Sample Output</h4>
+
+<pre><code>Enter Age: 25
+Eligible for Employment</code></pre>
+
+        <h3>Program 1: Find Largest of Two Numbers</h3>
+
+<pre><code>a = int(input("Enter First Number: "))
+b = int(input("Enter Second Number: "))
+
+if a > b:
+    print("Largest =", a)
+else:
+    print("Largest =", b)</code></pre>
+
+        <h3>Program 2: Check Pass or Fail</h3>
+
+<pre><code>mark = int(input("Enter Mark: "))
+
+if mark >= 40:
+    print("Pass")
+else:
+    print("Fail")</code></pre>
+
+        <h3>Program 3: Positive or Negative Number</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+if num >= 0:
+    print("Positive Number")
+else:
+    print("Negative Number")</code></pre>
+
+        <h3>Program 4: Voting Eligibility</h3>
+
+<pre><code>age = int(input("Enter Age: "))
+
+if age >= 18:
+    print("Eligible to Vote")
+else:
+    print("Not Eligible to Vote")</code></pre>
+
+        <h3>Indentation in Python</h3>
+
+        <div class="quiz-card">
+
+            <p>
+                Python uses indentation (spaces before statements)
+                to identify code blocks.
+            </p>
+
+        </div>
+
+<pre><code>if True:
+    print("Correct")
+
+print("Program End")</code></pre>
+
+        <h3>Common Mistake</h3>
+
+<pre><code>if True:
+print("Wrong Indentation")</code></pre>
+
+        <p>
+            This will generate an <strong>IndentationError</strong>.
+        </p>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which statement is used for decision making?</strong></p>
+
+            <div class="quiz-option">A. for</div>
+            <div class="quiz-option">B. while</div>
+            <div class="quiz-option">C. if ✅</div>
+            <div class="quiz-option">D. print</div>
+
+            <br>
+
+            <p><strong>2. Which keyword is used for multiple conditions?</strong></p>
+
+            <div class="quiz-option">A. elif ✅</div>
+            <div class="quiz-option">B. repeat</div>
+            <div class="quiz-option">C. case</div>
+            <div class="quiz-option">D. goto</div>
+
+            <br>
+
+            <p><strong>3. Python uses ______ to identify blocks of code.</strong></p>
+
+            <div class="quiz-option">A. Braces</div>
+            <div class="quiz-option">B. Semicolon</div>
+            <div class="quiz-option">C. Indentation ✅</div>
+            <div class="quiz-option">D. Colon Only</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>Write a program to check whether a number is positive or negative.</li>
+            <li>Write a program to find the largest of two numbers.</li>
+            <li>Write a program to check voting eligibility.</li>
+            <li>Write a program to assign grades using if-elif-else.</li>
+            <li>Explain nested if with an example.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Remember the syntax of if, if-else and if-elif-else.</li>
+            <li>Indentation is compulsory in Python.</li>
+            <li>elif is used for multiple conditions.</li>
+            <li>Nested if means an if statement inside another if.</li>
+            <li>Decision-making statements are frequently asked in practical exams.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Use the if statement for simple decisions.</li>
+            <li>Use if-else for two-way decisions.</li>
+            <li>Use if-elif-else for multiple conditions.</li>
+            <li>Create nested if statements.</li>
+            <li>Develop practical decision-making programs.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- LOOPS -->
+        <section id="loops" class="topic-section">
+
+    <h2>🔁 Loops in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to Loops</h3>
+
+        <p>
+            In programming, a loop is used to execute a block of code repeatedly.
+            Loops help reduce the amount of code and make programs more efficient.
+        </p>
+
+        <p>
+            For example, instead of writing the same print statement ten times,
+            we can use a loop to repeat it automatically.
+        </p>
+
+<pre><code>print("Python")
+print("Python")
+print("Python")
+print("Python")
+print("Python")</code></pre>
+
+        <p>
+            The above code can be replaced by a loop.
+        </p>
+
+        <h3>Types of Loops in Python</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Loop Type</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>while loop</td>
+                    <td>Repeats while a condition is True</td>
+                </tr>
+                <tr>
+                    <td>for loop</td>
+                    <td>Repeats for a fixed sequence of values</td>
+                </tr>
+                <tr>
+                    <td>Nested Loop</td>
+                    <td>A loop inside another loop</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>1️⃣ The while Loop</h3>
+
+        <p>
+            The while loop executes a block of code repeatedly as long as the
+            specified condition remains True.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>while condition:
+    statement</code></pre>
+
+        <h4>Example 1: Print Numbers 1 to 5</h4>
+
+<pre><code>i = 1
+
+while i <= 5:
+    print(i)
+    i = i + 1</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>1
+2
+3
+4
+5</code></pre>
+
+        <h4>Dry Run Table</h4>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>i</th>
+                    <th>Condition</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>True</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>True</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>True</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>True</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>True</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Infinite Loop</h3>
+
+        <p>
+            If the loop condition never becomes False, the loop runs forever.
+            This is called an Infinite Loop.
+        </p>
+
+<pre><code>while True:
+    print("Hello")</code></pre>
+
+        <h3>2️⃣ The for Loop</h3>
+
+        <p>
+            The for loop is used to iterate through a sequence such as a range,
+            string, list or tuple.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>for variable in sequence:
+    statement</code></pre>
+
+        <h4>Example 1: Print Numbers 1 to 5</h4>
+
+<pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>1
+2
+3
+4
+5</code></pre>
+
+        <h3>Understanding range()</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>range(5)</td>
+                    <td>0,1,2,3,4</td>
+                </tr>
+                <tr>
+                    <td>range(1,5)</td>
+                    <td>1,2,3,4</td>
+                </tr>
+                <tr>
+                    <td>range(1,10,2)</td>
+                    <td>1,3,5,7,9</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Example 2: Print Even Numbers</h4>
+
+<pre><code>for i in range(2, 11, 2):
+    print(i)</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>2
+4
+6
+8
+10</code></pre>
+
+        <h4>Example 3: Print Characters of a String</h4>
+
+<pre><code>name = "PYTHON"
+
+for ch in name:
+    print(ch)</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>P
+Y
+T
+H
+O
+N</code></pre>
+
+        <h3>3️⃣ Nested Loops</h3>
+
+        <p>
+            A nested loop is a loop inside another loop.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>for i in range(3):
+
+    for j in range(2):
+        statement</code></pre>
+
+        <h4>Example</h4>
+
+<pre><code>for i in range(3):
+
+    for j in range(2):
+        print("*", end=" ")
+
+    print()</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>* *
+* *
+* *</code></pre>
+
+        <h3>Pattern Programs</h3>
+
+        <h4>Star Pattern</h4>
+
+<pre><code>for i in range(1,6):
+
+    for j in range(i):
+        print("*", end=" ")
+
+    print()</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>*
+* *
+* * *
+* * * *
+* * * * *</code></pre>
+
+        <h3>4️⃣ break Statement</h3>
+
+        <p>
+            The break statement immediately terminates the loop.
+        </p>
+
+<pre><code>for i in range(1,11):
+
+    if i == 6:
+        break
+
+    print(i)</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>1
+2
+3
+4
+5</code></pre>
+
+        <p>
+            When i becomes 6, the loop stops completely.
+        </p>
+
+        <h3>5️⃣ continue Statement</h3>
+
+        <p>
+            The continue statement skips the current iteration and moves to the
+            next iteration.
+        </p>
+
+<pre><code>for i in range(1,6):
+
+    if i == 3:
+        continue
+
+    print(i)</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>1
+2
+4
+5</code></pre>
+
+        <p>
+            Number 3 is skipped.
+        </p>
+
+        <h3>6️⃣ pass Statement</h3>
+
+        <p>
+            The pass statement does nothing. It acts as a placeholder for future code.
+        </p>
+
+<pre><code>for i in range(5):
+
+    if i == 3:
+        pass
+
+    print(i)</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>0
+1
+2
+3
+4</code></pre>
+
+        <h3>Program 1: Sum of First 10 Numbers</h3>
+
+<pre><code>sum = 0
+
+for i in range(1,11):
+    sum = sum + i
+
+print("Sum =", sum)</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>Sum = 55</code></pre>
+
+        <h3>Program 2: Multiplication Table</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+for i in range(1,11):
+    print(num, "x", i, "=", num*i)</code></pre>
+
+        <h3>Program 3: Factorial of a Number</h3>
+
+<pre><code>n = int(input("Enter Number: "))
+
+fact = 1
+
+for i in range(1,n+1):
+    fact = fact * i
+
+print("Factorial =", fact)</code></pre>
+
+        <h3>Program 4: Reverse Counting</h3>
+
+<pre><code>for i in range(10,0,-1):
+    print(i)</code></pre>
+
+        <h4>Output</h4>
+
+<pre><code>10
+9
+8
+7
+6
+5
+4
+3
+2
+1</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which loop executes while a condition remains True?</strong></p>
+
+            <div class="quiz-option">A. for</div>
+            <div class="quiz-option">B. while ✅</div>
+            <div class="quiz-option">C. do while</div>
+            <div class="quiz-option">D. repeat</div>
+
+            <br>
+
+            <p><strong>2. Which statement immediately exits a loop?</strong></p>
+
+            <div class="quiz-option">A. continue</div>
+            <div class="quiz-option">B. stop</div>
+            <div class="quiz-option">C. break ✅</div>
+            <div class="quiz-option">D. pass</div>
+
+            <br>
+
+            <p><strong>3. Which statement skips the current iteration?</strong></p>
+
+            <div class="quiz-option">A. pass</div>
+            <div class="quiz-option">B. break</div>
+            <div class="quiz-option">C. continue ✅</div>
+            <div class="quiz-option">D. exit</div>
+
+            <br>
+
+            <p><strong>4. What is the output of range(5)?</strong></p>
+
+            <div class="quiz-option">A. 1,2,3,4,5</div>
+            <div class="quiz-option">B. 0,1,2,3,4 ✅</div>
+            <div class="quiz-option">C. 0,1,2,3,4,5</div>
+            <div class="quiz-option">D. 1,2,3,4</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>Write a program to print numbers from 1 to 100.</li>
+            <li>Write a program to find the sum of first N numbers.</li>
+            <li>Write a program to generate multiplication tables.</li>
+            <li>Write a program to find factorial of a number.</li>
+            <li>Differentiate break and continue.</li>
+            <li>Explain nested loops with an example.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>while loop is condition-based.</li>
+            <li>for loop is sequence-based.</li>
+            <li>range(start, stop, step) is very important.</li>
+            <li>break exits the loop immediately.</li>
+            <li>continue skips the current iteration.</li>
+            <li>pass is a placeholder statement.</li>
+            <li>Factorial and multiplication table programs are frequently asked.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Use while loops for repetitive tasks.</li>
+            <li>Use for loops with range().</li>
+            <li>Create nested loops and patterns.</li>
+            <li>Apply break, continue and pass statements.</li>
+            <li>Develop practical looping programs.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- STRINGS -->
+        <section id="strings" class="topic-section">
+
+    <h2>📝 Strings in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to Strings</h3>
+
+        <p>
+            A string is a sequence of characters enclosed within single quotes (' '),
+            double quotes (" "), or triple quotes (''' ''' or """ """).
+            Strings are used to store text data such as names, addresses, messages,
+            and sentences.
+        </p>
+
+<pre><code>name = "Python"
+city = 'Kollam'
+
+print(name)
+print(city)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Python
+Kollam</code></pre>
+
+        <h3>Creating Strings</h3>
+
+<pre><code>str1 = "Hello"
+str2 = 'World'
+str3 = """Python Programming"""
+
+print(str1)
+print(str2)
+print(str3)</code></pre>
+
+        <h3>Characteristics of Strings</h3>
+
+        <ul>
+            <li>Strings are ordered collections of characters.</li>
+            <li>Strings are immutable (cannot be modified directly).</li>
+            <li>Each character has an index position.</li>
+            <li>Strings can contain letters, digits, symbols and spaces.</li>
+        </ul>
+
+        <h3>String Indexing</h3>
+
+        <p>
+            Each character in a string has a position called an index.
+            Indexing starts from 0.
+        </p>
+
+<pre><code>word = "PYTHON"
+
+Position : 0 1 2 3 4 5
+Characters: P Y T H O N</code></pre>
+
+<pre><code>word = "PYTHON"
+
+print(word[0])
+print(word[2])
+print(word[5])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>P
+T
+N</code></pre>
+
+        <h3>Negative Indexing</h3>
+
+        <p>
+            Python also supports negative indexing.
+        </p>
+
+<pre><code>word = "PYTHON"
+
+print(word[-1])
+print(word[-2])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>N
+O</code></pre>
+
+        <h3>String Slicing</h3>
+
+        <p>
+            Slicing is used to extract a portion of a string.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>string[start : stop : step]</code></pre>
+
+<pre><code>word = "PYTHON"
+
+print(word[0:3])
+print(word[2:5])
+print(word[:4])
+print(word[3:])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>PYT
+THO
+PYTH
+HON</code></pre>
+
+        <h3>String Concatenation</h3>
+
+        <p>
+            Concatenation means joining two or more strings using the + operator.
+        </p>
+
+<pre><code>first = "Hello"
+second = "World"
+
+result = first + " " + second
+
+print(result)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Hello World</code></pre>
+
+        <h3>String Repetition</h3>
+
+        <p>
+            The * operator is used to repeat strings.
+        </p>
+
+<pre><code>print("Python " * 3)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Python Python Python</code></pre>
+
+        <h3>Membership Operators</h3>
+
+        <p>
+            Membership operators check whether a character or substring exists
+            in a string.
+        </p>
+
+<pre><code>text = "Python Programming"
+
+print("Python" in text)
+print("Java" in text)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>True
+False</code></pre>
+
+        <h3>Length of a String</h3>
+
+        <p>
+            The len() function returns the number of characters in a string.
+        </p>
+
+<pre><code>name = "Computer"
+
+print(len(name))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>8</code></pre>
+
+        <h3>Common String Functions</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>len()</td>
+                    <td>Returns length of string</td>
+                </tr>
+                <tr>
+                    <td>max()</td>
+                    <td>Returns highest character</td>
+                </tr>
+                <tr>
+                    <td>min()</td>
+                    <td>Returns lowest character</td>
+                </tr>
+                <tr>
+                    <td>sorted()</td>
+                    <td>Sorts characters</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>String Methods</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>upper()</td>
+                    <td>Convert to uppercase</td>
+                </tr>
+                <tr>
+                    <td>lower()</td>
+                    <td>Convert to lowercase</td>
+                </tr>
+                <tr>
+                    <td>title()</td>
+                    <td>Convert first letter of each word to uppercase</td>
+                </tr>
+                <tr>
+                    <td>strip()</td>
+                    <td>Remove leading and trailing spaces</td>
+                </tr>
+                <tr>
+                    <td>replace()</td>
+                    <td>Replace characters or words</td>
+                </tr>
+                <tr>
+                    <td>find()</td>
+                    <td>Find position of a substring</td>
+                </tr>
+                <tr>
+                    <td>count()</td>
+                    <td>Count occurrences</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Examples of String Methods</h3>
+
+<pre><code>text = "python programming"
+
+print(text.upper())
+print(text.title())</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>PYTHON PROGRAMMING
+Python Programming</code></pre>
+
+<pre><code>text = "Python Programming"
+
+print(text.replace("Python", "Java"))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Java Programming</code></pre>
+
+<pre><code>text = "banana"
+
+print(text.count("a"))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>3</code></pre>
+
+        <h3>Traversing a String Using Loop</h3>
+
+<pre><code>word = "PYTHON"
+
+for ch in word:
+    print(ch)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>P
+Y
+T
+H
+O
+N</code></pre>
+
+        <h3>Program 1: Count Vowels</h3>
+
+<pre><code>text = input("Enter a String: ")
+
+count = 0
+
+for ch in text.lower():
+
+    if ch in "aeiou":
+        count += 1
+
+print("Number of Vowels =", count)</code></pre>
+
+        <h3>Program 2: Reverse a String</h3>
+
+<pre><code>text = input("Enter a String: ")
+
+print(text[::-1])</code></pre>
+
+        <h3>Program 3: Palindrome Check</h3>
+
+<pre><code>word = input("Enter a Word: ")
+
+if word == word[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")</code></pre>
+
+        <h3>Program 4: Count Characters</h3>
+
+<pre><code>text = input("Enter a String: ")
+
+print("Total Characters =", len(text))</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. What is the index of the first character in a string?</strong></p>
+
+            <div class="quiz-option">A. 0 ✅</div>
+            <div class="quiz-option">B. 1</div>
+            <div class="quiz-option">C. -1</div>
+            <div class="quiz-option">D. 10</div>
+
+            <br>
+
+            <p><strong>2. Which function returns the length of a string?</strong></p>
+
+            <div class="quiz-option">A. count()</div>
+            <div class="quiz-option">B. size()</div>
+            <div class="quiz-option">C. len() ✅</div>
+            <div class="quiz-option">D. find()</div>
+
+            <br>
+
+            <p><strong>3. Which operator is used to join strings?</strong></p>
+
+            <div class="quiz-option">A. *</div>
+            <div class="quiz-option">B. + ✅</div>
+            <div class="quiz-option">C. %</div>
+            <div class="quiz-option">D. &</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>What is a string? Explain with examples.</li>
+            <li>Differentiate indexing and slicing.</li>
+            <li>Write a program to count vowels in a string.</li>
+            <li>Write a program to reverse a string.</li>
+            <li>Write a program to check whether a string is palindrome.</li>
+            <li>Explain any five string methods with examples.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Strings are immutable.</li>
+            <li>Indexing starts from 0.</li>
+            <li>Negative indexing starts from -1.</li>
+            <li>len() returns the length of a string.</li>
+            <li>String slicing is frequently asked in exams.</li>
+            <li>Palindrome and vowel counting programs are important.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Create and manipulate strings.</li>
+            <li>Use indexing and slicing techniques.</li>
+            <li>Apply string functions and methods.</li>
+            <li>Process strings using loops.</li>
+            <li>Develop practical string programs.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- LISTS -->
+        <section id="lists" class="topic-section">
+
+    <h2>📋 Lists in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to Lists</h3>
+
+        <p>
+            A List is a collection of multiple values stored in a single variable.
+            Lists are one of the most commonly used data structures in Python.
+        </p>
+
+        <p>
+            Unlike strings, lists can store different types of data such as
+            integers, floats, strings and even other lists.
+        </p>
+
+<pre><code>numbers = [10, 20, 30, 40, 50]
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>[10, 20, 30, 40, 50]</code></pre>
+
+        <h3>Characteristics of Lists</h3>
+
+        <ul>
+            <li>Lists are ordered collections.</li>
+            <li>Lists are mutable (can be modified).</li>
+            <li>Lists allow duplicate values.</li>
+            <li>Lists can store different data types.</li>
+            <li>Lists are enclosed within square brackets [ ].</li>
+        </ul>
+
+        <h3>Creating Lists</h3>
+
+<pre><code>list1 = [1, 2, 3, 4]
+list2 = ["Apple", "Orange", "Mango"]
+list3 = [10, "Python", 12.5]
+
+print(list1)
+print(list2)
+print(list3)</code></pre>
+
+        <h3>Accessing List Elements</h3>
+
+        <p>
+            Each element in a list has an index position starting from 0.
+        </p>
+
+<pre><code>fruits = ["Apple", "Orange", "Mango"]
+
+print(fruits[0])
+print(fruits[1])
+print(fruits[2])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Apple
+Orange
+Mango</code></pre>
+
+        <h3>Negative Indexing</h3>
+
+<pre><code>fruits = ["Apple", "Orange", "Mango"]
+
+print(fruits[-1])
+print(fruits[-2])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Mango
+Orange</code></pre>
+
+        <h3>List Slicing</h3>
+
+        <p>
+            Slicing extracts a portion of a list.
+        </p>
+
+<pre><code>numbers = [10,20,30,40,50,60]
+
+print(numbers[1:4])
+print(numbers[:3])
+print(numbers[3:])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>[20, 30, 40]
+[10, 20, 30]
+[40, 50, 60]</code></pre>
+
+        <h3>Modifying List Elements</h3>
+
+        <p>
+            Lists are mutable, so their elements can be changed.
+        </p>
+
+<pre><code>numbers = [10,20,30]
+
+numbers[1] = 50
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>[10, 50, 30]</code></pre>
+
+        <h3>Traversing a List</h3>
+
+<pre><code>numbers = [10,20,30,40]
+
+for item in numbers:
+    print(item)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>10
+20
+30
+40</code></pre>
+
+        <h3>Common List Functions</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>len()</td>
+                    <td>Returns number of elements</td>
+                </tr>
+                <tr>
+                    <td>max()</td>
+                    <td>Returns largest element</td>
+                </tr>
+                <tr>
+                    <td>min()</td>
+                    <td>Returns smallest element</td>
+                </tr>
+                <tr>
+                    <td>sum()</td>
+                    <td>Returns total of elements</td>
+                </tr>
+                <tr>
+                    <td>sorted()</td>
+                    <td>Returns sorted list</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>numbers = [5,10,15,20]
+
+print(len(numbers))
+print(max(numbers))
+print(min(numbers))
+print(sum(numbers))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>4
+20
+5
+50</code></pre>
+
+        <h3>Important List Methods</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>append()</td>
+                    <td>Add element at end</td>
+                </tr>
+                <tr>
+                    <td>insert()</td>
+                    <td>Insert element at specified position</td>
+                </tr>
+                <tr>
+                    <td>remove()</td>
+                    <td>Remove specified element</td>
+                </tr>
+                <tr>
+                    <td>pop()</td>
+                    <td>Remove element by index</td>
+                </tr>
+                <tr>
+                    <td>sort()</td>
+                    <td>Sort the list</td>
+                </tr>
+                <tr>
+                    <td>reverse()</td>
+                    <td>Reverse the list</td>
+                </tr>
+                <tr>
+                    <td>count()</td>
+                    <td>Count occurrences</td>
+                </tr>
+                <tr>
+                    <td>index()</td>
+                    <td>Find position of element</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>append()</h3>
+
+<pre><code>fruits = ["Apple", "Orange"]
+
+fruits.append("Mango")
+
+print(fruits)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>['Apple', 'Orange', 'Mango']</code></pre>
+
+        <h3>insert()</h3>
+
+<pre><code>numbers = [10,20,30]
+
+numbers.insert(1,15)
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>[10, 15, 20, 30]</code></pre>
+
+        <h3>remove()</h3>
+
+<pre><code>numbers = [10,20,30]
+
+numbers.remove(20)
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>[10, 30]</code></pre>
+
+        <h3>sort()</h3>
+
+<pre><code>numbers = [40,10,50,20]
+
+numbers.sort()
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>[10, 20, 40, 50]</code></pre>
+
+        <h3>reverse()</h3>
+
+<pre><code>numbers = [10,20,30]
+
+numbers.reverse()
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>[30, 20, 10]</code></pre>
+
+        <h3>Searching an Element</h3>
+
+<pre><code>numbers = [10,20,30,40]
+
+if 30 in numbers:
+    print("Found")
+else:
+    print("Not Found")</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Found</code></pre>
+
+        <h3>Nested Lists</h3>
+
+        <p>
+            A list inside another list is called a Nested List.
+        </p>
+
+<pre><code>marks = [
+    [75,80,90],
+    [65,70,85]
+]
+
+print(marks[0])
+print(marks[1])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>[75, 80, 90]
+[65, 70, 85]</code></pre>
+
+        <h3>Program 1: Find Largest Number</h3>
+
+<pre><code>numbers = [15,25,10,40,30]
+
+print("Largest =", max(numbers))</code></pre>
+
+        <h3>Program 2: Calculate Sum of List Elements</h3>
+
+<pre><code>numbers = [10,20,30,40]
+
+print("Sum =", sum(numbers))</code></pre>
+
+        <h3>Program 3: Count Occurrences</h3>
+
+<pre><code>numbers = [10,20,10,30,10]
+
+print(numbers.count(10))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>3</code></pre>
+
+        <h3>Program 4: Linear Search</h3>
+
+<pre><code>numbers = [5,10,15,20,25]
+
+key = int(input("Enter Number to Search: "))
+
+if key in numbers:
+    print("Element Found")
+else:
+    print("Element Not Found")</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which brackets are used for lists?</strong></p>
+
+            <div class="quiz-option">A. ( )</div>
+            <div class="quiz-option">B. { }</div>
+            <div class="quiz-option">C. [ ] ✅</div>
+            <div class="quiz-option">D. &lt; &gt;</div>
+
+            <br>
+
+            <p><strong>2. Which method adds an element at the end of a list?</strong></p>
+
+            <div class="quiz-option">A. insert()</div>
+            <div class="quiz-option">B. append() ✅</div>
+            <div class="quiz-option">C. add()</div>
+            <div class="quiz-option">D. extend()</div>
+
+            <br>
+
+            <p><strong>3. Which function returns the largest element?</strong></p>
+
+            <div class="quiz-option">A. min()</div>
+            <div class="quiz-option">B. len()</div>
+            <div class="quiz-option">C. sum()</div>
+            <div class="quiz-option">D. max() ✅</div>
+
+            <br>
+
+            <p><strong>4. Lists are:</strong></p>
+
+            <div class="quiz-option">A. Immutable</div>
+            <div class="quiz-option">B. Mutable ✅</div>
+            <div class="quiz-option">C. Fixed Size</div>
+            <div class="quiz-option">D. Read Only</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>What is a list? Explain its characteristics.</li>
+            <li>Differentiate indexing and slicing in lists.</li>
+            <li>Explain append(), insert() and remove() methods.</li>
+            <li>Write a program to find the largest element in a list.</li>
+            <li>Write a program to search an element in a list.</li>
+            <li>What is a nested list? Explain with example.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Lists are mutable whereas strings are immutable.</li>
+            <li>Indexing starts from 0.</li>
+            <li>append() adds at the end of the list.</li>
+            <li>insert() adds at a specific position.</li>
+            <li>sort() arranges elements in ascending order.</li>
+            <li>Linear search using 'in' operator is important.</li>
+            <li>List programs are commonly asked in practical exams.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Create and manipulate lists.</li>
+            <li>Use indexing and slicing on lists.</li>
+            <li>Apply list functions and methods.</li>
+            <li>Search and sort list elements.</li>
+            <li>Develop programs using lists.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- TUPLES -->
+        <section id="tuples" class="topic-section">
+
+    <h2>📦 Tuples in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to Tuples</h3>
+
+        <p>
+            A Tuple is an ordered collection of elements similar to a list.
+            However, unlike lists, tuples are <strong>immutable</strong>,
+            which means their elements cannot be modified after creation.
+        </p>
+
+        <p>
+            Tuples are used when data should remain constant throughout the program.
+        </p>
+
+<pre><code>numbers = (10, 20, 30, 40)
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>(10, 20, 30, 40)</code></pre>
+
+        <h3>Characteristics of Tuples</h3>
+
+        <ul>
+            <li>Tuples are ordered collections.</li>
+            <li>Tuples are immutable.</li>
+            <li>Tuples allow duplicate values.</li>
+            <li>Tuples can contain different data types.</li>
+            <li>Tuples are enclosed within parentheses ( ).</li>
+        </ul>
+
+        <h3>Creating Tuples</h3>
+
+<pre><code>t1 = (10, 20, 30)
+t2 = ("Apple", "Orange", "Mango")
+t3 = (10, "Python", 25.5)
+
+print(t1)
+print(t2)
+print(t3)</code></pre>
+
+        <h3>Creating a Single Element Tuple</h3>
+
+        <p>
+            A comma is mandatory when creating a single-element tuple.
+        </p>
+
+<pre><code>t = (10,)
+
+print(type(t))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>&lt;class 'tuple'&gt;</code></pre>
+
+        <h3>Accessing Tuple Elements</h3>
+
+        <p>
+            Tuple elements are accessed using index positions.
+        </p>
+
+<pre><code>fruits = ("Apple", "Orange", "Mango")
+
+print(fruits[0])
+print(fruits[1])
+print(fruits[2])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Apple
+Orange
+Mango</code></pre>
+
+        <h3>Negative Indexing</h3>
+
+<pre><code>fruits = ("Apple", "Orange", "Mango")
+
+print(fruits[-1])
+print(fruits[-2])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Mango
+Orange</code></pre>
+
+        <h3>Tuple Slicing</h3>
+
+<pre><code>numbers = (10,20,30,40,50,60)
+
+print(numbers[1:4])
+print(numbers[:3])
+print(numbers[3:])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>(20, 30, 40)
+(10, 20, 30)
+(40, 50, 60)</code></pre>
+
+        <h3>Traversing a Tuple</h3>
+
+<pre><code>numbers = (10,20,30,40)
+
+for item in numbers:
+    print(item)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>10
+20
+30
+40</code></pre>
+
+        <h3>Tuple Functions</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>len()</td>
+                    <td>Returns number of elements</td>
+                </tr>
+                <tr>
+                    <td>max()</td>
+                    <td>Returns largest element</td>
+                </tr>
+                <tr>
+                    <td>min()</td>
+                    <td>Returns smallest element</td>
+                </tr>
+                <tr>
+                    <td>sum()</td>
+                    <td>Returns total of numeric elements</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>numbers = (10,20,30,40)
+
+print(len(numbers))
+print(max(numbers))
+print(min(numbers))
+print(sum(numbers))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>4
+40
+10
+100</code></pre>
+
+        <h3>Tuple Methods</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>count()</td>
+                    <td>Counts occurrences of an element</td>
+                </tr>
+                <tr>
+                    <td>index()</td>
+                    <td>Returns index position of an element</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>count()</h3>
+
+<pre><code>numbers = (10,20,10,30,10)
+
+print(numbers.count(10))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>3</code></pre>
+
+        <h3>index()</h3>
+
+<pre><code>numbers = (10,20,30,40)
+
+print(numbers.index(30))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>2</code></pre>
+
+        <h3>Tuple Concatenation</h3>
+
+        <p>
+            Two tuples can be joined using the + operator.
+        </p>
+
+<pre><code>t1 = (1,2,3)
+t2 = (4,5,6)
+
+t3 = t1 + t2
+
+print(t3)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>(1, 2, 3, 4, 5, 6)</code></pre>
+
+        <h3>Tuple Repetition</h3>
+
+<pre><code>t = ("Python",)
+
+print(t * 3)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>('Python', 'Python', 'Python')</code></pre>
+
+        <h3>Tuple Packing and Unpacking</h3>
+
+        <h4>Packing</h4>
+
+<pre><code>student = ("Arun", 17, 95)</code></pre>
+
+        <h4>Unpacking</h4>
+
+<pre><code>student = ("Arun", 17, 95)
+
+name, age, mark = student
+
+print(name)
+print(age)
+print(mark)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Arun
+17
+95</code></pre>
+
+        <h3>Difference Between List and Tuple</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>List</th>
+                    <th>Tuple</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mutable</td>
+                    <td>Immutable</td>
+                </tr>
+                <tr>
+                    <td>[ ]</td>
+                    <td>( )</td>
+                </tr>
+                <tr>
+                    <td>Many methods available</td>
+                    <td>Limited methods</td>
+                </tr>
+                <tr>
+                    <td>Consumes more memory</td>
+                    <td>Consumes less memory</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Program 1: Find Largest Element in a Tuple</h3>
+
+<pre><code>numbers = (15,25,10,40,30)
+
+print("Largest =", max(numbers))</code></pre>
+
+        <h3>Program 2: Find Sum of Tuple Elements</h3>
+
+<pre><code>numbers = (10,20,30,40)
+
+print("Sum =", sum(numbers))</code></pre>
+
+        <h3>Program 3: Search an Element</h3>
+
+<pre><code>numbers = (10,20,30,40,50)
+
+key = int(input("Enter Number: "))
+
+if key in numbers:
+    print("Element Found")
+else:
+    print("Element Not Found")</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which symbol is used to create a tuple?</strong></p>
+
+            <div class="quiz-option">A. [ ]</div>
+            <div class="quiz-option">B. { }</div>
+            <div class="quiz-option">C. ( ) ✅</div>
+            <div class="quiz-option">D. &lt; &gt;</div>
+
+            <br>
+
+            <p><strong>2. Tuples are:</strong></p>
+
+            <div class="quiz-option">A. Mutable</div>
+            <div class="quiz-option">B. Immutable ✅</div>
+            <div class="quiz-option">C. Dynamic</div>
+            <div class="quiz-option">D. Editable</div>
+
+            <br>
+
+            <p><strong>3. Which method counts occurrences?</strong></p>
+
+            <div class="quiz-option">A. find()</div>
+            <div class="quiz-option">B. search()</div>
+            <div class="quiz-option">C. count() ✅</div>
+            <div class="quiz-option">D. locate()</div>
+
+            <br>
+
+            <p><strong>4. Which method returns the position of an element?</strong></p>
+
+            <div class="quiz-option">A. index() ✅</div>
+            <div class="quiz-option">B. count()</div>
+            <div class="quiz-option">C. locate()</div>
+            <div class="quiz-option">D. search()</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>What is a tuple? Explain its characteristics.</li>
+            <li>Differentiate between List and Tuple.</li>
+            <li>Explain tuple packing and unpacking.</li>
+            <li>Write a program to find the largest element in a tuple.</li>
+            <li>Explain count() and index() methods with examples.</li>
+            <li>Write a program to search an element in a tuple.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Tuples are immutable.</li>
+            <li>A single-element tuple requires a comma.</li>
+            <li>Only count() and index() are tuple methods.</li>
+            <li>Tuples support indexing and slicing.</li>
+            <li>Tuple packing and unpacking are important concepts.</li>
+            <li>Know the differences between lists and tuples.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Create and use tuples.</li>
+            <li>Access tuple elements using indexing and slicing.</li>
+            <li>Apply tuple functions and methods.</li>
+            <li>Perform tuple packing and unpacking.</li>
+            <li>Differentiate between lists and tuples.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- DICTIONARIES -->
+        <section id="dictionary" class="topic-section">
+
+    <h2>📖 Dictionaries in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to Dictionaries</h3>
+
+        <p>
+            A Dictionary is a collection of data stored in the form of
+            <strong>key-value pairs</strong>.
+        </p>
+
+        <p>
+            Each key is unique and is used to access its corresponding value.
+            Dictionaries are widely used for storing structured data such as
+            student records, employee details and product information.
+        </p>
+
+<pre><code>student = {
+    "name": "Arun",
+    "age": 17,
+    "mark": 95
+}
+
+print(student)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{'name': 'Arun', 'age': 17, 'mark': 95}</code></pre>
+
+        <h3>Characteristics of Dictionaries</h3>
+
+        <ul>
+            <li>Dictionaries store data as key-value pairs.</li>
+            <li>Keys must be unique.</li>
+            <li>Values can be duplicated.</li>
+            <li>Dictionaries are mutable.</li>
+            <li>Dictionaries are enclosed within curly braces { }.</li>
+            <li>Elements are accessed using keys instead of indexes.</li>
+        </ul>
+
+        <h3>Creating a Dictionary</h3>
+
+<pre><code>student = {
+    "name": "Anu",
+    "class": "XI",
+    "mark": 98
+}
+
+print(student)</code></pre>
+
+        <h3>Accessing Dictionary Elements</h3>
+
+        <p>
+            Values are accessed using their keys.
+        </p>
+
+<pre><code>student = {
+    "name": "Rahul",
+    "age": 17,
+    "mark": 90
+}
+
+print(student["name"])
+print(student["mark"])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Rahul
+90</code></pre>
+
+        <h3>Using get() Method</h3>
+
+        <p>
+            The get() method safely retrieves values from a dictionary.
+        </p>
+
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(student.get("name"))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Arun</code></pre>
+
+        <h3>Adding New Elements</h3>
+
+<pre><code>student = {
+    "name": "Anu",
+    "mark": 90
+}
+
+student["age"] = 17
+
+print(student)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{'name': 'Anu', 'mark': 90, 'age': 17}</code></pre>
+
+        <h3>Modifying Values</h3>
+
+<pre><code>student = {
+    "name": "Anu",
+    "mark": 90
+}
+
+student["mark"] = 95
+
+print(student)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{'name': 'Anu', 'mark': 95}</code></pre>
+
+        <h3>Removing Elements</h3>
+
+<pre><code>student = {
+    "name": "Anu",
+    "mark": 90,
+    "age": 17
+}
+
+del student["age"]
+
+print(student)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{'name': 'Anu', 'mark': 90}</code></pre>
+
+        <h3>Dictionary Functions</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>len()</td>
+                    <td>Returns number of key-value pairs</td>
+                </tr>
+                <tr>
+                    <td>type()</td>
+                    <td>Returns data type</td>
+                </tr>
+                <tr>
+                    <td>str()</td>
+                    <td>Converts dictionary to string</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(len(student))
+print(type(student))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>2
+&lt;class 'dict'&gt;</code></pre>
+
+        <h3>Important Dictionary Methods</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>keys()</td>
+                    <td>Returns all keys</td>
+                </tr>
+                <tr>
+                    <td>values()</td>
+                    <td>Returns all values</td>
+                </tr>
+                <tr>
+                    <td>items()</td>
+                    <td>Returns key-value pairs</td>
+                </tr>
+                <tr>
+                    <td>update()</td>
+                    <td>Updates dictionary</td>
+                </tr>
+                <tr>
+                    <td>pop()</td>
+                    <td>Removes specified key</td>
+                </tr>
+                <tr>
+                    <td>clear()</td>
+                    <td>Removes all elements</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>keys()</h3>
+
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(student.keys())</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>dict_keys(['name', 'mark'])</code></pre>
+
+        <h3>values()</h3>
+
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(student.values())</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>dict_values(['Arun', 95])</code></pre>
+
+        <h3>items()</h3>
+
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(student.items())</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>dict_items([('name', 'Arun'), ('mark', 95)])</code></pre>
+
+        <h3>Traversing a Dictionary</h3>
+
+<pre><code>student = {
+    "name": "Arun",
+    "age": 17,
+    "mark": 95
+}
+
+for key in student:
+    print(key, ":", student[key])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>name : Arun
+age : 17
+mark : 95</code></pre>
+
+        <h3>Nested Dictionary</h3>
+
+        <p>
+            A dictionary inside another dictionary is called a nested dictionary.
+        </p>
+
+<pre><code>students = {
+    "s1": {"name":"Arun", "mark":90},
+    "s2": {"name":"Anu", "mark":95}
+}
+
+print(students["s1"]["name"])</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Arun</code></pre>
+
+        <h3>Program 1: Student Record</h3>
+
+<pre><code>student = {
+    "name": "Rahul",
+    "age": 17,
+    "mark": 92
+}
+
+print("Name =", student["name"])
+print("Mark =", student["mark"])</code></pre>
+
+        <h3>Program 2: Display Keys and Values</h3>
+
+<pre><code>data = {
+    "A": 10,
+    "B": 20,
+    "C": 30
+}
+
+for k, v in data.items():
+    print(k, "=", v)</code></pre>
+
+        <h3>Program 3: Search a Key</h3>
+
+<pre><code>student = {
+    "name": "Arun",
+    "age": 17,
+    "mark": 95
+}
+
+key = input("Enter Key: ")
+
+if key in student:
+    print("Key Found")
+else:
+    print("Key Not Found")</code></pre>
+
+        <h3>Difference Between List, Tuple and Dictionary</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>List</th>
+                    <th>Tuple</th>
+                    <th>Dictionary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bracket</td>
+                    <td>[ ]</td>
+                    <td>( )</td>
+                    <td>{ }</td>
+                </tr>
+                <tr>
+                    <td>Mutable</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Index Based</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Key-Value Pair</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Dictionary elements are stored as:</strong></p>
+
+            <div class="quiz-option">A. Index Values</div>
+            <div class="quiz-option">B. Key-Value Pairs ✅</div>
+            <div class="quiz-option">C. Objects</div>
+            <div class="quiz-option">D. Arrays</div>
+
+            <br>
+
+            <p><strong>2. Which method returns all keys?</strong></p>
+
+            <div class="quiz-option">A. values()</div>
+            <div class="quiz-option">B. items()</div>
+            <div class="quiz-option">C. keys() ✅</div>
+            <div class="quiz-option">D. get()</div>
+
+            <br>
+
+            <p><strong>3. Dictionaries are:</strong></p>
+
+            <div class="quiz-option">A. Immutable</div>
+            <div class="quiz-option">B. Mutable ✅</div>
+            <div class="quiz-option">C. Fixed</div>
+            <div class="quiz-option">D. Read Only</div>
+
+            <br>
+
+            <p><strong>4. Which method returns both keys and values?</strong></p>
+
+            <div class="quiz-option">A. items() ✅</div>
+            <div class="quiz-option">B. keys()</div>
+            <div class="quiz-option">C. values()</div>
+            <div class="quiz-option">D. get()</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>What is a dictionary? Explain its characteristics.</li>
+            <li>How are dictionary elements accessed?</li>
+            <li>Explain keys(), values() and items() methods.</li>
+            <li>Write a program to search a key in a dictionary.</li>
+            <li>What is a nested dictionary?</li>
+            <li>Differentiate List, Tuple and Dictionary.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Dictionaries store data as key-value pairs.</li>
+            <li>Keys must be unique.</li>
+            <li>Dictionaries are mutable.</li>
+            <li>Use keys() to get all keys.</li>
+            <li>Use values() to get all values.</li>
+            <li>Use items() to get both keys and values.</li>
+            <li>Dictionary programs are frequently asked in practical exams.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Create and manipulate dictionaries.</li>
+            <li>Access dictionary values using keys.</li>
+            <li>Use dictionary methods effectively.</li>
+            <li>Traverse dictionaries using loops.</li>
+            <li>Create programs using dictionaries.</li>
+        </ul>
+
+    </div>
+
+</section>
+        
+<!-- SETS -->
+<section id="sets" class="topic-section">
+
+    <h2>🎯 Sets in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to Sets</h3>
+
+        <p>
+            A Set is an unordered collection of unique elements.
+            Sets are useful when duplicate values should not be stored.
+        </p>
+
+<pre><code>numbers = {10, 20, 30, 40}
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{10, 20, 30, 40}</code></pre>
+
+        <h3>Characteristics of Sets</h3>
+
+        <ul>
+            <li>Sets are unordered collections.</li>
+            <li>Sets do not allow duplicate values.</li>
+            <li>Sets are mutable.</li>
+            <li>Sets are enclosed within curly braces { }.</li>
+            <li>Sets do not support indexing.</li>
+        </ul>
+
+        <h3>Creating Sets</h3>
+
+<pre><code>fruits = {"Apple", "Orange", "Mango"}
+
+print(fruits)</code></pre>
+
+        <h3>Duplicate Values are Removed</h3>
+
+<pre><code>numbers = {10,20,10,30,20,40}
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{10, 20, 30, 40}</code></pre>
+
+        <h3>Creating an Empty Set</h3>
+
+<pre><code>s = set()
+
+print(type(s))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>&lt;class 'set'&gt;</code></pre>
+
+        <h3>Adding Elements</h3>
+
+<pre><code>numbers = {10,20,30}
+
+numbers.add(40)
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{10, 20, 30, 40}</code></pre>
+
+        <h3>Removing Elements</h3>
+
+<pre><code>numbers = {10,20,30,40}
+
+numbers.remove(20)
+
+print(numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{10, 30, 40}</code></pre>
+
+        <h3>Traversing a Set</h3>
+
+<pre><code>numbers = {10,20,30,40}
+
+for item in numbers:
+    print(item)</code></pre>
+
+        <h3>Important Set Methods</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>add()</td>
+                    <td>Add an element</td>
+                </tr>
+                <tr>
+                    <td>remove()</td>
+                    <td>Remove an element</td>
+                </tr>
+                <tr>
+                    <td>discard()</td>
+                    <td>Remove safely</td>
+                </tr>
+                <tr>
+                    <td>clear()</td>
+                    <td>Remove all elements</td>
+                </tr>
+                <tr>
+                    <td>pop()</td>
+                    <td>Remove a random element</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Set Operations</h3>
+
+        <p>
+            Set operations are one of the most important applications of sets.
+        </p>
+
+<pre><code>A = {1,2,3,4}
+B = {3,4,5,6}</code></pre>
+
+        <h3>1. Union ( | )</h3>
+
+        <p>
+            Combines all elements from both sets.
+        </p>
+
+<pre><code>print(A | B)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{1,2,3,4,5,6}</code></pre>
+
+        <h3>2. Intersection ( & )</h3>
+
+        <p>
+            Returns common elements.
+        </p>
+
+<pre><code>print(A & B)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{3,4}</code></pre>
+
+        <h3>3. Difference ( - )</h3>
+
+        <p>
+            Returns elements present in first set only.
+        </p>
+
+<pre><code>print(A - B)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{1,2}</code></pre>
+
+        <h3>4. Symmetric Difference ( ^ )</h3>
+
+        <p>
+            Returns elements present in either set but not both.
+        </p>
+
+<pre><code>print(A ^ B)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{1,2,5,6}</code></pre>
+
+        <h3>Membership Operators</h3>
+
+<pre><code>numbers = {10,20,30,40}
+
+print(20 in numbers)
+print(50 in numbers)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>True
+False</code></pre>
+
+        <h3>Program 1: Remove Duplicates from List</h3>
+
+<pre><code>numbers = [10,20,10,30,20,40]
+
+unique = set(numbers)
+
+print(unique)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{10,20,30,40}</code></pre>
+
+        <h3>Program 2: Find Common Elements</h3>
+
+<pre><code>A = {10,20,30,40}
+B = {30,40,50,60}
+
+print(A & B)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{30,40}</code></pre>
+
+        <h3>Program 3: Student Subjects</h3>
+
+<pre><code>science = {"Physics","Chemistry","Maths"}
+computer = {"Maths","Computer Science"}
+
+print(science & computer)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>{'Maths'}</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Sets allow duplicate values.</strong></p>
+
+            <div class="quiz-option">A. True</div>
+            <div class="quiz-option">B. False ✅</div>
+
+            <br>
+
+            <p><strong>2. Which operator performs Union?</strong></p>
+
+            <div class="quiz-option">A. &</div>
+            <div class="quiz-option">B. ^</div>
+            <div class="quiz-option">C. | ✅</div>
+            <div class="quiz-option">D. -</div>
+
+            <br>
+
+            <p><strong>3. Which operator performs Intersection?</strong></p>
+
+            <div class="quiz-option">A. & ✅</div>
+            <div class="quiz-option">B. |</div>
+            <div class="quiz-option">C. ^</div>
+            <div class="quiz-option">D. +</div>
+
+            <br>
+
+            <p><strong>4. Which method adds an element?</strong></p>
+
+            <div class="quiz-option">A. append()</div>
+            <div class="quiz-option">B. add() ✅</div>
+            <div class="quiz-option">C. insert()</div>
+            <div class="quiz-option">D. extend()</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>What is a set? Explain its characteristics.</li>
+            <li>Why are duplicate values not allowed in sets?</li>
+            <li>Explain Union and Intersection with examples.</li>
+            <li>Differentiate Set and List.</li>
+            <li>Write a program to remove duplicate elements from a list.</li>
+            <li>Explain Symmetric Difference with example.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Sets do not allow duplicates.</li>
+            <li>Sets are unordered collections.</li>
+            <li>Union uses | operator.</li>
+            <li>Intersection uses & operator.</li>
+            <li>Difference uses - operator.</li>
+            <li>Symmetric Difference uses ^ operator.</li>
+            <li>Sets are frequently used for removing duplicates.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Create and manipulate sets.</li>
+            <li>Perform set operations.</li>
+            <li>Use set methods effectively.</li>
+            <li>Remove duplicate data using sets.</li>
+            <li>Apply sets in practical programs.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- FUNCTIONS -->
+        <section id="functions" class="topic-section">
+
+    <h2>📁 Functions in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to Functions</h3>
+
+        <p>
+            A Function is a block of reusable code designed to perform a specific task.
+            Functions help reduce code repetition, improve readability and make programs easier to maintain.
+        </p>
+
+        <p>
+            Python provides built-in functions such as <code>print()</code>,
+            <code>input()</code>, <code>len()</code> and also allows users to create their own functions.
+        </p>
+
+<pre><code>print("Welcome to Python")
+print(len("Python"))</code></pre>
+
+        <h3>Advantages of Functions</h3>
+
+        <ul>
+            <li>Reduces repetition of code.</li>
+            <li>Improves readability.</li>
+            <li>Makes debugging easier.</li>
+            <li>Supports modular programming.</li>
+            <li>Allows code reusability.</li>
+        </ul>
+
+        <h3>Defining a Function</h3>
+
+        <h4>Syntax</h4>
+
+<pre><code>def function_name():
+    statements</code></pre>
+
+<pre><code>def greet():
+    print("Hello Python")
+
+greet()</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Hello Python</code></pre>
+
+        <h3>Components of a Function</h3>
+
+        <ul>
+            <li><strong>def</strong> – Keyword used to define a function.</li>
+            <li><strong>Function Name</strong> – Name given to the function.</li>
+            <li><strong>Parameters</strong> – Values received by the function.</li>
+            <li><strong>Function Body</strong> – Statements inside the function.</li>
+            <li><strong>Return Statement</strong> – Returns a value.</li>
+        </ul>
+
+        <h3>Function Call</h3>
+
+        <p>
+            A function executes only when it is called.
+        </p>
+
+<pre><code>def message():
+    print("Function Executed")
+
+message()</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Function Executed</code></pre>
+
+        <h3>Types of Functions</h3>
+
+        <ol>
+            <li>Built-in Functions</li>
+            <li>User Defined Functions</li>
+        </ol>
+
+        <h3>Built-in Functions</h3>
+
+<pre><code>numbers = [10,20,30]
+
+print(len(numbers))
+print(max(numbers))
+print(min(numbers))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>3
+30
+10</code></pre>
+
+        <h3>User Defined Functions</h3>
+
+<pre><code>def display():
+    print("Welcome to Python")
+
+display()</code></pre>
+
+        <h3>Functions with Parameters</h3>
+
+        <p>
+            Parameters allow values to be passed into a function.
+        </p>
+
+<pre><code>def greet(name):
+    print("Hello", name)
+
+greet("Arun")</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Hello Arun</code></pre>
+
+        <h3>Functions with Multiple Parameters</h3>
+
+<pre><code>def add(a, b):
+    print(a + b)
+
+add(10, 20)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>30</code></pre>
+
+        <h3>Arguments and Parameters</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Argument</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Variable in function definition</td>
+                    <td>Actual value passed</td>
+                </tr>
+                <tr>
+                    <td>def add(a,b)</td>
+                    <td>add(10,20)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Function Returning a Value</h3>
+
+        <p>
+            The <code>return</code> statement sends a value back to the caller.
+        </p>
+
+<pre><code>def square(n):
+    return n * n
+
+result = square(5)
+
+print(result)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>25</code></pre>
+
+        <h3>Function Without Return Statement</h3>
+
+<pre><code>def display():
+    print("Python")
+
+display()</code></pre>
+
+        <h3>Actual and Formal Arguments</h3>
+
+<pre><code>def add(a, b):   # Formal Arguments
+    print(a + b)
+
+add(10, 20)      # Actual Arguments</code></pre>
+
+        <h3>Scope of Variables</h3>
+
+        <p>
+            Scope refers to the area where a variable can be accessed.
+        </p>
+
+        <h4>Local Variable</h4>
+
+<pre><code>def demo():
+    x = 10
+    print(x)
+
+demo()</code></pre>
+
+        <h4>Global Variable</h4>
+
+<pre><code>x = 100
+
+def demo():
+    print(x)
+
+demo()</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>100</code></pre>
+
+        <h3>Recursive Functions</h3>
+
+        <p>
+            A recursive function is a function that calls itself.
+        </p>
+
+<pre><code>def countdown(n):
+
+    if n > 0:
+        print(n)
+        countdown(n-1)
+
+countdown(5)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>5
+4
+3
+2
+1</code></pre>
+
+        <h3>Lambda Functions</h3>
+
+        <p>
+            Lambda functions are small anonymous functions created using the
+            lambda keyword.
+        </p>
+
+<pre><code>square = lambda x: x * x
+
+print(square(6))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>36</code></pre>
+
+        <h3>Program 1: Find Sum Using Function</h3>
+
+<pre><code>def add(a, b):
+    return a + b
+
+result = add(10, 20)
+
+print("Sum =", result)</code></pre>
+
+        <h3>Program 2: Find Largest Number</h3>
+
+<pre><code>def largest(a, b):
+
+    if a > b:
+        return a
+    else:
+        return b
+
+print(largest(50, 30))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>50</code></pre>
+
+        <h3>Program 3: Calculate Factorial</h3>
+
+<pre><code>def factorial(n):
+
+    fact = 1
+
+    for i in range(1, n+1):
+        fact *= i
+
+    return fact
+
+print(factorial(5))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>120</code></pre>
+
+        <h3>Program 4: Check Even or Odd</h3>
+
+<pre><code>def check(num):
+
+    if num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+print(check(12))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Even</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which keyword is used to define a function?</strong></p>
+
+            <div class="quiz-option">A. function</div>
+            <div class="quiz-option">B. define</div>
+            <div class="quiz-option">C. def ✅</div>
+            <div class="quiz-option">D. fun</div>
+
+            <br>
+
+            <p><strong>2. Which statement returns a value from a function?</strong></p>
+
+            <div class="quiz-option">A. break</div>
+            <div class="quiz-option">B. pass</div>
+            <div class="quiz-option">C. return ✅</div>
+            <div class="quiz-option">D. continue</div>
+
+            <br>
+
+            <p><strong>3. A function calling itself is known as:</strong></p>
+
+            <div class="quiz-option">A. Nested Function</div>
+            <div class="quiz-option">B. Recursive Function ✅</div>
+            <div class="quiz-option">C. Lambda Function</div>
+            <div class="quiz-option">D. Built-in Function</div>
+
+            <br>
+
+            <p><strong>4. Which keyword is used for anonymous functions?</strong></p>
+
+            <div class="quiz-option">A. lambda ✅</div>
+            <div class="quiz-option">B. def</div>
+            <div class="quiz-option">C. return</div>
+            <div class="quiz-option">D. global</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>What is a function? Explain its advantages.</li>
+            <li>Differentiate built-in and user-defined functions.</li>
+            <li>Explain parameters and arguments with examples.</li>
+            <li>What is recursion? Explain with an example.</li>
+            <li>Differentiate local and global variables.</li>
+            <li>Write a function to calculate factorial of a number.</li>
+            <li>Write a function to find the largest of two numbers.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Functions improve code reusability.</li>
+            <li>Functions are defined using the <code>def</code> keyword.</li>
+            <li>Parameters receive values from arguments.</li>
+            <li>return sends a value back to the caller.</li>
+            <li>Recursion means a function calls itself.</li>
+            <li>Lambda functions are anonymous functions.</li>
+            <li>Local and Global variables are frequently asked theory questions.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Define and call functions.</li>
+            <li>Use parameters and return values.</li>
+            <li>Apply recursion in programs.</li>
+            <li>Understand variable scope.</li>
+            <li>Create practical programs using functions.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+        <!-- MODULES -->
+        <!-- MODULES -->
+<section id="modules" class="topic-section">
+
+    <h2>🧩 Modules in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to Modules</h3>
+
+        <p>
+            A Module is a file containing Python functions, variables and statements
+            that can be reused in other programs.
+        </p>
+
+        <p>
+            Modules help organize large programs into smaller manageable files and
+            promote code reusability.
+        </p>
+
+<pre><code>import math
+
+print(math.sqrt(25))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>5.0</code></pre>
+
+        <h3>Advantages of Modules</h3>
+
+        <ul>
+            <li>Code Reusability</li>
+            <li>Easy Maintenance</li>
+            <li>Improved Readability</li>
+            <li>Reduces Program Size</li>
+            <li>Supports Modular Programming</li>
+        </ul>
+
+        <h3>Types of Modules</h3>
+
+        <ol>
+            <li>Built-in Modules</li>
+            <li>User Defined Modules</li>
+        </ol>
+
+        <h3>Built-in Modules</h3>
+
+        <p>
+            Python provides many ready-made modules such as:
+        </p>
+
+        <ul>
+            <li>math</li>
+            <li>random</li>
+            <li>datetime</li>
+            <li>os</li>
+            <li>statistics</li>
+        </ul>
+
+        <h3>Importing a Module</h3>
+
+        <h4>Syntax</h4>
+
+<pre><code>import module_name</code></pre>
+
+        <h4>Example</h4>
+
+<pre><code>import math
+
+print(math.factorial(5))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>120</code></pre>
+
+        <h3>Import Specific Functions</h3>
+
+<pre><code>from math import sqrt
+
+print(sqrt(81))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>9.0</code></pre>
+
+        <h3>Import Multiple Functions</h3>
+
+<pre><code>from math import sqrt, factorial
+
+print(sqrt(64))
+print(factorial(4))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>8.0
+24</code></pre>
+
+        <h3>Using Alias Names</h3>
+
+<pre><code>import math as m
+
+print(m.sqrt(49))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>7.0</code></pre>
+
+        <h3>The math Module</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>sqrt()</td>
+                    <td>Square Root</td>
+                </tr>
+                <tr>
+                    <td>factorial()</td>
+                    <td>Factorial</td>
+                </tr>
+                <tr>
+                    <td>pow()</td>
+                    <td>Power Calculation</td>
+                </tr>
+                <tr>
+                    <td>ceil()</td>
+                    <td>Round Up</td>
+                </tr>
+                <tr>
+                    <td>floor()</td>
+                    <td>Round Down</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>import math
+
+print(math.pow(2,3))
+print(math.sqrt(16))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>8.0
+4.0</code></pre>
+
+        <h3>The random Module</h3>
+
+        <p>
+            The random module generates random numbers and selections.
+        </p>
+
+<pre><code>import random
+
+print(random.randint(1,10))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Random number between 1 and 10</code></pre>
+
+        <h3>User Defined Modules</h3>
+
+        <p>
+            Programmers can create their own modules and use them in other programs.
+        </p>
+
+        <h4>Step 1: Create a Module</h4>
+
+<b>File: mymodule.py</b>
+
+<pre><code>def add(a,b):
+    return a+b</code></pre>
+
+        <h4>Step 2: Import the Module</h4>
+
+<pre><code>import mymodule
+
+print(mymodule.add(10,20))</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>30</code></pre>
+
+        <h3>Program 1: Square Root Calculator</h3>
+
+<pre><code>import math
+
+num = int(input("Enter Number: "))
+
+print("Square Root =", math.sqrt(num))</code></pre>
+
+        <h3>Program 2: Random Number Generator</h3>
+
+<pre><code>import random
+
+print(random.randint(1,100))</code></pre>
+
+        <h3>Program 3: Factorial Using math Module</h3>
+
+<pre><code>import math
+
+n = int(input("Enter Number: "))
+
+print("Factorial =", math.factorial(n))</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. A module is:</strong></p>
+
+            <div class="quiz-option">A. Function</div>
+            <div class="quiz-option">B. Variable</div>
+            <div class="quiz-option">C. Python File ✅</div>
+            <div class="quiz-option">D. Loop</div>
+
+            <br>
+
+            <p><strong>2. Which keyword imports a module?</strong></p>
+
+            <div class="quiz-option">A. include</div>
+            <div class="quiz-option">B. import ✅</div>
+            <div class="quiz-option">C. using</div>
+            <div class="quiz-option">D. package</div>
+
+            <br>
+
+            <p><strong>3. Which module provides sqrt()?</strong></p>
+
+            <div class="quiz-option">A. random</div>
+            <div class="quiz-option">B. os</div>
+            <div class="quiz-option">C. math ✅</div>
+            <div class="quiz-option">D. statistics</div>
+
+            <br>
+
+            <p><strong>4. Which module generates random numbers?</strong></p>
+
+            <div class="quiz-option">A. math</div>
+            <div class="quiz-option">B. random ✅</div>
+            <div class="quiz-option">C. os</div>
+            <div class="quiz-option">D. datetime</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>What is a module?</li>
+            <li>Explain the advantages of modules.</li>
+            <li>Differentiate built-in and user-defined modules.</li>
+            <li>Explain the import statement with examples.</li>
+            <li>Write a program using the math module.</li>
+            <li>How do you create a user-defined module?</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Remember the syntax of import statement.</li>
+            <li>math and random modules are important.</li>
+            <li>Know how to create a user-defined module.</li>
+            <li>Understand alias names using "as".</li>
+            <li>Practice module-based programs.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Understand modules and their importance.</li>
+            <li>Use built-in modules.</li>
+            <li>Create user-defined modules.</li>
+            <li>Import modules in different ways.</li>
+            <li>Develop reusable Python programs.</li>
+        </ul>
+
+    </div>
+
+</section>
+        <!-- FILE HANDLING -->
+        <!-- FILE HANDLING -->
+<section id="filehandling" class="topic-section">
+
+    <h2>📂 File Handling in Python</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction to File Handling</h3>
+
+        <p>
+            File Handling is used to store data permanently in a file.
+            Normally, data stored in variables is lost when a program ends.
+            Files allow data to be saved and retrieved whenever needed.
+        </p>
+
+        <p>
+            Python provides built-in functions to create, read, write and update files.
+        </p>
+
+        <h3>Advantages of File Handling</h3>
+
+        <ul>
+            <li>Permanent storage of data.</li>
+            <li>Easy retrieval of information.</li>
+            <li>Supports large amounts of data.</li>
+            <li>Useful for record management.</li>
+            <li>Allows data sharing between programs.</li>
+        </ul>
+
+        <h3>Opening a File</h3>
+
+        <p>
+            Before performing any operation, a file must be opened using the
+            <strong>open()</strong> function.
+        </p>
+
+        <h4>Syntax</h4>
+
+<pre><code>file_object = open("filename","mode")</code></pre>
+
+        <h3>File Modes</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mode</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>r</td>
+                    <td>Read Mode</td>
+                </tr>
+                <tr>
+                    <td>w</td>
+                    <td>Write Mode</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>Append Mode</td>
+                </tr>
+                <tr>
+                    <td>r+</td>
+                    <td>Read and Write</td>
+                </tr>
+                <tr>
+                    <td>w+</td>
+                    <td>Write and Read</td>
+                </tr>
+                <tr>
+                    <td>a+</td>
+                    <td>Append and Read</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Creating and Writing to a File</h3>
+
+<pre><code>file = open("sample.txt","w")
+
+file.write("Welcome to Python")
+
+file.close()</code></pre>
+
+        <h3>Reading a File</h3>
+
+<pre><code>file = open("sample.txt","r")
+
+data = file.read()
+
+print(data)
+
+file.close()</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Welcome to Python</code></pre>
+
+        <h3>Appending Data to a File</h3>
+
+<pre><code>file = open("sample.txt","a")
+
+file.write("\nPython File Handling")
+
+file.close()</code></pre>
+
+        <h3>Reading Line by Line</h3>
+
+<pre><code>file = open("sample.txt","r")
+
+for line in file:
+    print(line)
+
+file.close()</code></pre>
+
+        <h3>read(), readline() and readlines()</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>read()</td>
+                    <td>Reads entire file</td>
+                </tr>
+                <tr>
+                    <td>readline()</td>
+                    <td>Reads one line</td>
+                </tr>
+                <tr>
+                    <td>readlines()</td>
+                    <td>Reads all lines into a list</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Using readline()</h3>
+
+<pre><code>file = open("sample.txt","r")
+
+print(file.readline())
+
+file.close()</code></pre>
+
+        <h3>Using readlines()</h3>
+
+<pre><code>file = open("sample.txt","r")
+
+lines = file.readlines()
+
+print(lines)
+
+file.close()</code></pre>
+
+        <h3>Closing a File</h3>
+
+        <p>
+            After completing operations, the file should be closed using
+            <strong>close()</strong>.
+        </p>
+
+<pre><code>file.close()</code></pre>
+
+        <h3>Using with Statement</h3>
+
+        <p>
+            The <strong>with</strong> statement automatically closes the file.
+        </p>
+
+<pre><code>with open("sample.txt","r") as file:
+    print(file.read())</code></pre>
+
+        <h3>File Pointer Functions</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tell()</td>
+                    <td>Returns current position</td>
+                </tr>
+                <tr>
+                    <td>seek()</td>
+                    <td>Moves file pointer</td>
+                </tr>
+            </tbody>
+        </table>
+
+<pre><code>file = open("sample.txt","r")
+
+print(file.tell())
+
+file.close()</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>0</code></pre>
+
+        <h3>Using seek()</h3>
+
+<pre><code>file = open("sample.txt","r")
+
+file.seek(5)
+
+print(file.read())
+
+file.close()</code></pre>
+
+        <h3>Program 1: Write Student Details</h3>
+
+<pre><code>file = open("student.txt","w")
+
+name = input("Enter Name: ")
+mark = input("Enter Mark: ")
+
+file.write(name + "\n")
+file.write(mark)
+
+file.close()
+
+print("Data Saved")</code></pre>
+
+        <h3>Program 2: Read Student Details</h3>
+
+<pre><code>file = open("student.txt","r")
+
+print(file.read())
+
+file.close()</code></pre>
+
+        <h3>Program 3: Count Number of Lines</h3>
+
+<pre><code>file = open("sample.txt","r")
+
+count = len(file.readlines())
+
+print("Lines =", count)
+
+file.close()</code></pre>
+
+        <h3>Program 4: Count Words in a File</h3>
+
+<pre><code>file = open("sample.txt","r")
+
+data = file.read()
+
+words = data.split()
+
+print("Words =", len(words))
+
+file.close()</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Quick Quiz</h3>
+
+            <p><strong>1. Which function opens a file?</strong></p>
+
+            <div class="quiz-option">A. file()</div>
+            <div class="quiz-option">B. open() ✅</div>
+            <div class="quiz-option">C. read()</div>
+            <div class="quiz-option">D. create()</div>
+
+            <br>
+
+            <p><strong>2. Which mode is used to write a file?</strong></p>
+
+            <div class="quiz-option">A. r</div>
+            <div class="quiz-option">B. a</div>
+            <div class="quiz-option">C. w ✅</div>
+            <div class="quiz-option">D. x</div>
+
+            <br>
+
+            <p><strong>3. Which method reads the entire file?</strong></p>
+
+            <div class="quiz-option">A. readline()</div>
+            <div class="quiz-option">B. readlines()</div>
+            <div class="quiz-option">C. read() ✅</div>
+            <div class="quiz-option">D. open()</div>
+
+            <br>
+
+            <p><strong>4. Which function returns current file position?</strong></p>
+
+            <div class="quiz-option">A. tell() ✅</div>
+            <div class="quiz-option">B. seek()</div>
+            <div class="quiz-option">C. close()</div>
+            <div class="quiz-option">D. read()</div>
+
+        </div>
+
+        <h3>📝 Practice Questions</h3>
+
+        <ol>
+            <li>What is file handling?</li>
+            <li>Explain different file modes.</li>
+            <li>Differentiate read(), readline() and readlines().</li>
+            <li>What is the purpose of seek() and tell()?</li>
+            <li>Write a program to store student details in a file.</li>
+            <li>Write a program to count words in a file.</li>
+        </ol>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Remember file modes (r, w, a).</li>
+            <li>Always close files after use.</li>
+            <li>Understand read(), readline() and readlines().</li>
+            <li>Learn seek() and tell() functions.</li>
+            <li>File programs are important for practical exams.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Open and close files.</li>
+            <li>Read and write file contents.</li>
+            <li>Append data to files.</li>
+            <li>Use file pointer functions.</li>
+            <li>Develop file-based applications.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- PROGRAM LIBRARY -->
+        <!-- PROGRAM LIBRARY -->
+<section id="programs" class="topic-section">
+
+    <h2>💻 Python Program Library</h2>
+
+    <div class="content-box">
+
+        <h3>Introduction</h3>
+
+        <p>
+            The Program Library contains frequently asked Python programs that are
+            important for examinations, practical records and programming practice.
+            Students should understand the logic, algorithm and output of each program.
+        </p>
+
+        <h3>Program 1: Check Even or Odd Number</h3>
+
+<pre><code>num = int(input("Enter a Number: "))
+
+if num % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Enter a Number: 12
+Even Number</code></pre>
+
+        <h3>Program 2: Find Largest of Two Numbers</h3>
+
+<pre><code>a = int(input("Enter First Number: "))
+b = int(input("Enter Second Number: "))
+
+if a > b:
+    print("Largest =", a)
+else:
+    print("Largest =", b)</code></pre>
+
+        <h3>Program 3: Find Largest of Three Numbers</h3>
+
+<pre><code>a = int(input("Enter First Number: "))
+b = int(input("Enter Second Number: "))
+c = int(input("Enter Third Number: "))
+
+if a > b and a > c:
+    print(a)
+elif b > c:
+    print(b)
+else:
+    print(c)</code></pre>
+
+        <h3>Program 4: Check Prime Number</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+flag = True
+
+if num <= 1:
+    flag = False
+
+for i in range(2, num):
+    if num % i == 0:
+        flag = False
+        break
+
+if flag:
+    print("Prime Number")
+else:
+    print("Not Prime Number")</code></pre>
+
+        <h3>Program 5: Multiplication Table</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+for i in range(1,11):
+    print(num, "x", i, "=", num*i)</code></pre>
+
+        <h3>Program 6: Factorial of a Number</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+fact = 1
+
+for i in range(1, num+1):
+    fact *= i
+
+print("Factorial =", fact)</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>Enter Number: 5
+Factorial = 120</code></pre>
+
+        <h3>Program 7: Fibonacci Series</h3>
+
+<pre><code>n = int(input("How Many Terms: "))
+
+a = 0
+b = 1
+
+for i in range(n):
+    print(a, end=" ")
+    c = a + b
+    a = b
+    b = c</code></pre>
+
+        <h3>Output</h3>
+
+<pre><code>0 1 1 2 3 5 8 13</code></pre>
+
+        <h3>Program 8: Reverse a Number</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+rev = 0
+
+while num > 0:
+    digit = num % 10
+    rev = rev * 10 + digit
+    num = num // 10
+
+print("Reverse =", rev)</code></pre>
+
+        <h3>Program 9: Palindrome Number</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+temp = num
+rev = 0
+
+while num > 0:
+    digit = num % 10
+    rev = rev * 10 + digit
+    num = num // 10
+
+if temp == rev:
+    print("Palindrome")
+else:
+    print("Not Palindrome")</code></pre>
+
+        <h3>Program 10: Armstrong Number</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+temp = num
+total = 0
+
+while num > 0:
+    digit = num % 10
+    total += digit ** 3
+    num = num // 10
+
+if temp == total:
+    print("Armstrong Number")
+else:
+    print("Not Armstrong Number")</code></pre>
+
+        <h3>Program 11: Sum of Digits</h3>
+
+<pre><code>num = int(input("Enter Number: "))
+
+total = 0
+
+while num > 0:
+    total += num % 10
+    num = num // 10
+
+print("Sum =", total)</code></pre>
+
+        <h3>Program 12: Count Vowels in a String</h3>
+
+<pre><code>text = input("Enter String: ")
+
+count = 0
+
+for ch in text.lower():
+    if ch in "aeiou":
+        count += 1
+
+print("Vowels =", count)</code></pre>
+
+        <h3>Program 13: Find Length of a List</h3>
+
+<pre><code>numbers = [10,20,30,40,50]
+
+print("Length =", len(numbers))</code></pre>
+
+        <h3>Program 14: Find Maximum Element in List</h3>
+
+<pre><code>numbers = [15,45,23,89,12]
+
+print("Maximum =", max(numbers))</code></pre>
+
+        <h3>Program 15: Student Mark List Using Dictionary</h3>
+
+<pre><code>student = {
+    "Name":"Arun",
+    "Mark":95,
+    "Grade":"A+"
+}
+
+print(student)</code></pre>
+
+        <div class="quiz-card">
+
+            <h3>🎯 Program Practice Quiz</h3>
+
+            <p><strong>1. Which loop is commonly used for factorial programs?</strong></p>
+
+            <div class="quiz-option">A. if</div>
+            <div class="quiz-option">B. for ✅</div>
+            <div class="quiz-option">C. try</div>
+            <div class="quiz-option">D. lambda</div>
+
+            <br>
+
+            <p><strong>2. Which operator is used for modulus?</strong></p>
+
+            <div class="quiz-option">A. /</div>
+            <div class="quiz-option">B. *</div>
+            <div class="quiz-option">C. % ✅</div>
+            <div class="quiz-option">D. //</div>
+
+            <br>
+
+            <p><strong>3. Which data structure stores key-value pairs?</strong></p>
+
+            <div class="quiz-option">A. List</div>
+            <div class="quiz-option">B. Tuple</div>
+            <div class="quiz-option">C. Dictionary ✅</div>
+            <div class="quiz-option">D. Set</div>
+
+        </div>
+
+        <h3>📝 Practical Exam Preparation</h3>
+
+        <ul>
+            <li>Prime Number Program</li>
+            <li>Factorial Program</li>
+            <li>Fibonacci Series</li>
+            <li>Palindrome Program</li>
+            <li>Armstrong Number Program</li>
+            <li>File Handling Programs</li>
+            <li>Functions and Modules Programs</li>
+            <li>Dictionary and List Programs</li>
+        </ul>
+
+        <h3>📚 Exam Tips</h3>
+
+        <ul>
+            <li>Understand program logic before memorizing code.</li>
+            <li>Practice tracing outputs.</li>
+            <li>Learn common algorithms such as factorial and Fibonacci.</li>
+            <li>Be familiar with string and list operations.</li>
+            <li>Practice writing programs without referring to notes.</li>
+        </ul>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Develop problem-solving skills.</li>
+            <li>Write complete Python programs independently.</li>
+            <li>Understand program logic and debugging.</li>
+            <li>Prepare for practical examinations.</li>
+            <li>Create real-world Python applications.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+        <!-- QUIZ -->
+        <!-- QUIZ CENTRE -->
+<section id="quiz" class="topic-section">
+
+    <h2>📝 Python Quiz Centre</h2>
+
+    <div class="content-box">
+
+        <p>
+            Test your Python knowledge using the following Multiple Choice Questions.
+            Select the correct answer and click <strong>Check Score</strong>.
+        </p>
+
+        <div class="quiz-container">
+
+            <div class="question">
+                <h3>1. Who developed Python?</h3>
+
+                <label><input type="radio" name="q1" value="0"> Dennis Ritchie</label><br>
+                <label><input type="radio" name="q1" value="1"> Guido van Rossum</label><br>
+                <label><input type="radio" name="q1" value="0"> James Gosling</label><br>
+                <label><input type="radio" name="q1" value="0"> Bjarne Stroustrup</label>
+            </div>
+
+            <div class="question">
+                <h3>2. Which function displays output?</h3>
+
+                <label><input type="radio" name="q2" value="1"> print()</label><br>
+                <label><input type="radio" name="q2" value="0"> input()</label><br>
+                <label><input type="radio" name="q2" value="0"> display()</label><br>
+                <label><input type="radio" name="q2" value="0"> show()</label>
+            </div>
+
+            <div class="question">
+                <h3>3. Which symbol is used for comments?</h3>
+
+                <label><input type="radio" name="q3" value="1"> #</label><br>
+                <label><input type="radio" name="q3" value="0"> //</label><br>
+                <label><input type="radio" name="q3" value="0"> /* */</label><br>
+                <label><input type="radio" name="q3" value="0"> --</label>
+            </div>
+
+            <div class="question">
+                <h3>4. Which data type stores text?</h3>
+
+                <label><input type="radio" name="q4" value="0"> int</label><br>
+                <label><input type="radio" name="q4" value="1"> str</label><br>
+                <label><input type="radio" name="q4" value="0"> float</label><br>
+                <label><input type="radio" name="q4" value="0"> bool</label>
+            </div>
+
+            <div class="question">
+                <h3>5. Which operator is used for exponentiation?</h3>
+
+                <label><input type="radio" name="q5" value="0">*</label><br>
+                <label><input type="radio" name="q5" value="0">%</label><br>
+                <label><input type="radio" name="q5" value="1">**</label><br>
+                <label><input type="radio" name="q5" value="0">//</label>
+            </div>
+
+            <div class="question">
+                <h3>6. Which statement is used for decision making?</h3>
+
+                <label><input type="radio" name="q6" value="1"> if</label><br>
+                <label><input type="radio" name="q6" value="0"> for</label><br>
+                <label><input type="radio" name="q6" value="0"> while</label><br>
+                <label><input type="radio" name="q6" value="0"> pass</label>
+            </div>
+
+            <div class="question">
+                <h3>7. Which loop executes a fixed number of times?</h3>
+
+                <label><input type="radio" name="q7" value="1"> for</label><br>
+                <label><input type="radio" name="q7" value="0"> while</label><br>
+                <label><input type="radio" name="q7" value="0"> if</label><br>
+                <label><input type="radio" name="q7" value="0"> else</label>
+            </div>
+
+            <div class="question">
+                <h3>8. Which data structure uses key-value pairs?</h3>
+
+                <label><input type="radio" name="q8" value="0"> List</label><br>
+                <label><input type="radio" name="q8" value="1"> Dictionary</label><br>
+                <label><input type="radio" name="q8" value="0"> Tuple</label><br>
+                <label><input type="radio" name="q8" value="0"> Set</label>
+            </div>
+
+            <div class="question">
+                <h3>9. Which keyword is used to define a function?</h3>
+
+                <label><input type="radio" name="q9" value="0"> function</label><br>
+                <label><input type="radio" name="q9" value="0"> define</label><br>
+                <label><input type="radio" name="q9" value="1"> def</label><br>
+                <label><input type="radio" name="q9" value="0"> lambda</label>
+            </div>
+
+            <div class="question">
+                <h3>10. Which keyword imports a module?</h3>
+
+                <label><input type="radio" name="q10" value="1"> import</label><br>
+                <label><input type="radio" name="q10" value="0"> include</label><br>
+                <label><input type="radio" name="q10" value="0"> using</label><br>
+                <label><input type="radio" name="q10" value="0"> package</label>
+            </div>
+
+            <br>
+
+            <button class="quiz-btn" onclick="checkQuiz()">
+                🎯 Check Score
+            </button>
+
+            <div id="quiz-result" class="quiz-result"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- REVISION -->
+        <!-- REVISION CENTRE -->
+<section id="revision" class="topic-section">
+
+    <h2>🎯 Python Revision Centre</h2>
+
+    <div class="content-box">
+
+        <h3>📖 Quick Revision Notes</h3>
+
+        <p>
+            This section provides a quick summary of all important Python concepts
+            for examination preparation and last-minute revision.
+        </p>
+
+        <h3>🐍 Python Basics</h3>
+
+        <ul>
+            <li>Python is a high-level programming language.</li>
+            <li>Developed by Guido van Rossum.</li>
+            <li>Easy to learn and platform independent.</li>
+            <li>Uses indentation instead of braces.</li>
+        </ul>
+
+        <h3>📦 Variables and Data Types</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>int</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>10.5</td>
+                </tr>
+                <tr>
+                    <td>str</td>
+                    <td>"Python"</td>
+                </tr>
+                <tr>
+                    <td>bool</td>
+                    <td>True / False</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>➕ Important Operators</h3>
+
+<pre><code>+   Addition
+-   Subtraction
+*   Multiplication
+/   Division
+//  Floor Division
+%   Modulus
+**  Exponentiation</code></pre>
+
+        <h3>⌨️ Input & Output</h3>
+
+<pre><code>name = input("Enter Name: ")
+print(name)</code></pre>
+
+        <h3>🔀 Decision Making</h3>
+
+<pre><code>if condition:
+    statements
+
+elif condition:
+    statements
+
+else:
+    statements</code></pre>
+
+        <h3>🔁 Loops</h3>
+
+<pre><code>for i in range(5):
+    print(i)
+
+while condition:
+    statements</code></pre>
+
+        <h3>📝 Strings</h3>
+
+<pre><code>len()
+upper()
+lower()
+replace()
+split()</code></pre>
+
+        <h3>📋 Lists</h3>
+
+<pre><code>append()
+insert()
+remove()
+pop()
+sort()</code></pre>
+
+        <h3>📦 Tuples</h3>
+
+        <ul>
+            <li>Ordered collection.</li>
+            <li>Immutable.</li>
+            <li>Uses () brackets.</li>
+        </ul>
+
+<pre><code>t = (10,20,30)</code></pre>
+
+        <h3>🎯 Sets</h3>
+
+        <ul>
+            <li>Unordered collection.</li>
+            <li>No duplicate values.</li>
+            <li>Uses {} braces.</li>
+        </ul>
+
+<pre><code>s = {10,20,30}</code></pre>
+
+        <h3>📖 Dictionary</h3>
+
+        <ul>
+            <li>Stores key-value pairs.</li>
+            <li>Uses {} braces.</li>
+            <li>Mutable collection.</li>
+        </ul>
+
+<pre><code>student = {
+    "name":"Arun",
+    "mark":95
+}</code></pre>
+
+        <h3>📁 Functions</h3>
+
+<pre><code>def greet():
+    print("Hello")
+
+greet()</code></pre>
+
+        <h3>🧩 Modules</h3>
+
+<pre><code>import math
+
+print(math.sqrt(25))</code></pre>
+
+        <h3>📂 File Handling</h3>
+
+<pre><code>file = open("sample.txt","r")
+print(file.read())
+file.close()</code></pre>
+
+        <h3>🔥 Frequently Asked Theory Questions</h3>
+
+        <ol>
+            <li>What are the features of Python?</li>
+            <li>Explain different data types.</li>
+            <li>Differentiate List and Tuple.</li>
+            <li>Differentiate Set and Dictionary.</li>
+            <li>Explain if-elif ladder.</li>
+            <li>Differentiate while loop and for loop.</li>
+            <li>Explain functions with example.</li>
+            <li>What is recursion?</li>
+            <li>Explain modules and their advantages.</li>
+            <li>Explain file handling modes.</li>
+        </ol>
+
+        <h3>💻 Most Important Practical Programs</h3>
+
+        <ul>
+            <li>Even / Odd Number</li>
+            <li>Prime Number</li>
+            <li>Factorial</li>
+            <li>Fibonacci Series</li>
+            <li>Palindrome Number</li>
+            <li>Armstrong Number</li>
+            <li>Largest of Three Numbers</li>
+            <li>Sum of Digits</li>
+            <li>Count Vowels in a String</li>
+            <li>File Read and Write Program</li>
+        </ul>
+
+        <h3>⚡ One-Mark Revision</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who developed Python?</td>
+                    <td>Guido van Rossum</td>
+                </tr>
+                <tr>
+                    <td>Keyword to define function?</td>
+                    <td>def</td>
+                </tr>
+                <tr>
+                    <td>Keyword to import module?</td>
+                    <td>import</td>
+                </tr>
+                <tr>
+                    <td>Which function takes input?</td>
+                    <td>input()</td>
+                </tr>
+                <tr>
+                    <td>Which function displays output?</td>
+                    <td>print()</td>
+                </tr>
+                <tr>
+                    <td>Which collection stores key-value pairs?</td>
+                    <td>Dictionary</td>
+                </tr>
+                <tr>
+                    <td>Which collection has no duplicates?</td>
+                    <td>Set</td>
+                </tr>
+                <tr>
+                    <td>Which loop is entry-controlled?</td>
+                    <td>for and while</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="quiz-card">
+
+            <h3>🏆 Final Exam Checklist</h3>
+
+            <ul>
+                <li>✅ Learn all syntax.</li>
+                <li>✅ Practice all important programs.</li>
+                <li>✅ Revise data structures.</li>
+                <li>✅ Practice functions and modules.</li>
+                <li>✅ Revise file handling programs.</li>
+                <li>✅ Solve MCQs regularly.</li>
+                <li>✅ Understand outputs of programs.</li>
+                <li>✅ Practice previous year questions.</li>
+            </ul>
+
+        </div>
+
+        <h3>🎓 Learning Outcomes</h3>
+
+        <ul>
+            <li>Revise the complete Python syllabus quickly.</li>
+            <li>Prepare for theory examinations.</li>
+            <li>Prepare for practical examinations.</li>
+            <li>Remember important syntax and concepts.</li>
+            <li>Improve confidence before exams.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Program Gallery</title>
+
+    <link rel="stylesheet" href="programs.css">
+</head>
+<body>
+
+<header class="top-header">
+    <h1>💻 Python Program Gallery</h1>
+    <p>Learn Python through practical programs</p>
+</header>
+
+<div class="gallery-container">
+
+    <aside class="sidebar">
+
+        <h3>Categories</h3>
+
+        <ul>
+    <li onclick="filterPrograms('all')">🏠 All Programs</li>
+    <li onclick="filterPrograms('basic')">📦 Basic Programs</li>
+    <li onclick="filterPrograms('decision')">🔀 Decision Making</li>
+    <li onclick="filterPrograms('loops')">🔁 Loops</li>
+    <li onclick="filterPrograms('strings')">📝 Strings</li>
+    <li onclick="filterPrograms('lists')">📋 Lists</li>
+    <li onclick="filterPrograms('tuples')">📦 Tuples</li>
+    <li onclick="filterPrograms('sets')">🎯 Sets</li>
+    <li onclick="filterPrograms('dictionary')">📖 Dictionary</li>
+    <li onclick="filterPrograms('functions')">📁 Functions</li>
+    <li onclick="filterPrograms('modules')">🧩 Modules</li>
+    <li onclick="filterPrograms('files')">📂 File Handling</li>
+    <li onclick="filterPrograms('patterns')">⌨️ Pattern Programs</li>
+    <li onclick="filterPrograms('numbers')">🔢 Number Programs</li>
+    <li onclick="filterPrograms('practicals')">🎓 Kerala Practicals</li>
+    <li><a href=index.html style="text-decoration: none; color: inherit;">🏠Go to Home🏠</a></li>
+	
+</ul>
+
+    </aside>
+
+    <main class="content">
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="🔍 Search Program..."
+            onkeyup="searchPrograms()">
+
+        <div id="programList">
+
+            <!-- Program 1 -->
+            <div class="program-card basic">
+
+                <h3>Even or Odd Number</h3>
+
+                <p>Checks whether a number is even or odd.</p>
+
+                <button onclick="showProgram('evenodd')">
+                    View Program
+                </button>
+
+            </div>
+
+            <!-- Program 2 -->
+            <div class="program-card loops">
+
+                <h3>Factorial</h3>
+
+                <p>Calculates factorial using loop.</p>
+
+                <button onclick="showProgram('factorial')">
+                    View Program
+                </button>
+
+            </div>
+
+            <!-- Program 3 -->
+            <div class="program-card loops">
+
+                <h3>Fibonacci Series</h3>
+
+                <p>Generates Fibonacci sequence.</p>
+
+                <button onclick="showProgram('fibonacci')">
+                    View Program
+                </button>
+
+            </div>
+
+        </div>
+
+        <div id="programViewer">
+
+            <h2>Select a Program</h2>
+
+            <p>Program code will appear here.</p>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="program_data.js"></script>
+<script src="program_data_part2.js"></script>
+<script src="program_data_part3.js"></script>
+<script src="program_data_part4.js"></script>
+<script src="program_data_part5.js"></script>
+<script src="programs.js"></script>
+
+</body>
+</html>
