@@ -1,6 +1,6 @@
 # Manojithub Python Portal
 
-An interactive Python learning website for Computer Science students.
+Manojithub is An interactive Python learning website for Computer Science students.
 
 Features:
 - Python Tutorials
@@ -8,6 +8,7 @@ Features:
 - MCQ Quiz Engine
 - Practical Programs
 - Kerala & CBSE Computer Science Support
+- Kerala Plus One Students Exam Helper-computer science
 
 Website:
 https://manojithub.github.io/python/
