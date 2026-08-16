@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ==========================================
+    // ===========================================
     // HOME PAGE SEARCH
-    // ==========================================
+    // ===========================================
 
     const searchInput = document.getElementById("searchInput");
 
