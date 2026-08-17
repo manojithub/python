@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number System Converter · Manojkumar S L</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #0b1a14;
+      color: #eef5ee;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-wrapper {
+      max-width: 820px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #b7e4c7, #a8d5ba);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header .sub {
+      font-size: 1.1rem;
+      color: #b0cfc0;
+      border-top: 1px solid #2b4d3a;
+      padding-top: 8px;
+      display: inline-block;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .header .sub span {
+      background: #1b3327;
+      padding: 3px 20px;
+      border-radius: 40px;
+    }
+
+    .menu-bar {
+      background: #13261d;
+      border-radius: 60px;
+      padding: 6px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 28px;
+      border: 1px solid #2a5a3e;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+    }
+    .menu-btn {
+      background: transparent;
+      border: none;
+      color: #b3dac6;
+      padding: 10px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: 0.2s;
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+    }
+    .menu-btn:hover {
+      background: #204433;
+      color: #e6f5ed;
+    }
+    .menu-btn.active {
+      background: #2e8f5a;
+      color: white;
+      box-shadow: 0 2px 10px #2e8f5a66;
+    }
+
+    .converter-card {
+      background: #1b3327;
+      border-radius: 28px;
+      padding: 24px 24px 28px;
+      border: 1px solid #2b5a3e;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+      display: none;
+      flex-direction: column;
+    }
+    .converter-card.active {
+      display: flex;
+    }
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+      border-bottom: 2px dashed #2f5e42;
+      padding-bottom: 12px;
+    }
+    .card-header h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #c7f0d6;
+    }
+    .card-header .badge {
+      background: #1d3d2b;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #9dc0ae;
+      margin-left: auto;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .input-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .input-row input {
+      flex: 2;
+      min-width: 160px;
+      padding: 12px 16px;
+      border-radius: 50px;
+      border: none;
+      background: #0b1f16;
+      color: #e2f0e8;
+      font-size: 1.05rem;
+      font-weight: 500;
+      outline: 1px solid #2f6a48;
+      transition: 0.2s;
+    }
+    .input-row input:focus {
+      outline: 2px solid #49b882;
+      background: #122b1f;
+    }
+    .input-row input:disabled {
+      opacity: 0.5;
+      filter: grayscale(0.4);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 6px 0 4px;
+    }
+    .btn {
+      flex: 1;
+      min-width: 70px;
+      padding: 12px 6px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: #2f5a42;
+      color: #e6f5ed;
+      transition: 0.15s;
+      letter-spacing: 0.3px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+    .btn:active { transform: scale(0.96); }
+    .btn:disabled { opacity: 0.35; filter: grayscale(0.5); pointer-events: none; }
+    .btn-start { background: #2b8f5a; color: white; }
+    .btn-step { background: #1f7a8c; color: white; }
+    .btn-stop { background: #b13e4b; color: white; }
+    .btn-reset { background: #b97c3a; color: white; }
+
+    .speed-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #b8dac8;
+      margin-top: 4px;
+    }
+    .speed-row input {
+      flex: 1;
+      accent-color: #49b882;
+    }
+
+    .vis-area {
+      background: #10261c;
+      border-radius: 22px;
+      padding: 22px 16px;
+      margin-top: 20px;
+      min-height: 200px;
+      border: 1px solid #204432;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.2s;
+      position: relative;
+    }
+    .vis-area .empty-hint {
+      color: #5f8673;
+      font-size: 1rem;
+      padding: 28px 0;
+    }
+
+    .bits-wrap, .groups-wrap, .ladder-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .group-card {
+      background: #1b3527;
+      padding: 10px 14px;
+      border-radius: 16px;
+      border: 2px solid #29593b;
+      min-width: 64px;
+      text-align: center;
+      transition: 0.25s;
+      opacity: 0.4;
+      transform: scale(0.94);
+    }
+    .group-card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .group-card.active {
+      border-color: #f7c948;
+      box-shadow: 0 0 22px #f7c94866;
+      background: #1f402e;
+      transform: scale(1.06);
+    }
+
+    .grouping-box {
+      background: #0d1f17;
+      border: 2px dashed #f7c948;
+      border-radius: 40px;
+      padding: 10px 24px;
+      font-weight: 600;
+      color: #f7c948;
+      margin-bottom: 16px;
+      opacity: 0;
+      transition: 0.4s;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .grouping-box.visible { opacity: 1; }
+
+    .ladder-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #162b1f;
+      padding: 8px 18px;
+      border-radius: 40px;
+      border-left: 5px solid #dd6b8a;
+      font-weight: 600;
+      opacity: 0;
+      transition: 0.25s;
+      width: 100%;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      font-size: 1rem;
+    }
+    .ladder-row.visible { opacity: 1; }
+    .ladder-row.active { border-left-color: #f7c948; background: #1f3d2c; }
+
+    .arrow-indicator {
+      color: #dd6b8a;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .result-box {
+      margin-top: 18px;
+      padding: 14px 24px;
+      border: 2px solid #dd6b8a;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.4rem;
+      background: #1f2f24;
+      color: #f2eef0;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: 0.3s;
+      text-align: center;
+      width: 100%;
+    }
+    .result-box.visible { opacity: 1; transform: scale(1); }
+
+    .footnote {
+      margin-top: 32px;
+      font-size: 0.85rem;
+      color: #56856b;
+      text-align: center;
+      border-top: 1px solid #1d3d2c;
+      padding-top: 18px;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .menu-btn { font-size: 0.7rem; padding: 6px 12px; }
+      .card-header h2 { font-size: 1.3rem; }
+      .result-box { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="main-wrapper">
+  <div class="header">
+    <h1>⚡ Number System Converter</h1>
+    <div class="sub"><span>by MANOJKUMAR S L</span></div>
+  </div>
+
+  <div class="menu-bar" id="menuBar"></div>
+
+  <div class="converter-card active" id="converterCard">
+    <div class="card-header">
+      <h2 id="cardTitle">Decimal → Binary</h2>
+      <span class="badge" id="cardBadge">dec → bin</span>
+    </div>
+    <div class="ctrl-group">
+      <div class="input-row">
+        <input type="text" id="mainInput" placeholder="e.g. 29" />
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-start" id="startBtn">▶ Start</button>
+        <button class="btn btn-step" id="stepBtn">⏭ Step</button>
+        <button class="btn btn-stop" id="stopBtn" disabled>⏹ Stop</button>
+        <button class="btn btn-reset" id="resetBtn">↺ Reset</button>
+      </div>
+      <div class="speed-row">
+        <span>Speed</span>
+        <input type="range" id="speedRange" min="200" max="2000" value="1000" step="100" />
+        <span id="speedLabel">1.0s</span>
+      </div>
+    </div>
+    <div class="vis-area" id="visArea">
+      <div class="empty-hint">⏳ select a conversion &amp; enter value</div>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footnote">✦ step‑by‑step · visual · interactive ✦</div>
+</div>
+
+<script>
+  const CONVERTERS = [
+    { id: 'dec2bin', label: 'Decimal → Binary', from: 'decimal', to: 'binary', base: 2, placeholder: 'e.g. 29' },
+    { id: 'dec2oct', label: 'Decimal → Octal', from: 'decimal', to: 'octal', base: 8, placeholder: 'e.g. 125' },
+    { id: 'dec2hex', label: 'Decimal → Hexadecimal', from: 'decimal', to: 'hex', base: 16, placeholder: 'e.g. 254' },
+    { id: 'bin2dec', label: 'Binary → Decimal', from: 'binary', to: 'decimal', base: 2, placeholder: 'e.g. 11101' },
+    { id: 'bin2oct', label: 'Binary → Octal', from: 'binary', to: 'octal', base: 2, placeholder: 'e.g. 11101' },
+    { id: 'bin2hex', label: 'Binary → Hexadecimal', from: 'binary', to: 'hex', base: 2, placeholder: 'e.g. 11101' },
+    { id: 'oct2dec', label: 'Octal → Decimal', from: 'octal', to: 'decimal', base: 8, placeholder: 'e.g. 357' },
+    { id: 'oct2bin', label: 'Octal → Binary', from: 'octal', to: 'binary', base: 8, placeholder: 'e.g. 357' },
+    { id: 'oct2hex', label: 'Octal → Hexadecimal', from: 'octal', to: 'hex', base: 8, placeholder: 'e.g. 357' },
+    { id: 'hex2dec', label: 'Hexadecimal → Decimal', from: 'hex', to: 'decimal', base: 16, placeholder: 'e.g. 2F' },
+    { id: 'hex2bin', label: 'Hexadecimal → Binary', from: 'hex', to: 'binary', base: 16, placeholder: 'e.g. 2A9F' },
+    { id: 'hex2oct', label: 'Hexadecimal → Octal', from: 'hex', to: 'octal', base: 16, placeholder: 'e.g. 2F' }
+  ];
+
+  const hexMap = { '0':'0000','1':'0001','2':'0010','3':'0011','4':'0100','5':'0101','6':'0110','7':'0111','8':'1000','9':'1001','A':'1010','B':'1011','C':'1100','D':'1101','E':'1110','F':'1111' };
+  const octMap = { '0':'000','1':'001','2':'010','3':'011','4':'100','5':'101','6':'110','7':'111' };
+  function toHexChar(v) { return v >= 10 ? String.fromCharCode(55 + v) : v.toString(); }
+
+  let currentId = 'dec2bin';
+  let timer = null;
+  let running = false;
+  let stepIdx = 0;
+  let steps = [];
+  let inputRaw = '';
+  let initialized = false;
+
+  const menuBar = document.getElementById('menuBar');
+  const cardTitle = document.getElementById('cardTitle');
+  const cardBadge = document.getElementById('cardBadge');
+  const mainInput = document.getElementById('mainInput');
+  const startBtn = document.getElementById('startBtn');
+  const stepBtn = document.getElementById('stepBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const speedRange = document.getElementById('speedRange');
+  const speedLabel = document.getElementById('speedLabel');
+  const visArea = document.getElementById('visArea');
+  const resultBox = document.getElementById('resultBox');
+
+  CONVERTERS.forEach(cfg => {
+    const btn = document.createElement('button');
+    btn.className = 'menu-btn' + (cfg.id === currentId ? ' active' : '');
+    btn.dataset.id = cfg.id;
+    btn.textContent = cfg.label;
+    btn.addEventListener('click', () => switchConverter(cfg.id));
+    menuBar.appendChild(btn);
+  });
+
+  speedRange.addEventListener('input', () => {
+    speedLabel.textContent = (speedRange.value / 1000).toFixed(1) + 's';
+  });
+
+  function switchConverter(id) {
+    if (id === currentId) return;
+    stopAnimation();
+    document.querySelectorAll('.menu-btn').forEach(b => b.classList.toggle('active', b.dataset.id === id));
+    currentId = id;
+    const cfg = CONVERTERS.find(c => c.id === id);
+    cardTitle.textContent = cfg.label;
+    cardBadge.textContent = cfg.from + ' → ' + cfg.to;
+    mainInput.placeholder = cfg.placeholder;
+    const defaults = { 'dec2bin':'29', 'dec2oct':'125', 'dec2hex':'254', 'bin2dec':'11101', 'bin2oct':'11101', 'bin2hex':'11101', 'oct2dec':'357', 'oct2bin':'357', 'oct2hex':'357', 'hex2dec':'2F', 'hex2bin':'2A9F', 'hex2oct':'2F' };
+    mainInput.value = defaults[id] || '';
+    mainInput.disabled = false;
+    resetState();
+    visArea.innerHTML = `<div class="empty-hint">⏳ enter a value and press Start</div>`;
+    resultBox.classList.remove('visible');
+    resultBox.textContent = '';
+    startBtn.disabled = false;
+    stepBtn.disabled = false;
+    stopBtn.disabled = true;
+  }
+
+  function resetState() {
+    if (timer) { clearInterval(timer); timer = null; }
+    running = false;
+    stepIdx = 0;
+    steps = [];
+    initialized = false;
+    inputRaw = '';
+  }
+
+  function prepareVisualization() {
+    const cfg = CONVERTERS.find(c => c.id === currentId);
+    const raw = mainInput.value.trim();
+    inputRaw = raw;
+    resultBox.classList.remove('visible');
+    resultBox.textContent = '';
+
+    if (!validateInput(raw, cfg)) {
+      visArea.innerHTML = `<div class="empty-hint">⚠️ invalid ${cfg.from} input</div>`;
+      initialized = false;
+      return false;
+    }
+
+    let st = [];
+    let success = true;
+
+    if (cfg.from === 'decimal') {
+      const num = parseInt(raw, 10);
+      if (isNaN(num) || num < 0) { success = false; }
+      else {
+        let cur = num;
+        if (cur === 0) st = [{ num: 0, quotient: 0, remainder: 0, hexChar: '0' }];
+        else {
+          const base = cfg.base;
+          while (cur > 0) {
+            const q = Math.floor(cur / base);
+            const r = cur % base;
+            st.push({ num: cur, quotient: q, remainder: r, hexChar: base === 16 ? toHexChar(r) : r.toString() });
+            cur = q;
+          }
+        }
+      }
+    }
+    else if (cfg.from === 'binary') {
+      const clean = raw.replace(/^0+/, '') || '0';
+      if (!/^[01]+$/.test(clean)) { success = false; }
+      else {
+        if (cfg.to === 'decimal') {
+          let total = 0;
+          for (let i = 0; i < clean.length; i++) {
+            const bit = parseInt(clean[i], 10);
+            const power = clean.length - 1 - i;
+            const val = bit * Math.pow(2, power);
+            total += val;
+            st.push({ bit, power, stepVal: val, runningTotal: total, index: i });
+          }
+        } else if (cfg.to === 'octal' || cfg.to === 'hex') {
+          const gs = cfg.to === 'octal' ? 3 : 4;
+          let padded = clean;
+          while (padded.length % gs !== 0) padded = '0' + padded;
+          for (let i = 0; i < padded.length; i += gs) {
+            const nib = padded.substr(i, gs);
+            const val = parseInt(nib, 2);
+            const out = cfg.to === 'octal' ? val.toString(8) : val.toString(16).toUpperCase();
+            st.push({ group: nib, out });
+          }
+        }
+      }
+    }
+    else if (cfg.from === 'octal') {
+      const clean = raw.replace(/^0+/, '') || '0';
+      if (!/^[0-7]+$/.test(clean)) { success = false; }
+      else {
+        if (cfg.to === 'decimal') {
+          let total = 0;
+          for (let i = 0; i < clean.length; i++) {
+            const d = parseInt(clean[i], 10);
+            const power = clean.length - 1 - i;
+            const val = d * Math.pow(8, power);
+            total += val;
+            st.push({ digit: d, power, termValue: val, runningSum: total });
+          }
+        } else if (cfg.to === 'binary') {
+          st = clean.split('').map(d => ({ digit: d, binary: octMap[d] }));
+        } else if (cfg.to === 'hex') {
+          let binStr = clean.split('').map(d => octMap[d]).join('');
+          while (binStr.length % 4 !== 0) binStr = '0' + binStr;
+          for (let i = 0; i < binStr.length; i += 4) {
+            const nib = binStr.substr(i, 4);
+            const val = parseInt(nib, 2);
+            st.push({ group: nib, out: val.toString(16).toUpperCase() });
+          }
+        }
+      }
+    }
+    else if (cfg.from === 'hex') {
+      const clean = raw.toUpperCase().replace(/^0+/, '') || '0';
+      if (!/^[0-9A-F]+$/.test(clean)) { success = false; }
+      else {
+        if (cfg.to === 'decimal') {
+          let total = 0;
+          for (let i = 0; i < clean.length; i++) {
+            const ch = clean[clean.length - 1 - i];
+            const d = parseInt(ch, 16);
+            const val = d * Math.pow(16, i);
+            total += val;
+            st.push({ char: ch, decVal: d, power: i, product: val, runningTotal: total });
+          }
+        } else if (cfg.to === 'binary') {
+          st = clean.split('').map(ch => ({ digit: ch, binary: hexMap[ch] || '0000' }));
+        } else if (cfg.to === 'octal') {
+          let binStr = clean.split('').map(ch => hexMap[ch] || '0000').join('');
+          while (binStr.length % 3 !== 0) binStr = '0' + binStr;
+          for (let i = 0; i < binStr.length; i += 3) {
+            const trip = binStr.substr(i, 3);
+            const val = parseInt(trip, 2);
+            st.push({ group: trip, out: val.toString(8) });
+          }
+        }
+      }
+    }
+
+    if (!success || st.length === 0) {
+      visArea.innerHTML = `<div class="empty-hint">⚠️ invalid input</div>`;
+      initialized = false;
+      return false;
+    }
+
+    steps = st;
+    stepIdx = 0;
+    initialized = true;
+    renderSkeleton(cfg);
+    return true;
+  }
+
+  function renderSkeleton(cfg) {
+    visArea.innerHTML = '';
+    const showGroup = (cfg.from === 'binary' && (cfg.to === 'octal' || cfg.to === 'hex')) ||
+                      (cfg.from === 'octal' && cfg.to === 'hex') ||
+                      (cfg.from === 'hex' && cfg.to === 'octal');
+    if (showGroup) {
+      const gbox = document.createElement('div');
+      gbox.className = 'grouping-box';
+      gbox.id = 'groupBox';
+      let label = '';
+      if (cfg.from === 'binary') label = cfg.to === 'octal' ? '3-bit' : '4-bit';
+      else if (cfg.from === 'octal' && cfg.to === 'hex') label = '4-bit (binary)';
+      else if (cfg.from === 'hex' && cfg.to === 'octal') label = '3-bit (binary)';
+      const groups = steps.map(s => s.group).join(', ');
+      gbox.innerHTML = `${label} grouping: ${groups}`;
+      visArea.appendChild(gbox);
+    }
+
+    const wrap = document.createElement('div');
+    wrap.className = 'bits-wrap';
+    wrap.id = 'stepWrap';
+    visArea.appendChild(wrap);
+
+    const isLadder = (cfg.from === 'decimal') ||
+                     (cfg.from === 'binary' && cfg.to === 'decimal') ||
+                     (cfg.from === 'octal' && cfg.to === 'decimal') ||
+                     (cfg.from === 'hex' && cfg.to === 'decimal');
+
+    if (isLadder) {
+      wrap.className = 'ladder-wrap';
+      steps.forEach((s, i) => {
+        const row = document.createElement('div');
+        row.className = 'ladder-row';
+        row.id = `lrow-${i}`;
+        if (cfg.from === 'decimal') {
+          const rem = s.remainder !== undefined ? (cfg.base === 16 ? (s.remainder >= 10 ? s.hexChar : s.remainder) : s.remainder) : '';
+          row.innerHTML = `<span>${cfg.base}</span> <span>${s.num}</span> <span>${i === 0 ? '' : rem}</span>`;
+        } else if (cfg.from === 'binary' && cfg.to === 'decimal') {
+          row.innerHTML = `<span>${s.bit} × 2<sup>${s.power}</sup> = ${s.stepVal}</span> <span>sum: ${s.runningTotal}</span>`;
+        } else if (cfg.from === 'octal' && cfg.to === 'decimal') {
+          row.innerHTML = `<span>${s.digit} × 8<sup>${s.power}</sup> = ${s.termValue}</span> <span>sum: ${s.runningSum}</span>`;
+        } else if (cfg.from === 'hex' && cfg.to === 'decimal') {
+          row.innerHTML = `<span>'${s.char}' × 16<sup>${s.power}</sup> = ${s.product}</span> <span>sum: ${s.runningTotal}</span>`;
+        }
+        wrap.appendChild(row);
+      });
+    } else {
+      wrap.className = 'groups-wrap';
+      steps.forEach((s, i) => {
+        const card = document.createElement('div');
+        card.className = 'group-card';
+        card.id = `gcard-${i}`;
+        let top = s.group || s.digit || s.binary;
+        let bottom = s.out || s.binary;
+        if (cfg.from === 'octal' && cfg.to === 'binary') {
+          top = s.digit + '<sub>8</sub>';
+          bottom = s.binary;
+        } else if (cfg.from === 'hex' && cfg.to === 'binary') {
+          top = s.digit;
+          bottom = s.binary;
+        } else {
+          top = s.group || s.digit;
+          bottom = s.out || s.binary;
+        }
+        card.innerHTML = `<div>${top}</div><div class="arrow-indicator">↓</div><div>${bottom}</div>`;
+        wrap.appendChild(card);
+      });
+    }
+  }
+
+  function validateInput(raw, cfg) {
+    if (!raw) return false;
+    if (cfg.from === 'decimal') return /^[0-9]+$/.test(raw);
+    if (cfg.from === 'binary') return /^[01]+$/.test(raw);
+    if (cfg.from === 'octal') return /^[0-7]+$/.test(raw);
+    if (cfg.from === 'hex') return /^[0-9A-Fa-f]+$/.test(raw);
+    return false;
+  }
+
+  function animateNext() {
+    if (!initialized || steps.length === 0) return false;
+    const total = steps.length;
+
+    if (stepIdx > 0) {
+      const prev = document.querySelector(`#lrow-${stepIdx-1}, #gcard-${stepIdx-1}`);
+      if (prev) prev.classList.remove('active');
+    }
+
+    if (stepIdx < total) {
+      const el = document.querySelector(`#lrow-${stepIdx}, #gcard-${stepIdx}`);
+      if (el) { el.classList.add('visible', 'active'); }
+      const gbox = document.getElementById('groupBox');
+      if (gbox && stepIdx === 0) gbox.classList.add('visible');
+      stepIdx++;
+      return true;
+    } else {
+      stopAnimation();
+      const cfg = CONVERTERS.find(c => c.id === currentId);
+      let finalVal = '';
+      const st = steps;
+      if (cfg.from === 'decimal') {
+        const out = st.map(s => cfg.base === 16 ? s.hexChar : s.remainder).reverse().join('');
+        finalVal = `${inputRaw} = (${out})<sub>${cfg.base}</sub>`;
+      } else if (cfg.from === 'binary' && cfg.to === 'decimal') {
+        finalVal = `(${inputRaw})<sub>2</sub> = (${st[st.length-1].runningTotal})<sub>10</sub>`;
+      } else if (cfg.from === 'binary' && (cfg.to === 'octal' || cfg.to === 'hex')) {
+        const out = st.map(s => s.out).join('');
+        finalVal = `(${inputRaw})<sub>2</sub> = (${out})<sub>${cfg.to === 'octal' ? 8 : 16}</sub>`;
+      } else if (cfg.from === 'octal' && cfg.to === 'decimal') {
+        finalVal = `(${inputRaw})<sub>8</sub> = (${st[st.length-1].runningSum})<sub>10</sub>`;
+      } else if (cfg.from === 'octal' && cfg.to === 'binary') {
+        const out = st.map(s => s.binary).join('');
+        finalVal = `(${inputRaw})<sub>8</sub> = (${out})<sub>2</sub>`;
+      } else if (cfg.from === 'octal' && cfg.to === 'hex') {
+        const out = st.map(s => s.out).join('');
+        finalVal = `(${inputRaw})<sub>8</sub> = (${out})<sub>16</sub>`;
+      } else if (cfg.from === 'hex' && cfg.to === 'decimal') {
+        finalVal = `(${inputRaw})<sub>16</sub> = (${st[st.length-1].runningTotal})<sub>10</sub>`;
+      } else if (cfg.from === 'hex' && cfg.to === 'binary') {
+        const out = st.map(s => s.binary).join(' ');
+        finalVal = `(${inputRaw})<sub>16</sub> = (${out})<sub>2</sub>`;
+      } else if (cfg.from === 'hex' && cfg.to === 'octal') {
+        const out = st.map(s => s.out).join('');
+        finalVal = `(${inputRaw})<sub>16</sub> = (${out})<sub>8</sub>`;
+      }
+      resultBox.innerHTML = finalVal;
+      resultBox.classList.add('visible');
+      startBtn.disabled = false;
+      stepBtn.disabled = true;
+      stopBtn.disabled = true;
+      return false;
+    }
+  }
+
+  function startAnimation() {
+    if (running) return;
+    if (!initialized) {
+      if (!prepareVisualization()) return;
+    }
+    if (stepIdx >= steps.length) resetAnimation();
+    running = true;
+    startBtn.disabled = true;
+    stepBtn.disabled = true;
+    stopBtn.disabled = false;
+    mainInput.disabled = true;
+
+    const delay = 2200 - parseInt(speedRange.value, 10);
+    if (!animateNext()) return;
+
+    timer = setInterval(() => {
+      const more = animateNext();
+      if (!more) stopAnimation();
+    }, delay);
+  }
+
+  function stepManual() {
+    if (running) stopAnimation();
+    if (!initialized) {
+      if (!prepareVisualization()) return;
+    }
+    if (stepIdx >= steps.length) resetAnimation();
+    mainInput.disabled = true;
+    animateNext();
+  }
+
+  function stopAnimation() {
+    if (timer) { clearInterval(timer); timer = null; }
+    running = false;
+    startBtn.disabled = false;
+    stepBtn.disabled = false;
+    stopBtn.disabled = true;
+  }
+
+  function resetAnimation() {
+    stopAnimation();
+    resetState();
+    mainInput.disabled = false;
+    visArea.innerHTML = `<div class="empty-hint">⟳ reset · press Start</div>`;
+    resultBox.classList.remove('visible');
+    resultBox.textContent = '';
+    startBtn.disabled = false;
+    stepBtn.disabled = false;
+    stopBtn.disabled = true;
+  }
+
+  startBtn.addEventListener('click', startAnimation);
+  stepBtn.addEventListener('click', stepManual);
+  stopBtn.addEventListener('click', stopAnimation);
+  resetBtn.addEventListener('click', resetAnimation);
+
+  // Initialize with default converter
+  switchConverter('dec2bin');
+</script>
+</body>
+</html>
