@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Number System Converter · Manojkumar S L @ 9745110065</title>
+  <title>Number System Converter · Manojkumar S L</title>
   <style>
     * {
       box-sizing: border-box;
@@ -21,7 +21,7 @@
       align-items: center;
     }
     .main-wrapper {
-      max-width: 820px;
+      max-width: 900px;
       width: 100%;
     }
     .header {
@@ -69,10 +69,10 @@
       background: transparent;
       border: none;
       color: #b3dac6;
-      padding: 10px 18px;
+      padding: 8px 14px;
       border-radius: 40px;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       cursor: pointer;
       transition: 0.2s;
       white-space: nowrap;
@@ -153,6 +153,13 @@
       opacity: 0.5;
       filter: grayscale(0.4);
     }
+    .input-row .hint {
+      color: #6a9a7e;
+      font-size: 0.8rem;
+      padding: 12px 8px;
+      flex: 1;
+      min-width: 120px;
+    }
 
     .btn-group {
       display: flex;
@@ -214,20 +221,106 @@
       padding: 28px 0;
     }
 
-    .bits-wrap, .groups-wrap, .ladder-wrap {
+    .ladder-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
+      flex-direction: column;
+      gap: 8px;
       width: 100%;
+      position: relative;
+    }
+
+    .ladder-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: #162b1f;
+      padding: 10px 20px;
+      border-radius: 40px;
+      border-left: 5px solid #dd6b8a;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      width: 100%;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .ladder-row.visible {
+      opacity: 1;
+    }
+    .ladder-row.active {
+      border-left-color: #f7c948;
+      background: #1f3d2c;
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(247, 201, 72, 0.2);
+    }
+
+    .ladder-row .divisor {
+      min-width: 40px;
+      text-align: right;
+      padding-right: 15px;
+      border-right: 3px solid #dd6b8a;
+    }
+    .ladder-row.active .divisor {
+      border-right-color: #f7c948;
+    }
+
+    .ladder-row .number-cell {
+      min-width: 80px;
+      text-align: center;
+      padding: 0 10px;
+      border-bottom: 3px solid #dd6b8a;
+    }
+    .ladder-row.active .number-cell {
+      border-bottom-color: #f7c948;
+    }
+
+    .ladder-row .remainder-cell {
+      min-width: 50px;
+      text-align: center;
+      padding-left: 10px;
+      font-weight: 700;
+    }
+
+    .remainder-color-1 { color: #ff6b6b; }
+    .remainder-color-2 { color: #ffd93d; }
+    .remainder-color-3 { color: #6bcb77; }
+    .remainder-color-4 { color: #4d96ff; }
+    .remainder-color-5 { color: #ff6bff; }
+    .remainder-color-6 { color: #ff9f43; }
+    .remainder-color-7 { color: #00d2d3; }
+    .remainder-color-8 { color: #f368e0; }
+    .remainder-color-9 { color: #ff4757; }
+    .remainder-color-10 { color: #2ed573; }
+    .remainder-color-11 { color: #1e90ff; }
+    .remainder-color-12 { color: #ff6348; }
+    .remainder-color-13 { color: #7bed9f; }
+    .remainder-color-14 { color: #70a1ff; }
+    .remainder-color-15 { color: #ff7979; }
+
+    .section-divider {
+      width: 100%;
+      text-align: center;
+      color: #4a7a5e;
+      font-weight: 600;
+      padding: 8px 0;
+      border-top: 1px dashed #2a4a3a;
+      border-bottom: 1px dashed #2a4a3a;
+      margin: 8px 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .section-divider.visible {
+      opacity: 1;
     }
 
     .group-card {
       background: #1b3527;
-      padding: 10px 14px;
+      padding: 12px 16px;
       border-radius: 16px;
       border: 2px solid #29593b;
-      min-width: 64px;
+      min-width: 80px;
       text-align: center;
       transition: 0.25s;
       opacity: 0.4;
@@ -243,46 +336,143 @@
       background: #1f402e;
       transform: scale(1.06);
     }
+    .group-card .top-value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #eef5ee;
+    }
+    .group-card .arrow-indicator {
+      color: #dd6b8a;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 4px 0;
+    }
+    .group-card .bottom-value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #f7c948;
+    }
+    .group-card .step-detail {
+      font-size: 0.95rem;
+      color: #8ab4a0;
+      margin-top: 6px;
+      font-weight: 500;
+      word-break: break-word;
+    }
+    .group-card .intermediate-binary {
+      font-size: 1.1rem;
+      color: #4d96ff;
+      font-weight: 600;
+      margin-top: 4px;
+      padding: 4px 8px;
+      background: rgba(77, 150, 255, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(77, 150, 255, 0.2);
+    }
 
     .grouping-box {
       background: #0d1f17;
       border: 2px dashed #f7c948;
       border-radius: 40px;
-      padding: 10px 24px;
+      padding: 12px 24px;
       font-weight: 600;
       color: #f7c948;
       margin-bottom: 16px;
       opacity: 0;
       transition: 0.4s;
-      font-size: 1rem;
+      font-size: 1.1rem;
       letter-spacing: 1px;
       text-align: center;
     }
     .grouping-box.visible { opacity: 1; }
 
-    .ladder-row {
+    .groups-wrap {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #162b1f;
-      padding: 8px 18px;
-      border-radius: 40px;
-      border-left: 5px solid #dd6b8a;
-      font-weight: 600;
-      opacity: 0;
-      transition: 0.25s;
-      width: 100%;
-      justify-content: space-around;
       flex-wrap: wrap;
-      font-size: 1rem;
+      justify-content: center;
+      gap: 15px;
+      width: 100%;
     }
-    .ladder-row.visible { opacity: 1; }
-    .ladder-row.active { border-left-color: #f7c948; background: #1f3d2c; }
 
-    .arrow-indicator {
-      color: #dd6b8a;
-      font-size: 1.8rem;
-      line-height: 1;
+    .intermediate-step-box {
+      width: 100%;
+      background: #0d1f17;
+      border: 2px solid #4d96ff;
+      border-radius: 16px;
+      padding: 12px 20px;
+      margin: 10px 0;
+      text-align: center;
+      opacity: 0;
+      transition: 0.4s;
+    }
+    .intermediate-step-box.visible {
+      opacity: 1;
+    }
+    .intermediate-step-box .label {
+      color: #8ab4a0;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .intermediate-step-box .binary-value {
+      color: #4d96ff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-top: 4px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .intermediate-detail-box {
+      width: 100%;
+      background: #0d1f17;
+      border: 2px solid #6bcb77;
+      border-radius: 16px;
+      padding: 12px 20px;
+      margin: 10px 0;
+      text-align: center;
+      opacity: 0;
+      transition: 0.4s;
+    }
+    .intermediate-detail-box.visible {
+      opacity: 1;
+    }
+    .intermediate-detail-box .label {
+      color: #8ab4a0;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .intermediate-detail-box .detail-value {
+      color: #6bcb77;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 4px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .grouping-rule-box {
+      width: 100%;
+      background: #1a2f24;
+      border: 2px solid #ff9f43;
+      border-radius: 16px;
+      padding: 10px 20px;
+      margin: 8px 0;
+      text-align: center;
+      opacity: 0;
+      transition: 0.4s;
+    }
+    .grouping-rule-box.visible {
+      opacity: 1;
+    }
+    .grouping-rule-box .rule-label {
+      color: #ff9f43;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .grouping-rule-box .rule-detail {
+      color: #b8dac8;
+      font-size: 0.95rem;
+      margin-top: 4px;
     }
 
     .result-box {
@@ -313,9 +503,50 @@
     }
 
     @media (max-width: 600px) {
-      .menu-btn { font-size: 0.7rem; padding: 6px 12px; }
+      .menu-btn { font-size: 0.65rem; padding: 5px 10px; }
       .card-header h2 { font-size: 1.3rem; }
       .result-box { font-size: 1.1rem; }
+      .input-row .hint { font-size: 0.7rem; padding: 8px 4px; }
+      .ladder-row { font-size: 0.9rem; padding: 8px 12px; gap: 10px; }
+      .ladder-row .divisor { min-width: 30px; padding-right: 10px; }
+      .ladder-row .number-cell { min-width: 60px; }
+      .ladder-row .remainder-cell { min-width: 35px; }
+      
+      .group-card {
+        padding: 10px 14px;
+        min-width: 65px;
+      }
+      .group-card .top-value {
+        font-size: 1.2rem;
+      }
+      .group-card .arrow-indicator {
+        font-size: 1.6rem;
+      }
+      .group-card .bottom-value {
+        font-size: 1.2rem;
+      }
+      .group-card .step-detail {
+        font-size: 0.8rem;
+      }
+      .group-card .intermediate-binary {
+        font-size: 0.95rem;
+      }
+      .grouping-box {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+      }
+      .intermediate-step-box .binary-value {
+        font-size: 1.1rem;
+      }
+      .intermediate-detail-box .detail-value {
+        font-size: 1rem;
+      }
+      .grouping-rule-box .rule-label {
+        font-size: 0.95rem;
+      }
+      .grouping-rule-box .rule-detail {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -335,7 +566,8 @@
     </div>
     <div class="ctrl-group">
       <div class="input-row">
-        <input type="text" id="mainInput" placeholder="e.g. 29" />
+        <input type="text" id="mainInput" placeholder="e.g. 29 or 18.6" />
+        <span class="hint">💡 supports fractions: 18.6 or 110.011</span>
       </div>
       <div class="btn-group">
         <button class="btn btn-start" id="startBtn">▶ Start</button>
@@ -355,23 +587,23 @@
     <div class="result-box" id="resultBox"></div>
   </div>
 
-  <div class="footnote">✦ step‑by‑step · visual · interactive ✦</div>
+  <div class="footnote">✦ step‑by‑step · visual · interactive · supports fractions ✦</div>
 </div>
 
 <script>
   const CONVERTERS = [
-    { id: 'dec2bin', label: 'Decimal → Binary', from: 'decimal', to: 'binary', base: 2, placeholder: 'e.g. 29' },
-    { id: 'dec2oct', label: 'Decimal → Octal', from: 'decimal', to: 'octal', base: 8, placeholder: 'e.g. 125' },
-    { id: 'dec2hex', label: 'Decimal → Hexadecimal', from: 'decimal', to: 'hex', base: 16, placeholder: 'e.g. 254' },
-    { id: 'bin2dec', label: 'Binary → Decimal', from: 'binary', to: 'decimal', base: 2, placeholder: 'e.g. 11101' },
-    { id: 'bin2oct', label: 'Binary → Octal', from: 'binary', to: 'octal', base: 2, placeholder: 'e.g. 11101' },
-    { id: 'bin2hex', label: 'Binary → Hexadecimal', from: 'binary', to: 'hex', base: 2, placeholder: 'e.g. 11101' },
-    { id: 'oct2dec', label: 'Octal → Decimal', from: 'octal', to: 'decimal', base: 8, placeholder: 'e.g. 357' },
-    { id: 'oct2bin', label: 'Octal → Binary', from: 'octal', to: 'binary', base: 8, placeholder: 'e.g. 357' },
-    { id: 'oct2hex', label: 'Octal → Hexadecimal', from: 'octal', to: 'hex', base: 8, placeholder: 'e.g. 357' },
-    { id: 'hex2dec', label: 'Hexadecimal → Decimal', from: 'hex', to: 'decimal', base: 16, placeholder: 'e.g. 2F' },
-    { id: 'hex2bin', label: 'Hexadecimal → Binary', from: 'hex', to: 'binary', base: 16, placeholder: 'e.g. 2A9F' },
-    { id: 'hex2oct', label: 'Hexadecimal → Octal', from: 'hex', to: 'octal', base: 16, placeholder: 'e.g. 2F' }
+    { id: 'dec2bin', label: 'Decimal → Binary', from: 'decimal', to: 'binary', base: 2, placeholder: 'e.g. 29 or 18.6' },
+    { id: 'dec2oct', label: 'Decimal → Octal', from: 'decimal', to: 'octal', base: 8, placeholder: 'e.g. 125 or 45.6' },
+    { id: 'dec2hex', label: 'Decimal → Hexadecimal', from: 'decimal', to: 'hex', base: 16, placeholder: 'e.g. 254 or 255.5' },
+    { id: 'bin2dec', label: 'Binary → Decimal', from: 'binary', to: 'decimal', base: 2, placeholder: 'e.g. 11101 or 110.011' },
+    { id: 'bin2oct', label: 'Binary → Octal', from: 'binary', to: 'octal', base: 2, placeholder: 'e.g. 11101 or 110.011' },
+    { id: 'bin2hex', label: 'Binary → Hexadecimal', from: 'binary', to: 'hex', base: 2, placeholder: 'e.g. 11101 or 110.011' },
+    { id: 'oct2dec', label: 'Octal → Decimal', from: 'octal', to: 'decimal', base: 8, placeholder: 'e.g. 357 or 45.6' },
+    { id: 'oct2bin', label: 'Octal → Binary', from: 'octal', to: 'binary', base: 8, placeholder: 'e.g. 357 or 45.6' },
+    { id: 'oct2hex', label: 'Octal → Hexadecimal', from: 'octal', to: 'hex', base: 8, placeholder: 'e.g. 357 or 45.6' },
+    { id: 'hex2dec', label: 'Hexadecimal → Decimal', from: 'hex', to: 'decimal', base: 16, placeholder: 'e.g. 2F or A.5' },
+    { id: 'hex2bin', label: 'Hexadecimal → Binary', from: 'hex', to: 'binary', base: 16, placeholder: 'e.g. 2A9F or A.5' },
+    { id: 'hex2oct', label: 'Hexadecimal → Octal', from: 'hex', to: 'octal', base: 16, placeholder: 'e.g. 2F or A.5' }
   ];
 
   const hexMap = { '0':'0000','1':'0001','2':'0010','3':'0011','4':'0100','5':'0101','6':'0110','7':'0111','8':'1000','9':'1001','A':'1010','B':'1011','C':'1100','D':'1101','E':'1110','F':'1111' };
@@ -383,8 +615,12 @@
   let running = false;
   let stepIdx = 0;
   let steps = [];
+  let fractionalSteps = [];
   let inputRaw = '';
   let initialized = false;
+  let hasFractionalPart = false;
+  let intermediateBinary = '';
+  let intermediateDetail = '';
 
   const menuBar = document.getElementById('menuBar');
   const cardTitle = document.getElementById('cardTitle');
@@ -421,7 +657,12 @@
     cardTitle.textContent = cfg.label;
     cardBadge.textContent = cfg.from + ' → ' + cfg.to;
     mainInput.placeholder = cfg.placeholder;
-    const defaults = { 'dec2bin':'29', 'dec2oct':'125', 'dec2hex':'254', 'bin2dec':'11101', 'bin2oct':'11101', 'bin2hex':'11101', 'oct2dec':'357', 'oct2bin':'357', 'oct2hex':'357', 'hex2dec':'2F', 'hex2bin':'2A9F', 'hex2oct':'2F' };
+    const defaults = { 
+      'dec2bin':'29', 'dec2oct':'125', 'dec2hex':'254', 
+      'bin2dec':'11101', 'bin2oct':'11101', 'bin2hex':'11101',
+      'oct2dec':'357', 'oct2bin':'357', 'oct2hex':'357',
+      'hex2dec':'2F', 'hex2bin':'2A9F', 'hex2oct':'2F' 
+    };
     mainInput.value = defaults[id] || '';
     mainInput.disabled = false;
     resetState();
@@ -438,8 +679,58 @@
     running = false;
     stepIdx = 0;
     steps = [];
+    fractionalSteps = [];
     initialized = false;
     inputRaw = '';
+    hasFractionalPart = false;
+    intermediateBinary = '';
+    intermediateDetail = '';
+  }
+
+  function splitNumber(raw, from) {
+    let parts = raw.split('.');
+    let intPart = parts[0] || '0';
+    let fracPart = parts.length > 1 ? parts[1] : '';
+    
+    let valid = true;
+    if (from === 'decimal') {
+      if (intPart && !/^[0-9]+$/.test(intPart)) valid = false;
+      if (fracPart && !/^[0-9]+$/.test(fracPart)) valid = false;
+    } else if (from === 'binary') {
+      if (intPart && !/^[01]+$/.test(intPart)) valid = false;
+      if (fracPart && !/^[01]+$/.test(fracPart)) valid = false;
+    } else if (from === 'octal') {
+      if (intPart && !/^[0-7]+$/.test(intPart)) valid = false;
+      if (fracPart && !/^[0-7]+$/.test(fracPart)) valid = false;
+    } else if (from === 'hex') {
+      if (intPart && !/^[0-9A-Fa-f]+$/.test(intPart)) valid = false;
+      if (fracPart && !/^[0-9A-Fa-f]+$/.test(fracPart)) valid = false;
+    }
+    
+    if (!valid) return null;
+    return { intPart: intPart || '0', fracPart: fracPart || '' };
+  }
+
+  function getRemainderColor(value) {
+    const colorMap = {
+      0: '',
+      1: 'remainder-color-1',
+      2: 'remainder-color-2',
+      3: 'remainder-color-3',
+      4: 'remainder-color-4',
+      5: 'remainder-color-5',
+      6: 'remainder-color-6',
+      7: 'remainder-color-7',
+      8: 'remainder-color-8',
+      9: 'remainder-color-9',
+      10: 'remainder-color-10',
+      11: 'remainder-color-11',
+      12: 'remainder-color-12',
+      13: 'remainder-color-13',
+      14: 'remainder-color-14',
+      15: 'remainder-color-15'
+    };
+    return colorMap[value] || 'remainder-color-1';
   }
 
   function prepareVisualization() {
@@ -448,119 +739,354 @@
     inputRaw = raw;
     resultBox.classList.remove('visible');
     resultBox.textContent = '';
+    intermediateBinary = '';
+    intermediateDetail = '';
 
-    if (!validateInput(raw, cfg)) {
+    const parts = splitNumber(raw, cfg.from);
+    if (!parts) {
       visArea.innerHTML = `<div class="empty-hint">⚠️ invalid ${cfg.from} input</div>`;
       initialized = false;
       return false;
     }
 
-    let st = [];
+    let intSteps = [];
+    let fracSteps = [];
     let success = true;
+    hasFractionalPart = parts.fracPart.length > 0;
 
+    // --- INTEGER PART CONVERSION ---
     if (cfg.from === 'decimal') {
-      const num = parseInt(raw, 10);
+      const num = parseInt(parts.intPart, 10);
       if (isNaN(num) || num < 0) { success = false; }
       else {
         let cur = num;
-        if (cur === 0) st = [{ num: 0, quotient: 0, remainder: 0, hexChar: '0' }];
-        else {
-          const base = cfg.base;
+        const base = cfg.base;
+        if (cur === 0) {
+          intSteps = [{ num: 0, quotient: 0, remainder: 0, hexChar: '0' }];
+        } else {
           while (cur > 0) {
             const q = Math.floor(cur / base);
             const r = cur % base;
-            st.push({ num: cur, quotient: q, remainder: r, hexChar: base === 16 ? toHexChar(r) : r.toString() });
+            intSteps.push({ 
+              num: cur, 
+              quotient: q, 
+              remainder: r, 
+              hexChar: base === 16 ? toHexChar(r) : r.toString() 
+            });
             cur = q;
           }
         }
       }
-    }
-    else if (cfg.from === 'binary') {
-      const clean = raw.replace(/^0+/, '') || '0';
-      if (!/^[01]+$/.test(clean)) { success = false; }
-      else {
-        if (cfg.to === 'decimal') {
-          let total = 0;
-          for (let i = 0; i < clean.length; i++) {
-            const bit = parseInt(clean[i], 10);
-            const power = clean.length - 1 - i;
-            const val = bit * Math.pow(2, power);
-            total += val;
-            st.push({ bit, power, stepVal: val, runningTotal: total, index: i });
-          }
-        } else if (cfg.to === 'octal' || cfg.to === 'hex') {
-          const gs = cfg.to === 'octal' ? 3 : 4;
-          let padded = clean;
-          while (padded.length % gs !== 0) padded = '0' + padded;
-          for (let i = 0; i < padded.length; i += gs) {
-            const nib = padded.substr(i, gs);
-            const val = parseInt(nib, 2);
-            const out = cfg.to === 'octal' ? val.toString(8) : val.toString(16).toUpperCase();
-            st.push({ group: nib, out });
-          }
-        }
+    } else if (cfg.from === 'binary' && cfg.to === 'decimal') {
+      let total = 0;
+      for (let i = 0; i < parts.intPart.length; i++) {
+        const bit = parseInt(parts.intPart[i], 10);
+        const power = parts.intPart.length - 1 - i;
+        const val = bit * Math.pow(2, power);
+        total += val;
+        intSteps.push({ 
+          bit: bit, 
+          power: power, 
+          stepVal: val, 
+          runningTotal: total, 
+          index: i,
+          display: `${bit} × 2<sup>${power}</sup> = ${val}`
+        });
+      }
+    } else if (cfg.from === 'octal' && cfg.to === 'decimal') {
+      let total = 0;
+      for (let i = 0; i < parts.intPart.length; i++) {
+        const d = parseInt(parts.intPart[i], 10);
+        const power = parts.intPart.length - 1 - i;
+        const val = d * Math.pow(8, power);
+        total += val;
+        intSteps.push({ 
+          digit: d, 
+          power: power, 
+          termValue: val, 
+          runningSum: total,
+          display: `${d} × 8<sup>${power}</sup> = ${val}`
+        });
+      }
+    } else if (cfg.from === 'hex' && cfg.to === 'decimal') {
+      let total = 0;
+      for (let i = 0; i < parts.intPart.length; i++) {
+        const ch = parts.intPart[parts.intPart.length - 1 - i];
+        const d = parseInt(ch, 16);
+        const val = d * Math.pow(16, i);
+        total += val;
+        intSteps.push({ 
+          char: ch, 
+          decVal: d, 
+          power: i, 
+          product: val, 
+          runningTotal: total,
+          display: `${ch} × 16<sup>${i}</sup> = ${val}`
+        });
+      }
+    } else if (cfg.from === 'binary' && cfg.to === 'octal') {
+      const clean = parts.intPart.replace(/^0+/, '') || '0';
+      let padded = clean;
+      while (padded.length % 3 !== 0) padded = '0' + padded;
+      for (let i = 0; i < padded.length; i += 3) {
+        const group = padded.substr(i, 3);
+        const val = parseInt(group, 2);
+        intSteps.push({ 
+          group: group, 
+          out: val.toString(8),
+          display: `${group}₂ = ${val}₁₀ = ${val.toString(8)}₈`
+        });
+      }
+    } else if (cfg.from === 'binary' && cfg.to === 'hex') {
+      const clean = parts.intPart.replace(/^0+/, '') || '0';
+      let padded = clean;
+      while (padded.length % 4 !== 0) padded = '0' + padded;
+      for (let i = 0; i < padded.length; i += 4) {
+        const group = padded.substr(i, 4);
+        const val = parseInt(group, 2);
+        intSteps.push({ 
+          group: group, 
+          out: val.toString(16).toUpperCase(),
+          display: `${group}₂ = ${val}₁₀ = ${val.toString(16).toUpperCase()}₁₆`
+        });
+      }
+    } else if (cfg.from === 'octal' && cfg.to === 'binary') {
+      const digits = parts.intPart.split('');
+      intSteps = digits.map(d => ({ 
+        digit: d, 
+        binary: octMap[d],
+        display: `${d}₈ = ${octMap[d]}₂`
+      }));
+    } else if (cfg.from === 'octal' && cfg.to === 'hex') {
+      const digits = parts.intPart.split('');
+      // Show each octal digit → 3-bit binary
+      const binaryParts = digits.map(d => `${d}→${octMap[d]}`);
+      intermediateDetail = binaryParts.join('  ');
+      
+      let binStr = digits.map(d => octMap[d]).join('');
+      intermediateBinary = binStr;
+      
+      while (binStr.length % 4 !== 0) binStr = '0' + binStr;
+      let idx = 0;
+      for (let i = 0; i < binStr.length; i += 4) {
+        const group = binStr.substr(i, 4);
+        const val = parseInt(group, 2);
+        const octDigit = digits[idx] || '';
+        intSteps.push({ 
+          group: group, 
+          out: val.toString(16).toUpperCase(),
+          octDigit: octDigit,
+          display: `${group}₂ = ${val}₁₀ = ${val.toString(16).toUpperCase()}₁₆`
+        });
+        idx++;
+      }
+    } else if (cfg.from === 'hex' && cfg.to === 'binary') {
+      const chars = parts.intPart.split('');
+      intSteps = chars.map(ch => ({ 
+        digit: ch, 
+        binary: hexMap[ch] || '0000',
+        display: `${ch}₁₆ = ${hexMap[ch] || '0000'}₂`
+      }));
+    } else if (cfg.from === 'hex' && cfg.to === 'octal') {
+      const chars = parts.intPart.split('');
+      // Show each hex digit → 4-bit binary
+      const binaryParts = chars.map(ch => `${ch}→${hexMap[ch] || '0000'}`);
+      intermediateDetail = binaryParts.join('  ');
+      
+      let binStr = chars.map(ch => hexMap[ch] || '0000').join('');
+      intermediateBinary = binStr;
+      
+      while (binStr.length % 3 !== 0) binStr = '0' + binStr;
+      let idx = 0;
+      for (let i = 0; i < binStr.length; i += 3) {
+        const group = binStr.substr(i, 3);
+        const val = parseInt(group, 2);
+        const hexDigit = chars[idx] || '';
+        intSteps.push({ 
+          group: group, 
+          out: val.toString(8),
+          hexDigit: hexDigit,
+          display: `${group}₂ = ${val}₁₀ = ${val.toString(8)}₈`
+        });
+        idx++;
       }
     }
-    else if (cfg.from === 'octal') {
-      const clean = raw.replace(/^0+/, '') || '0';
-      if (!/^[0-7]+$/.test(clean)) { success = false; }
-      else {
-        if (cfg.to === 'decimal') {
-          let total = 0;
-          for (let i = 0; i < clean.length; i++) {
-            const d = parseInt(clean[i], 10);
-            const power = clean.length - 1 - i;
-            const val = d * Math.pow(8, power);
-            total += val;
-            st.push({ digit: d, power, termValue: val, runningSum: total });
-          }
-        } else if (cfg.to === 'binary') {
-          st = clean.split('').map(d => ({ digit: d, binary: octMap[d] }));
-        } else if (cfg.to === 'hex') {
-          let binStr = clean.split('').map(d => octMap[d]).join('');
-          while (binStr.length % 4 !== 0) binStr = '0' + binStr;
-          for (let i = 0; i < binStr.length; i += 4) {
-            const nib = binStr.substr(i, 4);
-            const val = parseInt(nib, 2);
-            st.push({ group: nib, out: val.toString(16).toUpperCase() });
+
+    // --- FRACTIONAL PART CONVERSION (limited to 5 steps) ---
+    if (hasFractionalPart && parts.fracPart.length > 0) {
+      if (cfg.from === 'decimal') {
+        let frac = parseFloat('0.' + parts.fracPart);
+        const base = cfg.base;
+        let maxIter = 5;
+        let count = 0;
+        while (frac > 0 && count < maxIter) {
+          frac = frac * base;
+          let digit = Math.floor(frac);
+          frac = frac - digit;
+          let hexChar = base === 16 ? toHexChar(digit) : digit.toString();
+          fracSteps.push({ 
+            step: count + 1,
+            digit: digit,
+            hexChar: hexChar,
+            display: `× ${base} → ${digit} (remainder: ${frac.toFixed(4)})`
+          });
+          count++;
+        }
+      } else if (cfg.from === 'binary' && cfg.to === 'decimal') {
+        let total = 0;
+        const maxSteps = Math.min(parts.fracPart.length, 5);
+        for (let i = 0; i < maxSteps; i++) {
+          const bit = parseInt(parts.fracPart[i], 10);
+          const power = -(i + 1);
+          const val = bit * Math.pow(2, power);
+          total += val;
+          fracSteps.push({ 
+            bit: bit, 
+            power: power, 
+            stepVal: val, 
+            runningTotal: total,
+            display: `${bit} × 2<sup>${power}</sup> = ${val}`
+          });
+        }
+      } else if (cfg.from === 'octal' && cfg.to === 'decimal') {
+        let total = 0;
+        const maxSteps = Math.min(parts.fracPart.length, 5);
+        for (let i = 0; i < maxSteps; i++) {
+          const d = parseInt(parts.fracPart[i], 10);
+          const power = -(i + 1);
+          const val = d * Math.pow(8, power);
+          total += val;
+          fracSteps.push({ 
+            digit: d, 
+            power: power, 
+            termValue: val, 
+            runningSum: total,
+            display: `${d} × 8<sup>${power}</sup> = ${val}`
+          });
+        }
+      } else if (cfg.from === 'hex' && cfg.to === 'decimal') {
+        let total = 0;
+        const maxSteps = Math.min(parts.fracPart.length, 5);
+        for (let i = 0; i < maxSteps; i++) {
+          const ch = parts.fracPart[i];
+          const d = parseInt(ch, 16);
+          const power = -(i + 1);
+          const val = d * Math.pow(16, power);
+          total += val;
+          fracSteps.push({ 
+            char: ch, 
+            decVal: d, 
+            power: power, 
+            product: val, 
+            runningTotal: total,
+            display: `${ch} × 16<sup>${power}</sup> = ${val}`
+          });
+        }
+      } else if (cfg.from === 'binary' && cfg.to === 'octal') {
+        let fracStr = parts.fracPart;
+        while (fracStr.length % 3 !== 0) fracStr += '0';
+        const maxSteps = Math.min(Math.floor(fracStr.length / 3), 5);
+        for (let i = 0; i < maxSteps; i++) {
+          const group = fracStr.substr(i*3, 3);
+          const val = parseInt(group, 2);
+          fracSteps.push({ 
+            group: group, 
+            out: val.toString(8),
+            display: `${group}₂ = ${val}₁₀ = ${val.toString(8)}₈`
+          });
+        }
+      } else if (cfg.from === 'binary' && cfg.to === 'hex') {
+        let fracStr = parts.fracPart;
+        while (fracStr.length % 4 !== 0) fracStr += '0';
+        const maxSteps = Math.min(Math.floor(fracStr.length / 4), 5);
+        for (let i = 0; i < maxSteps; i++) {
+          const group = fracStr.substr(i*4, 4);
+          const val = parseInt(group, 2);
+          fracSteps.push({ 
+            group: group, 
+            out: val.toString(16).toUpperCase(),
+            display: `${group}₂ = ${val}₁₀ = ${val.toString(16).toUpperCase()}₁₆`
+          });
+        }
+      } else if (cfg.from === 'octal' && cfg.to === 'binary') {
+        const maxSteps = Math.min(parts.fracPart.length, 5);
+        const digits = parts.fracPart.split('').slice(0, maxSteps);
+        fracSteps = digits.map(d => ({ 
+          digit: d, 
+          binary: octMap[d],
+          display: `${d}₈ = ${octMap[d]}₂`
+        }));
+      } else if (cfg.from === 'octal' && cfg.to === 'hex') {
+        const digits = parts.fracPart.split('').slice(0, 5);
+        if (digits.length > 0) {
+          const binaryParts = digits.map(d => `${d}→${octMap[d]}`);
+          if (intermediateDetail) intermediateDetail += ' . ' + binaryParts.join('  ');
+          else intermediateDetail = binaryParts.join('  ');
+          
+          let binStr = digits.map(d => octMap[d]).join('');
+          if (intermediateBinary) intermediateBinary += '.' + binStr;
+          else intermediateBinary = binStr;
+          
+          while (binStr.length % 4 !== 0) binStr += '0';
+          let idx = 0;
+          for (let i = 0; i < binStr.length && i < 20; i += 4) {
+            const group = binStr.substr(i, 4);
+            const val = parseInt(group, 2);
+            const octDigit = digits[idx] || '';
+            fracSteps.push({ 
+              group: group, 
+              out: val.toString(16).toUpperCase(),
+              octDigit: octDigit,
+              display: `${group}₂ = ${val}₁₀ = ${val.toString(16).toUpperCase()}₁₆`
+            });
+            idx++;
           }
         }
-      }
-    }
-    else if (cfg.from === 'hex') {
-      const clean = raw.toUpperCase().replace(/^0+/, '') || '0';
-      if (!/^[0-9A-F]+$/.test(clean)) { success = false; }
-      else {
-        if (cfg.to === 'decimal') {
-          let total = 0;
-          for (let i = 0; i < clean.length; i++) {
-            const ch = clean[clean.length - 1 - i];
-            const d = parseInt(ch, 16);
-            const val = d * Math.pow(16, i);
-            total += val;
-            st.push({ char: ch, decVal: d, power: i, product: val, runningTotal: total });
-          }
-        } else if (cfg.to === 'binary') {
-          st = clean.split('').map(ch => ({ digit: ch, binary: hexMap[ch] || '0000' }));
-        } else if (cfg.to === 'octal') {
-          let binStr = clean.split('').map(ch => hexMap[ch] || '0000').join('');
-          while (binStr.length % 3 !== 0) binStr = '0' + binStr;
-          for (let i = 0; i < binStr.length; i += 3) {
-            const trip = binStr.substr(i, 3);
-            const val = parseInt(trip, 2);
-            st.push({ group: trip, out: val.toString(8) });
+      } else if (cfg.from === 'hex' && cfg.to === 'binary') {
+        const maxSteps = Math.min(parts.fracPart.length, 5);
+        const chars = parts.fracPart.split('').slice(0, maxSteps);
+        fracSteps = chars.map(ch => ({ 
+          digit: ch, 
+          binary: hexMap[ch] || '0000',
+          display: `${ch}₁₆ = ${hexMap[ch] || '0000'}₂`
+        }));
+      } else if (cfg.from === 'hex' && cfg.to === 'octal') {
+        const chars = parts.fracPart.split('').slice(0, 5);
+        if (chars.length > 0) {
+          const binaryParts = chars.map(ch => `${ch}→${hexMap[ch] || '0000'}`);
+          if (intermediateDetail) intermediateDetail += ' . ' + binaryParts.join('  ');
+          else intermediateDetail = binaryParts.join('  ');
+          
+          let binStr = chars.map(ch => hexMap[ch] || '0000').join('');
+          if (intermediateBinary) intermediateBinary += '.' + binStr;
+          else intermediateBinary = binStr;
+          
+          while (binStr.length % 3 !== 0) binStr += '0';
+          let idx = 0;
+          for (let i = 0; i < binStr.length && i < 15; i += 3) {
+            const group = binStr.substr(i, 3);
+            const val = parseInt(group, 2);
+            const hexDigit = chars[idx] || '';
+            fracSteps.push({ 
+              group: group, 
+              out: val.toString(8),
+              hexDigit: hexDigit,
+              display: `${group}₂ = ${val}₁₀ = ${val.toString(8)}₈`
+            });
+            idx++;
           }
         }
       }
     }
 
-    if (!success || st.length === 0) {
+    if (!success || (intSteps.length === 0 && fracSteps.length === 0)) {
       visArea.innerHTML = `<div class="empty-hint">⚠️ invalid input</div>`;
       initialized = false;
       return false;
     }
 
-    steps = st;
+    steps = intSteps;
+    fractionalSteps = fracSteps;
     stepIdx = 0;
     initialized = true;
     renderSkeleton(cfg);
@@ -569,52 +1095,130 @@
 
   function renderSkeleton(cfg) {
     visArea.innerHTML = '';
-    const showGroup = (cfg.from === 'binary' && (cfg.to === 'octal' || cfg.to === 'hex')) ||
-                      (cfg.from === 'octal' && cfg.to === 'hex') ||
-                      (cfg.from === 'hex' && cfg.to === 'octal');
-    if (showGroup) {
-      const gbox = document.createElement('div');
-      gbox.className = 'grouping-box';
-      gbox.id = 'groupBox';
-      let label = '';
-      if (cfg.from === 'binary') label = cfg.to === 'octal' ? '3-bit' : '4-bit';
-      else if (cfg.from === 'octal' && cfg.to === 'hex') label = '4-bit (binary)';
-      else if (cfg.from === 'hex' && cfg.to === 'octal') label = '3-bit (binary)';
-      const groups = steps.map(s => s.group).join(', ');
-      gbox.innerHTML = `${label} grouping: ${groups}`;
-      visArea.appendChild(gbox);
-    }
-
-    const wrap = document.createElement('div');
-    wrap.className = 'bits-wrap';
-    wrap.id = 'stepWrap';
-    visArea.appendChild(wrap);
+    
+    const container = document.createElement('div');
+    container.className = 'ladder-container';
+    container.id = 'ladderContainer';
+    visArea.appendChild(container);
 
     const isLadder = (cfg.from === 'decimal') ||
                      (cfg.from === 'binary' && cfg.to === 'decimal') ||
                      (cfg.from === 'octal' && cfg.to === 'decimal') ||
                      (cfg.from === 'hex' && cfg.to === 'decimal');
 
+    const isGrouping = (cfg.from === 'binary' && (cfg.to === 'octal' || cfg.to === 'hex')) ||
+                       (cfg.from === 'octal' && (cfg.to === 'binary' || cfg.to === 'hex')) ||
+                       (cfg.from === 'hex' && (cfg.to === 'binary' || cfg.to === 'octal'));
+
+    // Show intermediate for octal↔hex conversions
+    const showIntermediate = (cfg.from === 'octal' && cfg.to === 'hex') || 
+                            (cfg.from === 'hex' && cfg.to === 'octal');
+
     if (isLadder) {
-      wrap.className = 'ladder-wrap';
       steps.forEach((s, i) => {
         const row = document.createElement('div');
         row.className = 'ladder-row';
         row.id = `lrow-${i}`;
+        
         if (cfg.from === 'decimal') {
-          const rem = s.remainder !== undefined ? (cfg.base === 16 ? (s.remainder >= 10 ? s.hexChar : s.remainder) : s.remainder) : '';
-          row.innerHTML = `<span>${cfg.base}</span> <span>${s.num}</span> <span>${i === 0 ? '' : rem}</span>`;
-        } else if (cfg.from === 'binary' && cfg.to === 'decimal') {
-          row.innerHTML = `<span>${s.bit} × 2<sup>${s.power}</sup> = ${s.stepVal}</span> <span>sum: ${s.runningTotal}</span>`;
-        } else if (cfg.from === 'octal' && cfg.to === 'decimal') {
-          row.innerHTML = `<span>${s.digit} × 8<sup>${s.power}</sup> = ${s.termValue}</span> <span>sum: ${s.runningSum}</span>`;
-        } else if (cfg.from === 'hex' && cfg.to === 'decimal') {
-          row.innerHTML = `<span>'${s.char}' × 16<sup>${s.power}</sup> = ${s.product}</span> <span>sum: ${s.runningTotal}</span>`;
+          let remainderDisplay = '';
+          if (i === 0) {
+            remainderDisplay = '';
+          } else {
+            const prevRemainder = steps[i-1].remainder;
+            const prevHexChar = cfg.base === 16 ? steps[i-1].hexChar : steps[i-1].remainder;
+            const colorClass = getRemainderColor(prevRemainder);
+            remainderDisplay = prevRemainder === 0 ? '0' : `<span class="${colorClass}">${prevHexChar}</span>`;
+          }
+          row.innerHTML = `
+            <span class="divisor">${cfg.base}</span>
+            <span class="number-cell">${s.num}</span>
+            <span class="remainder-cell">${remainderDisplay}</span>
+          `;
+        } else {
+          row.innerHTML = `<span>${s.display}</span> <span style="color:#49b882;">sum: ${s.runningTotal || s.runningSum || ''}</span>`;
         }
-        wrap.appendChild(row);
+        container.appendChild(row);
       });
-    } else {
+
+      if (cfg.from === 'decimal' && steps.length > 0) {
+        const finalRow = document.createElement('div');
+        finalRow.className = 'ladder-row';
+        finalRow.id = `lrow-${steps.length}`;
+        const lastStep = steps[steps.length - 1];
+        const lastRemainder = cfg.base === 16 ? lastStep.hexChar : lastStep.remainder;
+        const colorClass = getRemainderColor(lastStep.remainder);
+        finalRow.innerHTML = `
+          <span class="divisor">${cfg.base}</span>
+          <span class="number-cell">0</span>
+          <span class="remainder-cell"><span class="${colorClass}">${lastRemainder}</span></span>
+        `;
+        container.appendChild(finalRow);
+      }
+
+    } else if (isGrouping) {
+      // Show grouping rule box for octal↔hex
+      if (showIntermediate) {
+        const ruleBox = document.createElement('div');
+        ruleBox.className = 'grouping-rule-box';
+        ruleBox.id = 'ruleBox';
+        if (cfg.from === 'octal' && cfg.to === 'hex') {
+          ruleBox.innerHTML = `
+            <div class="rule-label">📐 Grouping into 4 bits (for Hex)</div>
+            <div class="rule-detail">Each octal digit → 3-bit binary → Combine → Group into 4-bit → Convert to Hex</div>
+          `;
+        } else if (cfg.from === 'hex' && cfg.to === 'octal') {
+          ruleBox.innerHTML = `
+            <div class="rule-label">📐 Grouping into 3 bits (for Octal)</div>
+            <div class="rule-detail">Each hex digit → 4-bit binary → Combine → Group into 3-bit → Convert to Octal</div>
+          `;
+        }
+        container.appendChild(ruleBox);
+      }
+
+      // Show intermediate detail for octal↔hex
+      if (showIntermediate && intermediateDetail) {
+        const interDetailBox = document.createElement('div');
+        interDetailBox.className = 'intermediate-detail-box';
+        interDetailBox.id = 'intermediateDetailBox';
+        interDetailBox.innerHTML = `
+          <div class="label">⬇️ Digit-wise Binary Conversion</div>
+          <div class="detail-value">${intermediateDetail}</div>
+        `;
+        container.appendChild(interDetailBox);
+      }
+
+      // Show full intermediate binary for octal↔hex
+      if (showIntermediate && intermediateBinary) {
+        const interBox = document.createElement('div');
+        interBox.className = 'intermediate-step-box';
+        interBox.id = 'intermediateBox';
+        interBox.innerHTML = `
+          <div class="label">⬇️ Combined Binary</div>
+          <div class="binary-value">${intermediateBinary}</div>
+        `;
+        container.appendChild(interBox);
+      }
+
+      const gbox = document.createElement('div');
+      gbox.className = 'grouping-box';
+      gbox.id = 'groupBox';
+      let label = '';
+      if (cfg.from === 'binary' && cfg.to === 'octal') label = '3-bit grouping';
+      else if (cfg.from === 'binary' && cfg.to === 'hex') label = '4-bit grouping';
+      else if (cfg.from === 'octal' && cfg.to === 'binary') label = 'Octal digits → 3-bit binary';
+      else if (cfg.from === 'octal' && cfg.to === 'hex') label = '4-bit grouping for Hex';
+      else if (cfg.from === 'hex' && cfg.to === 'binary') label = 'Hex digits → 4-bit binary';
+      else if (cfg.from === 'hex' && cfg.to === 'octal') label = '3-bit grouping for Octal';
+      
+      const groups = steps.map(s => s.group || s.binary || s.digit).join(', ');
+      gbox.innerHTML = `${label}: ${groups}`;
+      container.appendChild(gbox);
+
+      const wrap = document.createElement('div');
       wrap.className = 'groups-wrap';
+      container.appendChild(wrap);
+
       steps.forEach((s, i) => {
         const card = document.createElement('div');
         card.className = 'group-card';
@@ -627,71 +1231,305 @@
         } else if (cfg.from === 'hex' && cfg.to === 'binary') {
           top = s.digit;
           bottom = s.binary;
-        } else {
-          top = s.group || s.digit;
-          bottom = s.out || s.binary;
+        } else if (cfg.from === 'binary' && (cfg.to === 'octal' || cfg.to === 'hex')) {
+          top = s.group;
+          bottom = s.out;
+        } else if (cfg.from === 'octal' && cfg.to === 'hex') {
+          top = s.group;
+          bottom = s.out;
+        } else if (cfg.from === 'hex' && cfg.to === 'octal') {
+          top = s.group;
+          bottom = s.out;
         }
-        card.innerHTML = `<div>${top}</div><div class="arrow-indicator">↓</div><div>${bottom}</div>`;
+        card.innerHTML = `
+          <div class="top-value">${top}</div>
+          <div class="arrow-indicator">↓</div>
+          <div class="bottom-value">${bottom}</div>
+          <div class="step-detail">${s.display || ''}</div>
+        `;
         wrap.appendChild(card);
       });
+    }
+
+    if (fractionalSteps.length > 0) {
+      const divider = document.createElement('div');
+      divider.className = 'section-divider';
+      divider.id = 'fracDivider';
+      divider.textContent = '✦ Fractional Part ✦';
+      container.appendChild(divider);
+
+      // Show fractional grouping rule for octal↔hex
+      if (showIntermediate && fractionalSteps.length > 0) {
+        const ruleBox = document.createElement('div');
+        ruleBox.className = 'grouping-rule-box';
+        ruleBox.id = 'fracRuleBox';
+        if (cfg.from === 'octal' && cfg.to === 'hex') {
+          ruleBox.innerHTML = `
+            <div class="rule-label">📐 Grouping into 4 bits (Fractional)</div>
+            <div class="rule-detail">Each octal digit → 3-bit binary → Combine → Group into 4-bit → Convert to Hex</div>
+          `;
+        } else if (cfg.from === 'hex' && cfg.to === 'octal') {
+          ruleBox.innerHTML = `
+            <div class="rule-label">📐 Grouping into 3 bits (Fractional)</div>
+            <div class="rule-detail">Each hex digit → 4-bit binary → Combine → Group into 3-bit → Convert to Octal</div>
+          `;
+        }
+        container.appendChild(ruleBox);
+      }
+
+      // Show fractional intermediate detail for octal↔hex
+      if (showIntermediate && intermediateDetail && intermediateDetail.includes('.')) {
+        const interDetailBox = document.createElement('div');
+        interDetailBox.className = 'intermediate-detail-box';
+        interDetailBox.id = 'fracIntermediateDetailBox';
+        interDetailBox.innerHTML = `
+          <div class="label">⬇️ Digit-wise Binary (Fractional)</div>
+          <div class="detail-value">${intermediateDetail}</div>
+        `;
+        container.appendChild(interDetailBox);
+      }
+
+      if (showIntermediate && intermediateBinary && intermediateBinary.includes('.')) {
+        const interBox = document.createElement('div');
+        interBox.className = 'intermediate-step-box';
+        interBox.id = 'fracIntermediateBox';
+        interBox.innerHTML = `
+          <div class="label">⬇️ Combined Binary (Fractional)</div>
+          <div class="binary-value">${intermediateBinary}</div>
+        `;
+        container.appendChild(interBox);
+      }
+
+      if (isLadder) {
+        fractionalSteps.forEach((s, i) => {
+          const row = document.createElement('div');
+          row.className = 'ladder-row fraction-row';
+          row.id = `frow-${i}`;
+          let displayText = s.display || '';
+          let sumText = '';
+          if (s.runningTotal !== undefined) sumText = `sum: ${s.runningTotal}`;
+          else if (s.runningSum !== undefined) sumText = `sum: ${s.runningSum}`;
+          row.innerHTML = `<span>${displayText}</span> ${sumText ? `<span style="color:#49b882;">${sumText}</span>` : ''}`;
+          container.appendChild(row);
+        });
+      } else if (isGrouping) {
+        const fracWrap = document.createElement('div');
+        fracWrap.className = 'groups-wrap';
+        container.appendChild(fracWrap);
+
+        fractionalSteps.forEach((s, i) => {
+          const card = document.createElement('div');
+          card.className = 'group-card';
+          card.id = `fgcard-${i}`;
+          let top = s.group || s.digit || s.binary;
+          let bottom = s.out || s.binary;
+          if (cfg.from === 'octal' && cfg.to === 'binary') {
+            top = s.digit + '<sub>8</sub>';
+            bottom = s.binary;
+          } else if (cfg.from === 'hex' && cfg.to === 'binary') {
+            top = s.digit;
+            bottom = s.binary;
+          } else {
+            top = s.group || s.digit;
+            bottom = s.out || s.binary;
+          }
+          card.innerHTML = `
+            <div class="top-value">${top}</div>
+            <div class="arrow-indicator">↓</div>
+            <div class="bottom-value">${bottom}</div>
+            <div class="step-detail">${s.display || ''}</div>
+          `;
+          fracWrap.appendChild(card);
+        });
+      }
     }
   }
 
   function validateInput(raw, cfg) {
     if (!raw) return false;
-    if (cfg.from === 'decimal') return /^[0-9]+$/.test(raw);
-    if (cfg.from === 'binary') return /^[01]+$/.test(raw);
-    if (cfg.from === 'octal') return /^[0-7]+$/.test(raw);
-    if (cfg.from === 'hex') return /^[0-9A-Fa-f]+$/.test(raw);
-    return false;
+    const parts = raw.split('.');
+    if (parts.length > 2) return false;
+    const intPart = parts[0] || '0';
+    const fracPart = parts.length > 1 ? parts[1] : '';
+    
+    if (cfg.from === 'decimal') {
+      if (intPart && !/^[0-9]+$/.test(intPart)) return false;
+      if (fracPart && !/^[0-9]+$/.test(fracPart)) return false;
+    } else if (cfg.from === 'binary') {
+      if (intPart && !/^[01]+$/.test(intPart)) return false;
+      if (fracPart && !/^[01]+$/.test(fracPart)) return false;
+    } else if (cfg.from === 'octal') {
+      if (intPart && !/^[0-7]+$/.test(intPart)) return false;
+      if (fracPart && !/^[0-7]+$/.test(fracPart)) return false;
+    } else if (cfg.from === 'hex') {
+      if (intPart && !/^[0-9A-Fa-f]+$/.test(intPart)) return false;
+      if (fracPart && !/^[0-9A-Fa-f]+$/.test(fracPart)) return false;
+    }
+    return true;
+  }
+
+  function getTotalSteps() {
+    let total = steps.length;
+    const cfg = CONVERTERS.find(c => c.id === currentId);
+    
+    const showIntermediate = (cfg.from === 'octal' && cfg.to === 'hex') || 
+                            (cfg.from === 'hex' && cfg.to === 'octal');
+    
+    if (showIntermediate) {
+      if (intermediateDetail) total += 1; // detail box
+      if (intermediateBinary) total += 1; // combined binary box
+      total += 1; // rule box
+    }
+    
+    if (cfg.from === 'decimal' && steps.length > 0) {
+      total += 1;
+    }
+    
+    if (fractionalSteps.length > 0) {
+      total += fractionalSteps.length + 1;
+      if (showIntermediate) {
+        total += 1; // fractional rule box
+        if (intermediateDetail && intermediateDetail.includes('.')) total += 1;
+        if (intermediateBinary && intermediateBinary.includes('.')) total += 1;
+      }
+    }
+    
+    return total;
   }
 
   function animateNext() {
-    if (!initialized || steps.length === 0) return false;
-    const total = steps.length;
+    if (!initialized) return false;
+    
+    const cfg = CONVERTERS.find(c => c.id === currentId);
+    const showIntermediate = (cfg.from === 'octal' && cfg.to === 'hex') || 
+                            (cfg.from === 'hex' && cfg.to === 'octal');
+    const totalSteps = getTotalSteps();
 
     if (stepIdx > 0) {
-      const prev = document.querySelector(`#lrow-${stepIdx-1}, #gcard-${stepIdx-1}`);
+      const prev = document.querySelector(`#lrow-${stepIdx-1}, #gcard-${stepIdx-1}, #frow-${stepIdx - steps.length - 1}, #fgcard-${stepIdx - steps.length - 1}`);
       if (prev) prev.classList.remove('active');
     }
 
-    if (stepIdx < total) {
-      const el = document.querySelector(`#lrow-${stepIdx}, #gcard-${stepIdx}`);
-      if (el) { el.classList.add('visible', 'active'); }
-      const gbox = document.getElementById('groupBox');
-      if (gbox && stepIdx === 0) gbox.classList.add('visible');
+    if (stepIdx < totalSteps) {
+      let el;
+      let offset = 0;
+      
+      // Check for intermediate boxes
+      if (showIntermediate) {
+        // Rule box
+        if (stepIdx === 0) {
+          const ruleBox = document.getElementById('ruleBox');
+          if (ruleBox) ruleBox.classList.add('visible');
+          stepIdx++;
+          return true;
+        }
+        offset++;
+        
+        if (intermediateDetail && stepIdx === 1) {
+          const interDetailBox = document.getElementById('intermediateDetailBox');
+          if (interDetailBox) interDetailBox.classList.add('visible');
+          stepIdx++;
+          return true;
+        }
+        if (intermediateDetail) offset++;
+        
+        if (intermediateBinary && stepIdx === (intermediateDetail ? 2 : 1)) {
+          const interBox = document.getElementById('intermediateBox');
+          if (interBox) interBox.classList.add('visible');
+          stepIdx++;
+          return true;
+        }
+        if (intermediateBinary) offset++;
+      }
+      
+      if (stepIdx - offset < steps.length) {
+        el = document.querySelector(`#lrow-${stepIdx - offset}, #gcard-${stepIdx - offset}`);
+      } else if (stepIdx - offset === steps.length && cfg.from === 'decimal' && steps.length > 0) {
+        el = document.querySelector(`#lrow-${steps.length}`);
+      } else if (stepIdx - offset === steps.length || (stepIdx - offset === steps.length + 1 && cfg.from === 'decimal')) {
+        const divider = document.getElementById('fracDivider');
+        if (divider) divider.classList.add('visible');
+        stepIdx++;
+        return true;
+      } else if (showIntermediate && stepIdx - offset === steps.length + (cfg.from === 'decimal' ? 2 : 1) && fractionalSteps.length > 0) {
+        // Fractional rule box
+        const fracRuleBox = document.getElementById('fracRuleBox');
+        if (fracRuleBox) fracRuleBox.classList.add('visible');
+        stepIdx++;
+        return true;
+      } else if (showIntermediate && stepIdx - offset === steps.length + (cfg.from === 'decimal' ? 2 : 1) + 1 && fractionalSteps.length > 0) {
+        // Check for fractional intermediate boxes
+        let fracOffset = 0;
+        if (intermediateDetail && intermediateDetail.includes('.')) {
+          const fracDetailBox = document.getElementById('fracIntermediateDetailBox');
+          if (fracDetailBox) fracDetailBox.classList.add('visible');
+          stepIdx++;
+          return true;
+        }
+        if (intermediateDetail && intermediateDetail.includes('.')) fracOffset++;
+        if (intermediateBinary && intermediateBinary.includes('.')) {
+          const fracInterBox = document.getElementById('fracIntermediateBox');
+          if (fracInterBox) fracInterBox.classList.add('visible');
+          stepIdx++;
+          return true;
+        }
+        if (intermediateBinary && intermediateBinary.includes('.')) fracOffset++;
+        
+        const fracIdx = stepIdx - offset - steps.length - (cfg.from === 'decimal' ? 2 : 1) - 1 - fracOffset;
+        el = document.querySelector(`#frow-${fracIdx}, #fgcard-${fracIdx}`);
+      } else {
+        let fracOffset = 0;
+        if (intermediateDetail && intermediateDetail.includes('.')) fracOffset++;
+        if (intermediateBinary && intermediateBinary.includes('.')) fracOffset++;
+        const baseOffset = showIntermediate ? 1 : 0;
+        const fracIdx = stepIdx - offset - steps.length - (cfg.from === 'decimal' ? 2 : 1) - baseOffset - fracOffset;
+        el = document.querySelector(`#frow-${fracIdx}, #fgcard-${fracIdx}`);
+      }
+      
+      if (el) { 
+        el.classList.add('visible', 'active'); 
+      }
       stepIdx++;
       return true;
     } else {
       stopAnimation();
-      const cfg = CONVERTERS.find(c => c.id === currentId);
       let finalVal = '';
       const st = steps;
+      const fst = fractionalSteps;
+      
       if (cfg.from === 'decimal') {
-        const out = st.map(s => cfg.base === 16 ? s.hexChar : s.remainder).reverse().join('');
-        finalVal = `${inputRaw} = (${out})<sub>${cfg.base}</sub>`;
+        const intOut = st.map(s => cfg.base === 16 ? s.hexChar : s.remainder).reverse().join('');
+        let fracOut = '';
+        if (fst.length > 0) {
+          fracOut = fst.map(s => cfg.base === 16 ? s.hexChar : s.digit).join('');
+        }
+        finalVal = `${inputRaw} = (${intOut}${fracOut ? '.' + fracOut : ''})<sub>${cfg.base}</sub>`;
       } else if (cfg.from === 'binary' && cfg.to === 'decimal') {
-        finalVal = `(${inputRaw})<sub>2</sub> = (${st[st.length-1].runningTotal})<sub>10</sub>`;
-      } else if (cfg.from === 'binary' && (cfg.to === 'octal' || cfg.to === 'hex')) {
-        const out = st.map(s => s.out).join('');
-        finalVal = `(${inputRaw})<sub>2</sub> = (${out})<sub>${cfg.to === 'octal' ? 8 : 16}</sub>`;
+        const intVal = st[st.length-1]?.runningTotal || 0;
+        let fracVal = 0;
+        if (fst.length > 0) fracVal = fst[fst.length-1]?.runningTotal || 0;
+        finalVal = `(${inputRaw})<sub>2</sub> = (${(intVal + fracVal).toFixed(10).replace(/\.?0+$/, '')})<sub>10</sub>`;
       } else if (cfg.from === 'octal' && cfg.to === 'decimal') {
-        finalVal = `(${inputRaw})<sub>8</sub> = (${st[st.length-1].runningSum})<sub>10</sub>`;
-      } else if (cfg.from === 'octal' && cfg.to === 'binary') {
-        const out = st.map(s => s.binary).join('');
-        finalVal = `(${inputRaw})<sub>8</sub> = (${out})<sub>2</sub>`;
-      } else if (cfg.from === 'octal' && cfg.to === 'hex') {
-        const out = st.map(s => s.out).join('');
-        finalVal = `(${inputRaw})<sub>8</sub> = (${out})<sub>16</sub>`;
+        const intVal = st[st.length-1]?.runningSum || 0;
+        let fracVal = 0;
+        if (fst.length > 0) fracVal = fst[fst.length-1]?.runningSum || 0;
+        finalVal = `(${inputRaw})<sub>8</sub> = (${(intVal + fracVal).toFixed(10).replace(/\.?0+$/, '')})<sub>10</sub>`;
       } else if (cfg.from === 'hex' && cfg.to === 'decimal') {
-        finalVal = `(${inputRaw})<sub>16</sub> = (${st[st.length-1].runningTotal})<sub>10</sub>`;
-      } else if (cfg.from === 'hex' && cfg.to === 'binary') {
-        const out = st.map(s => s.binary).join(' ');
-        finalVal = `(${inputRaw})<sub>16</sub> = (${out})<sub>2</sub>`;
-      } else if (cfg.from === 'hex' && cfg.to === 'octal') {
-        const out = st.map(s => s.out).join('');
-        finalVal = `(${inputRaw})<sub>16</sub> = (${out})<sub>8</sub>`;
+        const intVal = st[st.length-1]?.runningTotal || 0;
+        let fracVal = 0;
+        if (fst.length > 0) fracVal = fst[fst.length-1]?.runningTotal || 0;
+        finalVal = `(${inputRaw})<sub>16</sub> = (${(intVal + fracVal).toFixed(10).replace(/\.?0+$/, '')})<sub>10</sub>`;
+      } else {
+        const intOut = st.map(s => s.out || s.binary).join('');
+        let fracOut = '';
+        if (fst.length > 0) {
+          fracOut = fst.map(s => s.out || s.binary).join('');
+        }
+        const targetBase = cfg.to === 'binary' ? 2 : (cfg.to === 'octal' ? 8 : 16);
+        const sourceBase = cfg.from === 'binary' ? 2 : (cfg.from === 'octal' ? 8 : 16);
+        finalVal = `(${inputRaw})<sub>${sourceBase}</sub> = (${intOut}${fracOut ? '.' + fracOut : ''})<sub>${targetBase}</sub>`;
       }
+      
       resultBox.innerHTML = finalVal;
       resultBox.classList.add('visible');
       startBtn.disabled = false;
@@ -706,7 +1544,8 @@
     if (!initialized) {
       if (!prepareVisualization()) return;
     }
-    if (stepIdx >= steps.length) resetAnimation();
+    const total = getTotalSteps();
+    if (stepIdx >= total) resetAnimation();
     running = true;
     startBtn.disabled = true;
     stepBtn.disabled = true;
@@ -727,7 +1566,8 @@
     if (!initialized) {
       if (!prepareVisualization()) return;
     }
-    if (stepIdx >= steps.length) resetAnimation();
+    const total = getTotalSteps();
+    if (stepIdx >= total) resetAnimation();
     mainInput.disabled = true;
     animateNext();
   }
@@ -757,8 +1597,9 @@
   stopBtn.addEventListener('click', stopAnimation);
   resetBtn.addEventListener('click', resetAnimation);
 
-  // Initialize with default converter
   switchConverter('dec2bin');
 </script>
+<BR><CENTER> &COPY; COPYRIGHT 2026. The site Created and Maintained by DREAM LOGICS @9745110065
+<BR><BR></CENTER>
 </body>
 </html>
