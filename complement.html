@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Binary Arithmetic · Manojkumar S L</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #0b1a14;
+      color: #eef5ee;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-wrapper {
+      max-width: 950px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #b7e4c7, #a8d5ba);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header .sub {
+      font-size: 1.1rem;
+      color: #b0cfc0;
+      border-top: 1px solid #2b4d3a;
+      padding-top: 8px;
+      display: inline-block;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .header .sub span {
+      background: #1b3327;
+      padding: 3px 20px;
+      border-radius: 40px;
+    }
+
+    .menu-bar {
+      background: #13261d;
+      border-radius: 60px;
+      padding: 6px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 28px;
+      border: 1px solid #2a5a3e;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+    }
+    .menu-btn {
+      background: transparent;
+      border: none;
+      color: #b3dac6;
+      padding: 8px 14px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: 0.2s;
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+    }
+    .menu-btn:hover {
+      background: #204433;
+      color: #e6f5ed;
+    }
+    .menu-btn.active {
+      background: #2e8f5a;
+      color: white;
+      box-shadow: 0 2px 10px #2e8f5a66;
+    }
+
+    .converter-card {
+      background: #1b3327;
+      border-radius: 28px;
+      padding: 24px 24px 28px;
+      border: 1px solid #2b5a3e;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+      display: none;
+      flex-direction: column;
+    }
+    .converter-card.active {
+      display: flex;
+    }
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+      border-bottom: 2px dashed #2f5e42;
+      padding-bottom: 12px;
+    }
+    .card-header h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #c7f0d6;
+    }
+    .card-header .badge {
+      background: #1d3d2b;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: #9dc0ae;
+      margin-left: auto;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .input-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .input-row .input-group {
+      flex: 1;
+      min-width: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .input-row .input-group label {
+      font-size: 0.8rem;
+      color: #8ab4a0;
+      font-weight: 500;
+    }
+    .input-row .input-group input {
+      padding: 10px 14px;
+      border-radius: 50px;
+      border: none;
+      background: #0b1f16;
+      color: #e2f0e8;
+      font-size: 1rem;
+      font-weight: 500;
+      outline: 1px solid #2f6a48;
+      transition: 0.2s;
+      width: 100%;
+    }
+    .input-row .input-group input:focus {
+      outline: 2px solid #49b882;
+      background: #122b1f;
+    }
+    .input-row .input-group input:disabled {
+      opacity: 0.5;
+      filter: grayscale(0.4);
+    }
+    .input-row .input-group select {
+      padding: 10px 14px;
+      border-radius: 50px;
+      border: none;
+      background: #0b1f16;
+      color: #e2f0e8;
+      font-size: 0.9rem;
+      font-weight: 500;
+      outline: 1px solid #2f6a48;
+      cursor: pointer;
+    }
+    .input-row .input-group select:focus {
+      outline: 2px solid #49b882;
+    }
+    .input-row .input-group .radio-group {
+      display: flex;
+      gap: 12px;
+      padding: 4px 0;
+    }
+    .input-row .input-group .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #b8dac8;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .input-row .input-group .radio-group input[type="radio"] {
+      width: 16px;
+      height: 16px;
+      accent-color: #49b882;
+      cursor: pointer;
+    }
+    .input-row .hint {
+      color: #6a9a7e;
+      font-size: 0.8rem;
+      padding: 12px 8px;
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 6px 0 4px;
+    }
+    .btn {
+      flex: 1;
+      min-width: 70px;
+      padding: 12px 6px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: #2f5a42;
+      color: #e6f5ed;
+      transition: 0.15s;
+      letter-spacing: 0.3px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+    .btn:active { transform: scale(0.96); }
+    .btn:disabled { opacity: 0.35; filter: grayscale(0.5); pointer-events: none; }
+    .btn-start { background: #2b8f5a; color: white; }
+    .btn-step { background: #1f7a8c; color: white; }
+    .btn-stop { background: #b13e4b; color: white; }
+    .btn-reset { background: #b97c3a; color: white; }
+
+    .speed-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #b8dac8;
+      margin-top: 4px;
+    }
+    .speed-row input {
+      flex: 1;
+      accent-color: #49b882;
+    }
+
+    .vis-area {
+      background: #10261c;
+      border-radius: 22px;
+      padding: 22px 16px;
+      margin-top: 20px;
+      min-height: 200px;
+      border: 1px solid #204432;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.2s;
+      position: relative;
+    }
+    .vis-area .empty-hint {
+      color: #5f8673;
+      font-size: 1rem;
+      padding: 28px 0;
+    }
+
+    .ladder-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      position: relative;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      background: #162b1f;
+      padding: 10px 18px;
+      border-radius: 40px;
+      border-left: 5px solid #dd6b8a;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      width: 100%;
+      font-size: 1rem;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .step-row.visible {
+      opacity: 1;
+    }
+    .step-row.active {
+      border-left-color: #f7c948;
+      background: #1f3d2c;
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(247, 201, 72, 0.2);
+    }
+    .step-row .label {
+      color: #8ab4a0;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .step-row .value {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .step-row .highlight {
+      color: #f7c948;
+    }
+    .step-row .success {
+      color: #6bcb77;
+    }
+    .step-row .error {
+      color: #ff6b6b;
+    }
+    .step-row .info {
+      color: #4d96ff;
+    }
+
+    .result-box {
+      margin-top: 18px;
+      padding: 14px 24px;
+      border: 2px solid #dd6b8a;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      background: #1f2f24;
+      color: #f2eef0;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: 0.3s;
+      text-align: center;
+      width: 100%;
+      word-break: break-all;
+    }
+    .result-box.visible { opacity: 1; transform: scale(1); }
+
+    .footnote {
+      margin-top: 32px;
+      font-size: 0.85rem;
+      color: #56856b;
+      text-align: center;
+      border-top: 1px solid #1d3d2c;
+      padding-top: 18px;
+      width: 100%;
+    }
+
+    .input-group.hidden {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .menu-btn { font-size: 0.6rem; padding: 4px 8px; }
+      .card-header h2 { font-size: 1.1rem; }
+      .result-box { font-size: 1rem; }
+      .input-row .hint { font-size: 0.7rem; padding: 8px 4px; }
+      .step-row { font-size: 0.85rem; padding: 8px 12px; gap: 8px; }
+      .input-row .input-group { min-width: 100px; }
+      .input-row .input-group .radio-group label { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="main-wrapper">
+  <div class="header">
+    <h1>⚡ Binary Arithmetic & Signed Representations</h1>
+    <div class="sub"><span>by MANOJKUMAR S L</span></div>
+  </div>
+
+  <div class="menu-bar" id="menuBar"></div>
+
+  <div class="converter-card active" id="converterCard">
+    <div class="card-header">
+      <h2 id="cardTitle">Signed Magnitude</h2>
+      <span class="badge" id="cardBadge">sign-mag</span>
+    </div>
+    <div class="ctrl-group">
+      <div class="input-row" id="inputRow">
+        <div class="input-group" id="inputGroup1">
+          <label id="label1">Enter Number:</label>
+          <input type="text" id="input1" placeholder="e.g. -25 or 42" />
+          <div class="radio-group">
+            <label><input type="radio" name="mode1" value="decimal" checked /> Decimal</label>
+            <label><input type="radio" name="mode1" value="binary" /> Binary</label>
+          </div>
+        </div>
+        <div class="input-group hidden" id="inputGroup2">
+          <label id="label2">Enter Second Number:</label>
+          <input type="text" id="input2" placeholder="e.g. 42" />
+          <div class="radio-group">
+            <label><input type="radio" name="mode2" value="decimal" checked /> Decimal</label>
+            <label><input type="radio" name="mode2" value="binary" /> Binary</label>
+          </div>
+        </div>
+        <div class="input-group" style="flex:0.5;min-width:120px;">
+          <label>Bit Width:</label>
+          <select id="bitWidth">
+            <option value="4">4-bit</option>
+            <option value="8" selected>8-bit</option>
+            <option value="16">16-bit</option>
+          </select>
+        </div>
+        <div class="input-group hidden" id="compSelectGroup" style="flex:0.7;min-width:140px;">
+          <label>Complement Method:</label>
+          <select id="compMethod">
+            <option value="twos">2's Complement</option>
+            <option value="ones">1's Complement</option>
+          </select>
+        </div>
+        <span class="hint" id="inputHint">💡 Select Decimal or Binary mode</span>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-start" id="startBtn">▶ Start</button>
+        <button class="btn btn-step" id="stepBtn">⏭ Step</button>
+        <button class="btn btn-stop" id="stopBtn" disabled>⏹ Stop</button>
+        <button class="btn btn-reset" id="resetBtn">↺ Reset</button>
+      </div>
+      <div class="speed-row">
+        <span>Speed</span>
+        <input type="range" id="speedRange" min="200" max="2000" value="1000" step="100" />
+        <span id="speedLabel">1.0s</span>
+      </div>
+    </div>
+    <div class="vis-area" id="visArea">
+      <div class="empty-hint">⏳ select a conversion &amp; enter value</div>
+    </div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <div class="footnote">✦ step‑by‑step · visual · interactive ✦</div>
+</div>
+
+<script>
+  // ----- Menu Definitions -----
+  const MENU_ITEMS = [
+    { id: 'sign-mag', label: 'Signed Magnitude', desc: 'Sign + Magnitude' },
+    { id: 'ones-comp', label: "1's Complement", desc: 'Bitwise NOT' },
+    { id: 'twos-comp', label: "2's Complement", desc: '1\'s Comp + 1' },
+    { id: 'add-bin', label: 'Add Binary', desc: 'Binary Addition' },
+    { id: 'sub-bin', label: 'Subtract Binary', desc: 'Binary Subtraction' },
+    { id: 'sub-comp', label: 'Subtract using Complement', desc: 'Complement Method' }
+  ];
+
+  // ----- State -----
+  let currentId = 'sign-mag';
+  let timer = null;
+  let running = false;
+  let stepIdx = 0;
+  let steps = [];
+  let initialized = false;
+  let bitWidth = 8;
+
+  // DOM refs
+  const menuBar = document.getElementById('menuBar');
+  const cardTitle = document.getElementById('cardTitle');
+  const cardBadge = document.getElementById('cardBadge');
+  const input1 = document.getElementById('input1');
+  const input2 = document.getElementById('input2');
+  const inputGroup1 = document.getElementById('inputGroup1');
+  const inputGroup2 = document.getElementById('inputGroup2');
+  const label1 = document.getElementById('label1');
+  const label2 = document.getElementById('label2');
+  const compSelectGroup = document.getElementById('compSelectGroup');
+  const compMethod = document.getElementById('compMethod');
+  const bitWidthSelect = document.getElementById('bitWidth');
+  const inputHint = document.getElementById('inputHint');
+  const startBtn = document.getElementById('startBtn');
+  const stepBtn = document.getElementById('stepBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const speedRange = document.getElementById('speedRange');
+  const speedLabel = document.getElementById('speedLabel');
+  const visArea = document.getElementById('visArea');
+  const resultBox = document.getElementById('resultBox');
+
+  // ----- Build Menu -----
+  MENU_ITEMS.forEach(item => {
+    const btn = document.createElement('button');
+    btn.className = 'menu-btn' + (item.id === currentId ? ' active' : '');
+    btn.dataset.id = item.id;
+    btn.textContent = item.label;
+    btn.title = item.desc;
+    btn.addEventListener('click', () => switchMode(item.id));
+    menuBar.appendChild(btn);
+  });
+
+  // ----- Speed Control -----
+  speedRange.addEventListener('input', () => {
+    speedLabel.textContent = (speedRange.value / 1000).toFixed(1) + 's';
+  });
+
+  // ----- Bit Width Change -----
+  bitWidthSelect.addEventListener('change', () => {
+    bitWidth = parseInt(bitWidthSelect.value);
+  });
+
+  // ----- Switch Mode -----
+  function switchMode(id) {
+    if (id === currentId) return;
+    stopAnimation();
+    document.querySelectorAll('.menu-btn').forEach(b => b.classList.toggle('active', b.dataset.id === id));
+    currentId = id;
+    const item = MENU_ITEMS.find(i => i.id === id);
+    cardTitle.textContent = item.label;
+    cardBadge.textContent = item.desc;
+    
+    const isSingleInput = (id === 'sign-mag' || id === 'ones-comp' || id === 'twos-comp');
+    const isSubtractComp = (id === 'sub-comp');
+    
+    if (isSingleInput) {
+      inputGroup1.classList.remove('hidden');
+      inputGroup2.classList.add('hidden');
+      compSelectGroup.classList.add('hidden');
+      label1.textContent = 'Enter Number:';
+      input1.placeholder = 'e.g. -25 or 42';
+      inputHint.textContent = '💡 Select Decimal or Binary mode';
+    } else {
+      inputGroup1.classList.remove('hidden');
+      inputGroup2.classList.remove('hidden');
+      label1.textContent = 'First Number:';
+      label2.textContent = 'Second Number:';
+      input1.placeholder = 'e.g. 25 or 11001';
+      input2.placeholder = 'e.g. 42 or 101010';
+      inputHint.textContent = '💡 Select mode for each number';
+      
+      if (isSubtractComp) {
+        compSelectGroup.classList.remove('hidden');
+      } else {
+        compSelectGroup.classList.add('hidden');
+      }
+    }
+    
+    const defaults = {
+      'sign-mag': { v1: '-25', v2: '' },
+      'ones-comp': { v1: '-25', v2: '' },
+      'twos-comp': { v1: '-25', v2: '' },
+      'add-bin': { v1: '7', v2: '-6' },
+      'sub-bin': { v1: '42', v2: '25' },
+      'sub-comp': { v1: '42', v2: '25' }
+    };
+    input1.value = defaults[id]?.v1 || '';
+    input2.value = defaults[id]?.v2 || '';
+    
+    input1.disabled = false;
+    input2.disabled = false;
+    resetState();
+    visArea.innerHTML = `<div class="empty-hint">⏳ enter value(s) and press Start</div>`;
+    resultBox.classList.remove('visible');
+    resultBox.textContent = '';
+    startBtn.disabled = false;
+    stepBtn.disabled = false;
+    stopBtn.disabled = true;
+  }
+
+  function resetState() {
+    if (timer) { clearInterval(timer); timer = null; }
+    running = false;
+    stepIdx = 0;
+    steps = [];
+    initialized = false;
+  }
+
+  // ----- Helper Functions -----
+  function getInputMode(inputElement) {
+    const parent = inputElement.closest('.input-group');
+    const radios = parent.querySelectorAll('input[type="radio"]');
+    for (let radio of radios) {
+      if (radio.checked) return radio.value;
+    }
+    return 'decimal';
+  }
+
+  function parseNumberInput(val, mode) {
+    if (!val || val.trim() === '') {
+      throw new Error('Please enter a valid number');
+    }
+    val = val.trim();
+    
+    if (mode === 'binary') {
+      // Check for negative binary
+      let isNegative = false;
+      let binVal = val;
+      if (val.startsWith('-')) {
+        isNegative = true;
+        binVal = val.substring(1);
+      }
+      if (!/^[01]+$/.test(binVal)) {
+        throw new Error(`Invalid binary number: ${val}. Use only 0s and 1s.`);
+      }
+      const num = parseInt(binVal, 2);
+      if (isNaN(num)) throw new Error(`Invalid binary number: ${val}`);
+      return isNegative ? -num : num;
+    } else {
+      // Decimal mode
+      const num = parseInt(val);
+      if (isNaN(num)) throw new Error(`Invalid decimal number: ${val}`);
+      return num;
+    }
+  }
+
+  function toTwosComplement(bin) {
+    let inverted = bin.split('').map(b => b === '0' ? '1' : '0').join('');
+    let result = '';
+    let carry = 1;
+    for (let i = inverted.length - 1; i >= 0; i--) {
+      let sum = parseInt(inverted[i]) + carry;
+      if (sum === 2) {
+        result = '0' + result;
+        carry = 1;
+      } else {
+        result = sum + result;
+        carry = 0;
+      }
+    }
+    return result;
+  }
+
+  function toOnesComplement(bin) {
+    return bin.split('').map(b => b === '0' ? '1' : '0').join('');
+  }
+
+  function decToTwosComplement(num, bits) {
+    if (num >= 0) {
+      return num.toString(2).padStart(bits, '0');
+    } else {
+      const abs = Math.abs(num).toString(2).padStart(bits, '0');
+      return toTwosComplement(abs);
+    }
+  }
+
+  function twosComplementToDec(bin) {
+    const bits = bin.length;
+    let num = parseInt(bin, 2);
+    if (bin[0] === '1') {
+      num = num - Math.pow(2, bits);
+    }
+    return num;
+  }
+
+  function binaryAdd(a, b) {
+    const bits = Math.max(a.length, b.length);
+    a = a.padStart(bits, '0');
+    b = b.padStart(bits, '0');
+    
+    let result = '';
+    let carry = 0;
+    const bitSteps = [];
+    
+    for (let i = bits - 1; i >= 0; i--) {
+      let sum = parseInt(a[i]) + parseInt(b[i]) + carry;
+      if (sum >= 2) {
+        result = (sum - 2) + result;
+        carry = 1;
+      } else {
+        result = sum + result;
+        carry = 0;
+      }
+      bitSteps.push({ 
+        pos: bits - 1 - i, 
+        bitA: parseInt(a[i]), 
+        bitB: parseInt(b[i]), 
+        carryIn: (carry === 1 && i < bits - 1) ? 1 : 0,
+        sum: sum, 
+        outBit: result[0] === '' ? 0 : parseInt(result[0]), 
+        carryOut: carry 
+      });
+    }
+    
+    return { result: result, carry: carry, bitSteps: bitSteps };
+  }
+
+  // ----- Generate Functions -----
+  function generateSignMagnitude() {
+    const mode = getInputMode(input1);
+    const raw = input1.value.trim();
+    if (!raw) throw new Error('Please enter a number');
+    
+    const num = parseNumberInput(raw, mode);
+    const bits = bitWidth;
+    
+    const sign = num < 0 ? '1' : '0';
+    const mag = Math.abs(num).toString(2);
+    if (mag.length > bits - 1) throw new Error(`Number too large for ${bits}-bit representation`);
+    const paddedMag = mag.padStart(bits - 1, '0');
+    const result = sign + paddedMag;
+    
+    steps.push({ type: 'info', text: `Converting ${num} to ${bits}-bit Signed Magnitude (${mode} input)` });
+    steps.push({ type: 'step', text: `Step 1: Determine sign bit`, detail: `Sign: ${num < 0 ? 'Negative → 1' : 'Positive → 0'}`, value: sign });
+    steps.push({ type: 'step', text: `Step 2: Convert magnitude to binary`, detail: `|${num}| = ${Math.abs(num)} → ${mag}₂`, value: mag });
+    steps.push({ type: 'step', text: `Step 3: Pad magnitude to ${bits-1} bits`, detail: `${mag} → ${paddedMag}`, value: paddedMag });
+    steps.push({ type: 'step', text: `Step 4: Combine sign + magnitude`, detail: `${sign} + ${paddedMag} = ${result}`, value: result });
+    steps.push({ type: 'result', text: `Result: ${num} = ${result}₂ (Sign-Magnitude)`, value: result });
+    steps.push({ type: 'final', result: `${num} = (${result})₂ [Sign-Magnitude]` });
+  }
+
+  function generateOnesComplement() {
+    const mode = getInputMode(input1);
+    const raw = input1.value.trim();
+    if (!raw) throw new Error('Please enter a number');
+    
+    const num = parseNumberInput(raw, mode);
+    const bits = bitWidth;
+    const absNum = Math.abs(num);
+    
+    if (absNum >= Math.pow(2, bits-1)) throw new Error(`Number too large for ${bits}-bit representation`);
+    
+    const binary = absNum.toString(2).padStart(bits, '0');
+    
+    steps.push({ type: 'info', text: `Converting ${num} to ${bits}-bit 1's Complement (${mode} input)` });
+    steps.push({ type: 'step', text: `Step 1: Convert to binary`, detail: `${num} = ${Math.abs(num)} → ${binary}₂`, value: binary });
+    
+    if (num >= 0) {
+      steps.push({ type: 'step', text: `Step 2: For positive numbers, 1's complement is the same as the true form`, detail: `No change needed`, value: binary });
+      steps.push({ type: 'result', text: `Result: ${num} = ${binary}₂ (1's Complement)`, value: binary });
+      steps.push({ type: 'final', result: `${num} = (${binary})₂ [1's Complement - Positive]` });
+    } else {
+      const onesComp = toOnesComplement(binary);
+      steps.push({ type: 'step', text: `Step 2: Invert all bits (1's complement)`, detail: `${binary} → ${onesComp}`, value: onesComp });
+      steps.push({ type: 'step', text: `Step 3: Result (negative number)`, detail: `Sign bit is 1 → ${onesComp} represents ${num}`, value: onesComp });
+      steps.push({ type: 'result', text: `Result: ${num} = ${onesComp}₂ (1's Complement)`, value: onesComp });
+      steps.push({ type: 'final', result: `${num} = (${onesComp})₂ [1's Complement - Negative]` });
+    }
+  }
+
+  function generateTwosComplement() {
+    const mode = getInputMode(input1);
+    const raw = input1.value.trim();
+    if (!raw) throw new Error('Please enter a number');
+    
+    const num = parseNumberInput(raw, mode);
+    const bits = bitWidth;
+    const absNum = Math.abs(num);
+    
+    if (absNum >= Math.pow(2, bits-1)) throw new Error(`Number too large for ${bits}-bit representation`);
+    
+    const binary = absNum.toString(2).padStart(bits, '0');
+    
+    steps.push({ type: 'info', text: `Converting ${num} to ${bits}-bit 2's Complement (${mode} input)` });
+    steps.push({ type: 'step', text: `Step 1: Convert to binary`, detail: `${num} = ${Math.abs(num)} → ${binary}₂`, value: binary });
+    
+    if (num >= 0) {
+      steps.push({ type: 'step', text: `Step 2: For positive numbers, 2's complement is the same as the true form`, detail: `No change needed`, value: binary });
+      steps.push({ type: 'result', text: `Result: ${num} = ${binary}₂ (2's Complement)`, value: binary });
+      steps.push({ type: 'final', result: `${num} = (${binary})₂ [2's Complement - Positive]` });
+    } else {
+      const onesComp = toOnesComplement(binary);
+      steps.push({ type: 'step', text: `Step 2: Invert all bits (1's complement)`, detail: `${binary} → ${onesComp}`, value: onesComp });
+      
+      const twosComp = toTwosComplement(binary);
+      steps.push({ type: 'step', text: `Step 3: Add 1 to get 2's complement`, detail: `${onesComp} + 1 = ${twosComp}`, value: twosComp });
+      steps.push({ type: 'step', text: `Step 4: Result (negative number)`, detail: `Sign bit is 1 → ${twosComp} represents ${num}`, value: twosComp });
+      steps.push({ type: 'result', text: `Result: ${num} = ${twosComp}₂ (2's Complement)`, value: twosComp });
+      steps.push({ type: 'final', result: `${num} = (${twosComp})₂ [2's Complement - Negative]` });
+    }
+  }
+
+  function generateAddBinary() {
+    const raw1 = input1.value.trim();
+    const raw2 = input2.value.trim();
+    if (!raw1 || !raw2) throw new Error('Please enter two numbers');
+    
+    const mode1 = getInputMode(input1);
+    const mode2 = getInputMode(input2);
+    
+    const num1 = parseNumberInput(raw1, mode1);
+    const num2 = parseNumberInput(raw2, mode2);
+    const bits = bitWidth;
+    
+    const aBin = decToTwosComplement(num1, bits);
+    const bBin = decToTwosComplement(num2, bits);
+    
+    steps.push({ type: 'info', text: `Adding: ${num1} + ${num2} (${mode1}/${mode2} input)` });
+    steps.push({ type: 'step', text: `Step 1: Convert to 2's complement`, detail: `${num1} → ${aBin}₂, ${num2} → ${bBin}₂`, value: `${aBin}\n+ ${bBin}` });
+    
+    const result = binaryAdd(aBin, bBin);
+    
+    result.bitSteps.forEach((s) => {
+      const pos = bits - s.pos - 1;
+      steps.push({ 
+        type: 'step', 
+        text: `Bit ${s.pos+1} (position ${pos}): ${s.bitA} + ${s.bitB} + ${s.carryIn} = ${s.sum} → ${s.outBit} (carry ${s.carryOut})`,
+        detail: `Position ${pos}: ${s.bitA} + ${s.bitB} + ${s.carryIn} = ${s.sum}`,
+        value: `${s.outBit}`
+      });
+    });
+    
+    const displayResult = result.carry ? result.carry + result.result : result.result;
+    const decimalResult = twosComplementToDec(result.result);
+    
+    steps.push({ type: 'result', text: `Result: ${num1} + ${num2} = ${displayResult}₂`, value: displayResult });
+    steps.push({ type: 'final', result: `${num1} + ${num2} = (${displayResult})₂ = ${decimalResult}₁₀` });
+  }
+
+  function generateSubtractBinary() {
+    const raw1 = input1.value.trim();
+    const raw2 = input2.value.trim();
+    if (!raw1 || !raw2) throw new Error('Please enter two numbers');
+    
+    const mode1 = getInputMode(input1);
+    const mode2 = getInputMode(input2);
+    
+    const num1 = parseNumberInput(raw1, mode1);
+    const num2 = parseNumberInput(raw2, mode2);
+    const bits = bitWidth;
+    
+    // a - b = a + (-b)
+    const negNum2 = -num2;
+    const aBin = decToTwosComplement(num1, bits);
+    const bBin = decToTwosComplement(negNum2, bits);
+    
+    steps.push({ type: 'info', text: `Subtracting: ${num1} - ${num2} (${mode1}/${mode2} input)` });
+    steps.push({ type: 'step', text: `Step 1: Convert to 2's complement (a + (-b))`, detail: `${num1} → ${aBin}₂, -${num2} → ${bBin}₂`, value: `${aBin}\n+ ${bBin}` });
+    
+    const result = binaryAdd(aBin, bBin);
+    
+    result.bitSteps.forEach((s) => {
+      const pos = bits - s.pos - 1;
+      steps.push({ 
+        type: 'step', 
+        text: `Bit ${s.pos+1} (position ${pos}): ${s.bitA} + ${s.bitB} + ${s.carryIn} = ${s.sum} → ${s.outBit} (carry ${s.carryOut})`,
+        detail: `Position ${pos}: ${s.bitA} + ${s.bitB} + ${s.carryIn} = ${s.sum}`,
+        value: `${s.outBit}`
+      });
+    });
+    
+    const displayResult = result.carry ? result.carry + result.result : result.result;
+    const decimalResult = twosComplementToDec(result.result);
+    
+    steps.push({ type: 'result', text: `Result: ${num1} - ${num2} = ${displayResult}₂`, value: displayResult });
+    steps.push({ type: 'final', result: `${num1} - ${num2} = (${displayResult})₂ = ${decimalResult}₁₀` });
+  }
+
+  function generateSubtractComplement() {
+    const raw1 = input1.value.trim();
+    const raw2 = input2.value.trim();
+    if (!raw1 || !raw2) throw new Error('Please enter two numbers');
+    
+    const mode1 = getInputMode(input1);
+    const mode2 = getInputMode(input2);
+    
+    const num1 = parseNumberInput(raw1, mode1);
+    const num2 = parseNumberInput(raw2, mode2);
+    const bits = bitWidth;
+    const method = compMethod.value;
+    const methodName = method === 'twos' ? "2's Complement" : "1's Complement";
+    
+    steps.push({ type: 'info', text: `Subtracting using ${methodName}: ${num1} - ${num2} (${mode1}/${mode2} input)` });
+    
+    const aBin = decToTwosComplement(num1, bits);
+    steps.push({ type: 'step', text: `Step 1: Convert ${num1} to 2's complement`, detail: `${num1} → ${aBin}`, value: aBin });
+    
+    const abs2 = Math.abs(num2).toString(2).padStart(bits, '0');
+    let bComp;
+    if (method === 'twos') {
+      bComp = toTwosComplement(abs2);
+      steps.push({ type: 'step', text: `Step 2: Find 2's complement of ${num2}`, detail: `${abs2} → ${bComp}`, value: bComp });
+    } else {
+      bComp = toOnesComplement(abs2);
+      steps.push({ type: 'step', text: `Step 2: Find 1's complement of ${num2}`, detail: `${abs2} → ${bComp}`, value: bComp });
+    }
+    
+    steps.push({ type: 'step', text: `Step 3: Add ${aBin} + ${bComp}`, detail: `${aBin} + ${bComp}`, value: `${aBin}\n+ ${bComp}` });
+    
+    const result = binaryAdd(aBin, bComp);
+    
+    result.bitSteps.forEach((s) => {
+      const pos = bits - s.pos - 1;
+      steps.push({ 
+        type: 'step', 
+        text: `Bit ${s.pos+1}: ${s.bitA} + ${s.bitB} + ${s.carryIn} = ${s.sum} → ${s.outBit}`,
+        detail: `Position ${pos}: ${s.bitA} + ${s.bitB} + ${s.carryIn} = ${s.sum}`,
+        value: `${s.outBit}`
+      });
+    });
+    
+    let finalResult = result.result;
+    
+    if (method === 'twos') {
+      if (result.carry) {
+        steps.push({ type: 'step', text: `Step 4: Discard carry (2's complement method)`, detail: `Carry: ${result.carry} → ${result.result}`, value: result.result });
+        finalResult = result.result;
+      } else {
+        steps.push({ type: 'step', text: `Step 4: No carry to discard`, detail: `Result: ${result.result}`, value: result.result });
+      }
+    } else {
+      if (result.carry) {
+        steps.push({ type: 'step', text: `Step 4: End-around carry (1's complement method)`, detail: `Adding carry back: ${result.result} + ${result.carry}`, value: result.result });
+        const endAround = binaryAdd(result.result, result.carry.toString());
+        finalResult = endAround.result.padStart(bits, '0');
+        steps.push({ type: 'step', text: `Step 5: Result after end-around carry`, detail: `${result.result} + ${result.carry} = ${finalResult}`, value: finalResult });
+      } else {
+        steps.push({ type: 'step', text: `Step 4: No carry to add back`, detail: `Result: ${result.result}`, value: result.result });
+        finalResult = result.result;
+      }
+    }
+    
+    const decimalResult = twosComplementToDec(finalResult);
+    
+    steps.push({ type: 'result', text: `Result: ${num1} - ${num2} = ${finalResult}₂`, value: finalResult });
+    steps.push({ type: 'final', result: `${num1} - ${num2} = (${finalResult})₂ = ${decimalResult}₁₀ [Using ${methodName}]` });
+  }
+
+  // ----- Prepare Visualization -----
+  function prepareVisualization() {
+    steps = [];
+    try {
+      switch (currentId) {
+        case 'sign-mag':
+          generateSignMagnitude();
+          break;
+        case 'ones-comp':
+          generateOnesComplement();
+          break;
+        case 'twos-comp':
+          generateTwosComplement();
+          break;
+        case 'add-bin':
+          generateAddBinary();
+          break;
+        case 'sub-bin':
+          generateSubtractBinary();
+          break;
+        case 'sub-comp':
+          generateSubtractComplement();
+          break;
+        default:
+          throw new Error('Unknown mode');
+      }
+    } catch (e) {
+      visArea.innerHTML = `<div class="empty-hint">⚠️ ${e.message}</div>`;
+      initialized = false;
+      return false;
+    }
+
+    if (steps.length === 0) {
+      visArea.innerHTML = `<div class="empty-hint">⚠️ No steps generated</div>`;
+      initialized = false;
+      return false;
+    }
+
+    initialized = true;
+    stepIdx = 0;
+    renderSkeleton();
+    return true;
+  }
+
+  // ----- Render Skeleton -----
+  function renderSkeleton() {
+    visArea.innerHTML = '';
+    const container = document.createElement('div');
+    container.className = 'ladder-container';
+    container.id = 'ladderContainer';
+    visArea.appendChild(container);
+
+    steps.forEach((step, i) => {
+      const row = document.createElement('div');
+      row.className = 'step-row';
+      row.id = `step-${i}`;
+      
+      if (step.type === 'info') {
+        row.style.borderLeftColor = '#4d96ff';
+        row.innerHTML = `<span style="color:#4d96ff;font-weight:700;">ℹ️ ${step.text}</span>`;
+      } else if (step.type === 'step') {
+        row.innerHTML = `
+          <span class="label">${step.text}</span>
+          <span class="value">${step.value || ''}</span>
+          ${step.detail ? `<span style="color:#8ab4a0;font-size:0.85rem;">${step.detail}</span>` : ''}
+        `;
+      } else if (step.type === 'result') {
+        row.style.borderLeftColor = '#6bcb77';
+        row.innerHTML = `<span style="color:#6bcb77;font-weight:700;">✅ ${step.text}</span>`;
+      } else if (step.type === 'final') {
+        row.style.borderLeftColor = '#f7c948';
+        row.style.background = '#1f3d2c';
+        row.innerHTML = `<span style="color:#f7c948;font-weight:700;font-size:1.2rem;">🎯 ${step.result}</span>`;
+      }
+      container.appendChild(row);
+    });
+  }
+
+  // ----- Animation -----
+  function animateNext() {
+    if (!initialized || steps.length === 0) return false;
+    const total = steps.length;
+
+    if (stepIdx > 0) {
+      const prev = document.getElementById(`step-${stepIdx-1}`);
+      if (prev) prev.classList.remove('active');
+    }
+
+    if (stepIdx < total) {
+      const el = document.getElementById(`step-${stepIdx}`);
+      if (el) {
+        el.classList.add('visible', 'active');
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      stepIdx++;
+      return true;
+    } else {
+      stopAnimation();
+      const lastStep = steps[steps.length - 1];
+      if (lastStep && lastStep.type === 'final') {
+        resultBox.innerHTML = lastStep.result;
+        resultBox.classList.add('visible');
+      }
+      startBtn.disabled = false;
+      stepBtn.disabled = true;
+      stopBtn.disabled = true;
+      return false;
+    }
+  }
+
+  function startAnimation() {
+    if (running) return;
+    if (!initialized) {
+      if (!prepareVisualization()) return;
+    }
+    if (stepIdx >= steps.length) resetAnimation();
+    running = true;
+    startBtn.disabled = true;
+    stepBtn.disabled = true;
+    stopBtn.disabled = false;
+    input1.disabled = true;
+    input2.disabled = true;
+    bitWidthSelect.disabled = true;
+    compMethod.disabled = true;
+    document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);
+
+    const delay = 2200 - parseInt(speedRange.value, 10);
+    if (!animateNext()) return;
+
+    timer = setInterval(() => {
+      const more = animateNext();
+      if (!more) stopAnimation();
+    }, delay);
+  }
+
+  function stepManual() {
+    if (running) stopAnimation();
+    if (!initialized) {
+      if (!prepareVisualization()) return;
+    }
+    if (stepIdx >= steps.length) resetAnimation();
+    input1.disabled = true;
+    input2.disabled = true;
+    bitWidthSelect.disabled = true;
+    compMethod.disabled = true;
+    document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);
+    animateNext();
+  }
+
+  function stopAnimation() {
+    if (timer) { clearInterval(timer); timer = null; }
+    running = false;
+    startBtn.disabled = false;
+    stepBtn.disabled = false;
+    stopBtn.disabled = true;
+  }
+
+  function resetAnimation() {
+    stopAnimation();
+    resetState();
+    input1.disabled = false;
+    input2.disabled = false;
+    bitWidthSelect.disabled = false;
+    compMethod.disabled = false;
+    document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = false);
+    visArea.innerHTML = `<div class="empty-hint">⟳ reset · press Start</div>`;
+    resultBox.classList.remove('visible');
+    resultBox.textContent = '';
+    startBtn.disabled = false;
+    stepBtn.disabled = false;
+    stopBtn.disabled = true;
+  }
+
+  // ----- Event Listeners -----
+  startBtn.addEventListener('click', startAnimation);
+  stepBtn.addEventListener('click', stepManual);
+  stopBtn.addEventListener('click', stopAnimation);
+  resetBtn.addEventListener('click', resetAnimation);
+
+  // Initialize with default
+  switchMode('sign-mag');
+</script>
+<BR><CENTER> &COPY; COPYRIGHT 2026. The site Created and Maintained by DREAM LOGICS @9745110065
+<BR><BR></CENTER>
+</body>
+</html>
