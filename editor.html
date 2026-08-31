@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manoj's Python Learning Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 24px;
+        }
+
+        .top-bar {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .top-bar .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .top-bar .brand .icon {
+            background: #f39c12;
+            color: #2c3e50;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .top-bar .brand h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .top-bar .brand h1 small {
+            font-weight: 400;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-left: 6px;
+        }
+
+        .top-bar .brand .tag {
+            color: #ecf0f1;
+            background: rgba(255,255,255,0.15);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .status {
+            color: #ecf0f1;
+            background: rgba(255,255,255,0.1);
+            padding: 6px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .top-bar .status .dot {
+            color: #2ecc71;
+            font-size: 0.6rem;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 4px;
+            background: #f8f9fa;
+            padding: 4px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #e4e9f0;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #7f8c8d;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tab:hover {
+            background: #e8ecf0;
+            color: #2c3e50;
+        }
+
+        .tab.active {
+            background: white;
+            color: #2c3e50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .editor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .editor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e4e9f0;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .card-header i {
+            color: #f39c12;
+            margin-right: 6px;
+        }
+
+        .card-header .actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .card-header .actions button {
+            background: transparent;
+            border: none;
+            color: #7f8c8d;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .card-header .actions button:hover {
+            background: #f0f2f5;
+            color: #2c3e50;
+        }
+
+        .card-header .actions .run-btn {
+            background: #27ae60;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 3px 0 #1e8449;
+        }
+
+        .card-header .actions .run-btn:hover {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .card-header .actions .run-btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #1e8449;
+        }
+
+        #codeEditor {
+            width: 100%;
+            min-height: 350px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            padding: 12px;
+            border: 1px solid #dce1e8;
+            border-radius: 8px;
+            background: #fafbfc;
+            color: #2c3e50;
+            resize: vertical;
+            line-height: 1.6;
+            tab-size: 4;
+        }
+
+        #codeEditor:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .output-box {
+            min-height: 350px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #fafbfc;
+            border: 1px solid #dce1e8;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+            color: #2c3e50;
+        }
+
+        .output-box .label {
+            color: #7f8c8d;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+        }
+
+        .output-box .error {
+            color: #e74c3c;
+        }
+
+        .output-box .success {
+            color: #27ae60;
+        }
+
+        .samples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+            align-items: center;
+        }
+
+        .samples span {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .samples button {
+            background: #f8f9fa;
+            border: 1px solid #dce1e8;
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #2c3e50;
+        }
+
+        .samples button:hover {
+            background: #e8ecf0;
+            border-color: #bdc3c7;
+        }
+
+        .samples button i {
+            color: #f39c12;
+            font-size: 0.7rem;
+        }
+
+        .console-wrapper {
+            background: #1e1e2e;
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid #2d2d44;
+        }
+
+        .console-output {
+            min-height: 350px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #1a1a2a;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d4d4d4;
+            margin-bottom: 12px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .console-output .prompt {
+            color: #6fcf97;
+        }
+
+        .console-output .error {
+            color: #f28b82;
+        }
+
+        .console-output .output {
+            color: #d4d4d4;
+        }
+
+        .console-input-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background: #1a1a2a;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #2d2d44;
+        }
+
+        .console-input-row .symbol {
+            color: #6fcf97;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .console-input-row input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #d4d4d4;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            outline: none;
+            padding: 4px 0;
+        }
+
+        .console-input-row input::placeholder {
+            color: #555577;
+        }
+
+        .console-input-row button {
+            background: #27ae60;
+            border: none;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .console-input-row button:hover {
+            background: #2ecc71;
+        }
+
+        .console-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .console-actions button {
+            background: #2d2d44;
+            border: none;
+            color: #d4d4d4;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .console-actions button:hover {
+            background: #3d3d5a;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #95a5a6;
+            font-size: 0.8rem;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .dialog-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dialog-overlay.active {
+            display: flex;
+        }
+
+        .dialog-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .dialog-box h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .dialog-box .prompt-text {
+            color: #7f8c8d;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #e4e9f0;
+            font-family: monospace;
+            margin-bottom: 12px;
+        }
+
+        .dialog-box input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #dce1e8;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: monospace;
+            margin-bottom: 12px;
+        }
+
+        .dialog-box input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .dialog-box .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .dialog-box .btn-group button {
+            padding: 8px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .dialog-box .btn-group .submit-btn {
+            background: #27ae60;
+            color: white;
+        }
+
+        .dialog-box .btn-group .submit-btn:hover {
+            background: #2ecc71;
+        }
+
+        .dialog-box .btn-group .cancel-btn {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .dialog-box .btn-group .cancel-btn:hover {
+            background: #c0392b;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f0f2f5;
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #bdc3c7;
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="brand">
+            <div class="icon"><i class="fab fa-python"></i></div>
+            <h1>Manoj's Python Learning <small>Portal</small></h1>
+            <span class="tag"><i class="fas fa-graduation-cap"></i> manojithub</span>
+        </div>
+        <div class="status">
+            <span class="dot"><i class="fas fa-circle"></i></span>
+            <span id="statusText">loading Python...</span>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab active" data-tab="editor-tab">
+            <i class="fas fa-code"></i> Program Editor
+        </button>
+        <button class="tab" data-tab="console-tab">
+            <i class="fas fa-terminal"></i> Interactive Console
+        </button>
+    </div>
+
+    <!-- Editor Tab -->
+    <div class="tab-content active" id="editor-tab">
+        <div class="editor-grid">
+            <div class="card">
+                <div class="card-header">
+                    <span><i class="fas fa-file-code"></i> Python Program</span>
+                    <div class="actions">
+                        <button id="clearEditorBtn"><i class="fas fa-eraser"></i></button>
+                        <button id="runBtn" class="run-btn"><i class="fas fa-play"></i> Run</button>
+                    </div>
+                </div>
+                <textarea id="codeEditor" spellcheck="false"># Compare two numbers
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+if a > b:
+    print(f"{a} is greater than {b}")
+elif a < b:
+    print(f"{b} is greater than {a}")
+else:
+    print(f"{a} is equal to {b}")</textarea>
+                <div class="samples">
+                    <span><i class="fas fa-lightbulb"></i> samples:</span>
+                    <button onclick="loadSample('hello')"><i class="fas fa-play"></i> Hello</button>
+                    <button onclick="loadSample('loop')"><i class="fas fa-infinity"></i> Loop</button>
+                    <button onclick="loadSample('function')"><i class="fas fa-code-branch"></i> Function</button>
+                    <button onclick="loadSample('biggest')"><i class="fas fa-sort-numeric-up"></i> Biggest</button>
+                    <button onclick="loadSample('compare')"><i class="fas fa-greater-than"></i> Compare</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span><i class="fas fa-window-maximize"></i> Output</span>
+                    <div class="actions">
+                        <button id="clearOutputBtn"><i class="fas fa-times-circle"></i></button>
+                    </div>
+                </div>
+                <div class="output-box" id="outputBox">
+                    <div class="label"><i class="fas fa-arrow-right"></i> console</div>
+                    <div id="outputContent">▶️ ready · press Run</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Console Tab -->
+    <div class="tab-content" id="console-tab">
+        <div class="console-wrapper">
+            <div class="console-output" id="consoleOutput">
+                <div><span class="prompt">Python 3.12 - Interactive Console</span></div>
+                <div><span class="prompt">Type a command and press Enter</span></div>
+                <div><span class="prompt">>>> </span><span class="output">Ready</span></div>
+            </div>
+            <div class="console-input-row">
+                <span class="symbol">>>> </span>
+                <input type="text" id="consoleInput" placeholder="Type Python command here..." />
+                <button id="consoleRunBtn"><i class="fas fa-play"></i> Run</button>
+            </div>
+            <div class="console-actions">
+                <button id="consoleClearBtn"><i class="fas fa-eraser"></i> Clear Console</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <span><i class="far fa-clock"></i> live Python 3 · powered by Pyodide</span>
+        <span><a href="#" onclick="location.reload()">reset</a> · <a href="#" onclick="return false;">docs</a></span>
+    </div>
+</div>
+
+<!-- Input Dialog -->
+<div class="dialog-overlay" id="dialogOverlay">
+    <div class="dialog-box">
+        <h3><i class="fas fa-keyboard" style="color:#f39c12;"></i> Python Input Required</h3>
+        <div class="prompt-text" id="dialogPrompt">Enter value:</div>
+        <input type="text" id="dialogInput" placeholder="Type your input here..." />
+        <div class="btn-group">
+            <button class="cancel-btn" id="dialogCancel">Cancel</button>
+            <button class="submit-btn" id="dialogSubmit">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.3/full/pyodide.js"></script>
+<script>
+    // ===== Pyodide Setup =====
+    let pyodide = null;
+    let pyodideReady = false;
+    let isRunning = false;
+    let dialogResolver = null;
+
+    const statusText = document.getElementById('statusText');
+    const codeEditor = document.getElementById('codeEditor');
+    const outputContent = document.getElementById('outputContent');
+    const runBtn = document.getElementById('runBtn');
+    const clearEditorBtn = document.getElementById('clearEditorBtn');
+    const clearOutputBtn = document.getElementById('clearOutputBtn');
+    const consoleOutput = document.getElementById('consoleOutput');
+    const consoleInput = document.getElementById('consoleInput');
+    const consoleRunBtn = document.getElementById('consoleRunBtn');
+    const consoleClearBtn = document.getElementById('consoleClearBtn');
+
+    const dialogOverlay = document.getElementById('dialogOverlay');
+    const dialogPrompt = document.getElementById('dialogPrompt');
+    const dialogInput = document.getElementById('dialogInput');
+    const dialogSubmit = document.getElementById('dialogSubmit');
+    const dialogCancel = document.getElementById('dialogCancel');
+
+    // ===== Load Pyodide =====
+    async function loadPyodideInstance() {
+        try {
+            statusText.textContent = 'loading Pyodide...';
+            pyodide = await loadPyodide({
+                indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.3/full/'
+            });
+            pyodideReady = true;
+            statusText.textContent = 'Python ready ✅';
+            addConsoleMessage('Python engine loaded successfully', 'prompt');
+        } catch (err) {
+            statusText.textContent = '⚠️ load error';
+            console.error('Pyodide load error:', err);
+            outputContent.innerHTML = `<span class="error">⚠️ Python engine failed to load. Please refresh.</span>`;
+            addConsoleMessage('Error loading Python engine', 'error');
+        }
+    }
+
+    loadPyodideInstance();
+
+    // ===== Samples =====
+    const SAMPLES = {
+        hello: `# Simple greeting
+name = "student"
+print(f"Hello, {name}!")
+print("Welcome to Manoj's Python Portal 👋")`,
+        loop: `# For loop demo
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(f"I like {fruit}")
+
+# While loop
+count = 0
+while count < 4:
+    print("count =", count)
+    count += 1`,
+        function: `# Function example
+def greet(name, times=2):
+    for _ in range(times):
+        print(f"👋 Hello {name}!")
+
+greet("Alex", 3)
+print("---")
+greet("Sam")`,
+        biggest: `# Find the biggest of 3 numbers
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+
+if a > b and a > c:
+    print(f"The biggest number is: {a}")
+elif b > c:
+    print(f"The biggest number is: {b}")
+else:
+    print(f"The biggest number is: {c}")`,
+        compare: `# Compare two numbers
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+if a > b:
+    print(f"{a} is greater than {b}")
+elif a < b:
+    print(f"{b} is greater than {a}")
+else:
+    print(f"{a} is equal to {b}")`
+    };
+
+    function loadSample(name) {
+        if (SAMPLES[name]) {
+            codeEditor.value = SAMPLES[name];
+            outputContent.innerHTML = '🔄 sample loaded · press Run';
+        }
+    }
+
+    // ===== Dialog Functions =====
+    function showDialog(promptText) {
+        return new Promise((resolve) => {
+            dialogPrompt.textContent = promptText || 'Enter value:';
+            dialogInput.value = '';
+            dialogInput.focus();
+            dialogOverlay.classList.add('active');
+            dialogResolver = resolve;
+        });
+    }
+
+    function closeDialog(value) {
+        dialogOverlay.classList.remove('active');
+        if (dialogResolver) {
+            dialogResolver(value);
+            dialogResolver = null;
+        }
+    }
+
+    dialogSubmit.addEventListener('click', () => closeDialog(dialogInput.value));
+    dialogCancel.addEventListener('click', () => closeDialog(null));
+    dialogInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') closeDialog(dialogInput.value);
+        if (e.key === 'Escape') closeDialog(null);
+    });
+
+    // ===== Run Code (Editor) =====
+    async function runCode() {
+        const code = codeEditor.value;
+        if (!code.trim()) {
+            outputContent.innerHTML = '<span class="error">⚠️ empty code · write something</span>';
+            return;
+        }
+
+        if (!pyodideReady) {
+            outputContent.innerHTML = '<span class="error">⏳ Python engine still loading...</span>';
+            return;
+        }
+
+        if (isRunning) {
+            outputContent.innerHTML = '<span class="error">⏳ Already running...</span>';
+            return;
+        }
+
+        isRunning = true;
+        outputContent.innerHTML = '⏳ running Python ...';
+
+        try {
+            if (code.includes('input(')) {
+                await executeWithInput(code);
+            } else {
+                await executeSimple(code);
+            }
+        } catch (err) {
+            const errorMsg = err.message || String(err);
+            outputContent.innerHTML = `<span class="error">⚠️ ${escapeHtml(errorMsg)}</span>`;
+        } finally {
+            isRunning = false;
+        }
+    }
+
+    async function executeSimple(code) {
+        try {
+            // Execute the code directly
+            await pyodide.runPythonAsync(`
+import sys
+import io
+
+# Redirect stdout
+sys.stdout = io.StringIO()
+
+# Execute user code
+${code}
+
+# Get output
+output = sys.stdout.getvalue()
+
+# Restore stdout
+sys.stdout = sys.__stdout__
+            `);
+            
+            const result = await pyodide.runPythonAsync('output');
+            
+            if (result && result.trim() === '') {
+                outputContent.innerHTML = '<span class="success">✅ program executed (no output)</span>';
+            } else if (result) {
+                const lines = result.split('\n').filter(line => line !== '');
+                outputContent.innerHTML = lines.map(line => `<div>${escapeHtml(line)}</div>`).join('');
+            } else {
+                outputContent.innerHTML = '<span class="success">✅ program executed (no output)</span>';
+            }
+        } catch (err) {
+            const errorMsg = err.message || String(err);
+            outputContent.innerHTML = `<span class="error">⚠️ ${escapeHtml(errorMsg)}</span>`;
+        }
+    }
+
+    async function executeWithInput(code) {
+        try {
+            // Find all input prompts
+            const inputMatches = code.match(/input\s*\(["'](.+?)["']\)/g);
+            const prompts = inputMatches ? inputMatches.map(m => {
+                const match = m.match(/input\s*\(["'](.+?)["']\)/);
+                return match ? match[1] : 'Enter value:';
+            }) : ['Enter value:'];
+
+            let userInputs = [];
+            for (let prompt of prompts) {
+                const value = await showDialog(prompt);
+                if (value === null) {
+                    outputContent.innerHTML = '<span class="error">⚠️ Input cancelled</span>';
+                    return;
+                }
+                userInputs.push(value);
+            }
+
+            // Build the input queue as a Python list
+            const inputQueue = userInputs.map(v => `'${v.replace(/'/g, "\\'")}'`).join(', ');
+
+            // Execute with custom input
+            await pyodide.runPythonAsync(`
+import sys
+import io
+import builtins
+
+# Store original input
+original_input = builtins.input
+
+# Create input queue
+inputs = [${inputQueue}]
+
+# Custom input function
+def custom_input(prompt=''):
+    if inputs:
+        return inputs.pop(0)
+    return ''
+
+# Replace input
+builtins.input = custom_input
+
+# Redirect stdout
+sys.stdout = io.StringIO()
+
+# Execute code
+${code}
+
+# Get output
+output = sys.stdout.getvalue()
+
+# Restore
+sys.stdout = sys.__stdout__
+builtins.input = original_input
+            `);
+            
+            const result = await pyodide.runPythonAsync('output');
+            
+            if (result && result.trim() === '') {
+                outputContent.innerHTML = '<span class="success">✅ program executed (no output)</span>';
+            } else if (result) {
+                const lines = result.split('\n').filter(line => line !== '');
+                outputContent.innerHTML = lines.map(line => `<div>${escapeHtml(line)}</div>`).join('');
+            } else {
+                outputContent.innerHTML = '<span class="success">✅ program executed (no output)</span>';
+            }
+        } catch (err) {
+            const errorMsg = err.message || String(err);
+            outputContent.innerHTML = `<span class="error">⚠️ ${escapeHtml(errorMsg)}</span>`;
+        }
+    }
+
+    // ===== Console Functions =====
+    function addConsoleMessage(message, className = 'output') {
+        const div = document.createElement('div');
+        div.innerHTML = `<span class="${className}">${escapeHtml(message)}</span>`;
+        consoleOutput.appendChild(div);
+        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+    }
+
+    async function executeConsoleCommand() {
+        const command = consoleInput.value.trim();
+        if (!command) {
+            return;
+        }
+
+        consoleInput.value = '';
+        addConsoleMessage(`>>> ${command}`, 'prompt');
+
+        if (!pyodideReady) {
+            addConsoleMessage('Python engine not ready yet.', 'error');
+            return;
+        }
+
+        try {
+            // Try as expression first
+            try {
+                const result = await pyodide.runPythonAsync(command);
+                if (result !== undefined && result !== null) {
+                    addConsoleMessage(repr(result), 'output');
+                }
+            } catch (e) {
+                // Try as statement
+                await pyodide.runPythonAsync(`
+import sys
+import io
+
+sys.stdout = io.StringIO()
+try:
+    ${command}
+    output = sys.stdout.getvalue()
+finally:
+    sys.stdout = sys.__stdout__
+                `);
+                
+                const result = await pyodide.runPythonAsync('output');
+                if (result && result.trim()) {
+                    const lines = result.split('\n').filter(line => line !== '');
+                    lines.forEach(line => {
+                        addConsoleMessage(line, 'output');
+                    });
+                }
+            }
+        } catch (err) {
+            const errorMsg = err.message || String(err);
+            addConsoleMessage(`Error: ${errorMsg}`, 'error');
+        }
+
+        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        consoleInput.focus();
+    }
+
+    function repr(obj) {
+        if (obj === undefined || obj === null) return 'None';
+        if (typeof obj === 'string') return `'${obj}'`;
+        if (typeof obj === 'boolean') return obj ? 'True' : 'False';
+        if (typeof obj === 'number') return String(obj);
+        if (Array.isArray(obj)) return `[${obj.map(repr).join(', ')}]`;
+        if (typeof obj === 'object') {
+            try {
+                return JSON.stringify(obj);
+            } catch(e) {
+                return String(obj);
+            }
+        }
+        return String(obj);
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // ===== Event Listeners =====
+    runBtn.addEventListener('click', runCode);
+
+    clearEditorBtn.addEventListener('click', () => {
+        codeEditor.value = '';
+        outputContent.innerHTML = '🗑️ editor cleared';
+    });
+
+    clearOutputBtn.addEventListener('click', () => {
+        outputContent.innerHTML = '🧹 output cleared';
+    });
+
+    consoleRunBtn.addEventListener('click', executeConsoleCommand);
+    consoleInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            executeConsoleCommand();
+        }
+    });
+
+    consoleClearBtn.addEventListener('click', () => {
+        consoleOutput.innerHTML = '';
+        addConsoleMessage('Console cleared', 'prompt');
+        addConsoleMessage('Python 3.12 - Interactive Console', 'prompt');
+        addConsoleMessage('Type a command and press Enter', 'prompt');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            const activeTab = document.querySelector('.tab-content.active');
+            if (activeTab && activeTab.id === 'editor-tab') {
+                e.preventDefault();
+                runCode();
+            }
+        }
+    });
+
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            this.classList.add('active');
+            const tabId = this.dataset.tab;
+            document.getElementById(tabId).classList.add('active');
+            
+            if (tabId === 'console-tab') {
+                consoleInput.focus();
+            }
+        });
+    });
+
+    codeEditor.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    });
+    setTimeout(() => {
+        codeEditor.style.height = 'auto';
+        codeEditor.style.height = codeEditor.scrollHeight + 'px';
+    }, 100);
+</script>
+
+</body>
+</html>
