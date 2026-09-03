@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn decision making with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Decision Making | Manojithub">
+<meta property="og:description" content="Learn decision making with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/decision_making.html">
+<link rel="canonical" href="https://manojithub.github.io/python/decision_making.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Decision Making | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="decision-making">
+<h2>🔀 Decision Making in Python</h2>
+<div class="content-box">
+<h3>Introduction</h3>
+<p>
+            In real life, we make decisions every day. For example:
+        </p>
+<ul>
+<li>If it rains, take an umbrella.</li>
+<li>If marks are above 90, award Grade A.</li>
+<li>If age is 18 or above, allow voting.</li>
+</ul>
+<p>
+            Similarly, Python programs use decision-making statements to execute
+            different blocks of code based on conditions.
+        </p>
+<h3>Conditional Statements in Python</h3>
+<table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>if</td>
+<td>Execute code when a condition is true</td>
+</tr>
+<tr>
+<td>if...else</td>
+<td>Choose between two alternatives</td>
+</tr>
+<tr>
+<td>if...elif...else</td>
+<td>Choose from multiple alternatives</td>
+</tr>
+<tr>
+<td>Nested if</td>
+<td>Use an if statement inside another if</td>
+</tr>
+</tbody>
+</table>
+<h3>1️⃣ The if Statement</h3>
+<p>
+            The <strong>if</strong> statement executes a block of code only when
+            the specified condition is true.
+        </p>
+<h4>Syntax</h4>
+<pre><code>if condition:
+    statement</code></pre>
+<h4>Example</h4>
+<pre><code>age = 18
+
+if age &gt;= 18:
+    print("Eligible to Vote")</code></pre>
+<h4>Output</h4>
+<pre><code>Eligible to Vote</code></pre>
+<h3>Flowchart of if Statement</h3>
+<pre><code>
+        Condition?
+           |
+      +----+----+
+      |         |
+    True      False
+      |
+ Execute
+ Statement
+</code></pre>
+<h3>2️⃣ The if...else Statement</h3>
+<p>
+            The <strong>if...else</strong> statement is used when one action
+            should be performed if the condition is true and another action if
+            the condition is false.
+        </p>
+<h4>Syntax</h4>
+<pre><code>if condition:
+    statement1
+else:
+    statement2</code></pre>
+<h4>Example</h4>
+<pre><code>num = int(input("Enter a Number: "))
+
+if num % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")</code></pre>
+<h4>Sample Output</h4>
+<pre><code>Enter a Number: 12
+Even Number</code></pre>
+<h3>Dry Run Table</h3>
+<table>
+<thead>
+<tr>
+<th>num</th>
+<th>Condition (num % 2 == 0)</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>True</td>
+<td>Even Number</td>
+</tr>
+<tr>
+<td>15</td>
+<td>False</td>
+<td>Odd Number</td>
+</tr>
+</tbody>
+</table>
+<h3>3️⃣ The if...elif...else Ladder</h3>
+<p>
+            When there are multiple conditions to check, Python uses the
+            <strong>if...elif...else</strong> ladder.
+        </p>
+<h4>Syntax</h4>
+<pre><code>if condition1:
+    statement1
+
+elif condition2:
+    statement2
+
+elif condition3:
+    statement3
+
+else:
+    statement4</code></pre>
+<h4>Example: Grade Calculation</h4>
+<pre><code>mark = int(input("Enter Mark: "))
+
+if mark &gt;= 90:
+    print("Grade A")
+
+elif mark &gt;= 75:
+    print("Grade B")
+
+elif mark &gt;= 50:
+    print("Grade C")
+
+else:
+    print("Grade D")</code></pre>
+<h4>Sample Output</h4>
+<pre><code>Enter Mark: 82
+Grade B</code></pre>
+<h3>Flowchart of if-elif-else</h3>
+<pre><code>
+     Condition1?
+       /   \
+    Yes    No
+    |        |
+ Statement1  Condition2?
+             /      \
+          Yes       No
+          |          |
+      Statement2   Else Block
+</code></pre>
+<h3>4️⃣ Nested if Statement</h3>
+<p>
+            A nested if statement is an if statement placed inside another if statement.
+        </p>
+<h4>Syntax</h4>
+<pre><code>if condition1:
+
+    if condition2:
+        statement</code></pre>
+<h4>Example</h4>
+<pre><code>age = int(input("Enter Age: "))
+
+if age &gt;= 18:
+
+    if age &lt;= 60:
+        print("Eligible for Employment")</code></pre>
+<h4>Sample Output</h4>
+<pre><code>Enter Age: 25
+Eligible for Employment</code></pre>
+<h3>Program 1: Find Largest of Two Numbers</h3>
+<pre><code>a = int(input("Enter First Number: "))
+b = int(input("Enter Second Number: "))
+
+if a &gt; b:
+    print("Largest =", a)
+else:
+    print("Largest =", b)</code></pre>
+<h3>Program 2: Check Pass or Fail</h3>
+<pre><code>mark = int(input("Enter Mark: "))
+
+if mark &gt;= 40:
+    print("Pass")
+else:
+    print("Fail")</code></pre>
+<h3>Program 3: Positive or Negative Number</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+if num &gt;= 0:
+    print("Positive Number")
+else:
+    print("Negative Number")</code></pre>
+<h3>Program 4: Voting Eligibility</h3>
+<pre><code>age = int(input("Enter Age: "))
+
+if age &gt;= 18:
+    print("Eligible to Vote")
+else:
+    print("Not Eligible to Vote")</code></pre>
+<h3>Indentation in Python</h3>
+<div class="quiz-card">
+<p>
+                Python uses indentation (spaces before statements)
+                to identify code blocks.
+            </p>
+</div>
+<pre><code>if True:
+    print("Correct")
+
+print("Program End")</code></pre>
+<h3>Common Mistake</h3>
+<pre><code>if True:
+print("Wrong Indentation")</code></pre>
+<p>
+            This will generate an <strong>IndentationError</strong>.
+        </p>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Which statement is used for decision making?</strong></p>
+<div class="quiz-option">A. for</div>
+<div class="quiz-option">B. while</div>
+<div class="quiz-option">C. if ✅</div>
+<div class="quiz-option">D. print</div>
+<br/>
+<p><strong>2. Which keyword is used for multiple conditions?</strong></p>
+<div class="quiz-option">A. elif ✅</div>
+<div class="quiz-option">B. repeat</div>
+<div class="quiz-option">C. case</div>
+<div class="quiz-option">D. goto</div>
+<br/>
+<p><strong>3. Python uses ______ to identify blocks of code.</strong></p>
+<div class="quiz-option">A. Braces</div>
+<div class="quiz-option">B. Semicolon</div>
+<div class="quiz-option">C. Indentation ✅</div>
+<div class="quiz-option">D. Colon Only</div>
+</div>
+<h3>📝 Practice Questions</h3>
+<ol>
+<li>Write a program to check whether a number is positive or negative.</li>
+<li>Write a program to find the largest of two numbers.</li>
+<li>Write a program to check voting eligibility.</li>
+<li>Write a program to assign grades using if-elif-else.</li>
+<li>Explain nested if with an example.</li>
+</ol>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>Remember the syntax of if, if-else and if-elif-else.</li>
+<li>Indentation is compulsory in Python.</li>
+<li>elif is used for multiple conditions.</li>
+<li>Nested if means an if statement inside another if.</li>
+<li>Decision-making statements are frequently asked in practical exams.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Use the if statement for simple decisions.</li>
+<li>Use if-else for two-way decisions.</li>
+<li>Use if-elif-else for multiple conditions.</li>
+<li>Create nested if statements.</li>
+<li>Develop practical decision-making programs.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

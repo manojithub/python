@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn file handling in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="File Handling in Python | Manojithub">
+<meta property="og:description" content="Learn file handling in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/file_handling.html">
+<link rel="canonical" href="https://manojithub.github.io/python/file_handling.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>File Handling in Python | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="filehandling">
+<h2>📂 File Handling in Python</h2>
+<div class="content-box">
+<h3>Introduction to File Handling</h3>
+<p>
+            File Handling is used to store data permanently in a file.
+            Normally, data stored in variables is lost when a program ends.
+            Files allow data to be saved and retrieved whenever needed.
+        </p>
+<p>
+            Python provides built-in functions to create, read, write and update files.
+        </p>
+<h3>Advantages of File Handling</h3>
+<ul>
+<li>Permanent storage of data.</li>
+<li>Easy retrieval of information.</li>
+<li>Supports large amounts of data.</li>
+<li>Useful for record management.</li>
+<li>Allows data sharing between programs.</li>
+</ul>
+<h3>Opening a File</h3>
+<p>
+            Before performing any operation, a file must be opened using the
+            <strong>open()</strong> function.
+        </p>
+<h4>Syntax</h4>
+<pre><code>file_object = open("filename","mode")</code></pre>
+<h3>File Modes</h3>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td>Read Mode</td>
+</tr>
+<tr>
+<td>w</td>
+<td>Write Mode</td>
+</tr>
+<tr>
+<td>a</td>
+<td>Append Mode</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>Read and Write</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>Write and Read</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>Append and Read</td>
+</tr>
+</tbody>
+</table>
+<h3>Creating and Writing to a File</h3>
+<pre><code>file = open("sample.txt","w")
+
+file.write("Welcome to Python")
+
+file.close()</code></pre>
+<h3>Reading a File</h3>
+<pre><code>file = open("sample.txt","r")
+
+data = file.read()
+
+print(data)
+
+file.close()</code></pre>
+<h3>Output</h3>
+<pre><code>Welcome to Python</code></pre>
+<h3>Appending Data to a File</h3>
+<pre><code>file = open("sample.txt","a")
+
+file.write("\nPython File Handling")
+
+file.close()</code></pre>
+<h3>Reading Line by Line</h3>
+<pre><code>file = open("sample.txt","r")
+
+for line in file:
+    print(line)
+
+file.close()</code></pre>
+<h3>read(), readline() and readlines()</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>read()</td>
+<td>Reads entire file</td>
+</tr>
+<tr>
+<td>readline()</td>
+<td>Reads one line</td>
+</tr>
+<tr>
+<td>readlines()</td>
+<td>Reads all lines into a list</td>
+</tr>
+</tbody>
+</table>
+<h3>Using readline()</h3>
+<pre><code>file = open("sample.txt","r")
+
+print(file.readline())
+
+file.close()</code></pre>
+<h3>Using readlines()</h3>
+<pre><code>file = open("sample.txt","r")
+
+lines = file.readlines()
+
+print(lines)
+
+file.close()</code></pre>
+<h3>Closing a File</h3>
+<p>
+            After completing operations, the file should be closed using
+            <strong>close()</strong>.
+        </p>
+<pre><code>file.close()</code></pre>
+<h3>Using with Statement</h3>
+<p>
+            The <strong>with</strong> statement automatically closes the file.
+        </p>
+<pre><code>with open("sample.txt","r") as file:
+    print(file.read())</code></pre>
+<h3>File Pointer Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tell()</td>
+<td>Returns current position</td>
+</tr>
+<tr>
+<td>seek()</td>
+<td>Moves file pointer</td>
+</tr>
+</tbody>
+</table>
+<pre><code>file = open("sample.txt","r")
+
+print(file.tell())
+
+file.close()</code></pre>
+<h3>Output</h3>
+<pre><code>0</code></pre>
+<h3>Using seek()</h3>
+<pre><code>file = open("sample.txt","r")
+
+file.seek(5)
+
+print(file.read())
+
+file.close()</code></pre>
+<h3>Program 1: Write Student Details</h3>
+<pre><code>file = open("student.txt","w")
+
+name = input("Enter Name: ")
+mark = input("Enter Mark: ")
+
+file.write(name + "\n")
+file.write(mark)
+
+file.close()
+
+print("Data Saved")</code></pre>
+<h3>Program 2: Read Student Details</h3>
+<pre><code>file = open("student.txt","r")
+
+print(file.read())
+
+file.close()</code></pre>
+<h3>Program 3: Count Number of Lines</h3>
+<pre><code>file = open("sample.txt","r")
+
+count = len(file.readlines())
+
+print("Lines =", count)
+
+file.close()</code></pre>
+<h3>Program 4: Count Words in a File</h3>
+<pre><code>file = open("sample.txt","r")
+
+data = file.read()
+
+words = data.split()
+
+print("Words =", len(words))
+
+file.close()</code></pre>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Which function opens a file?</strong></p>
+<div class="quiz-option">A. file()</div>
+<div class="quiz-option">B. open() ✅</div>
+<div class="quiz-option">C. read()</div>
+<div class="quiz-option">D. create()</div>
+<br/>
+<p><strong>2. Which mode is used to write a file?</strong></p>
+<div class="quiz-option">A. r</div>
+<div class="quiz-option">B. a</div>
+<div class="quiz-option">C. w ✅</div>
+<div class="quiz-option">D. x</div>
+<br/>
+<p><strong>3. Which method reads the entire file?</strong></p>
+<div class="quiz-option">A. readline()</div>
+<div class="quiz-option">B. readlines()</div>
+<div class="quiz-option">C. read() ✅</div>
+<div class="quiz-option">D. open()</div>
+<br/>
+<p><strong>4. Which function returns current file position?</strong></p>
+<div class="quiz-option">A. tell() ✅</div>
+<div class="quiz-option">B. seek()</div>
+<div class="quiz-option">C. close()</div>
+<div class="quiz-option">D. read()</div>
+</div>
+<h3>📝 Practice Questions</h3>
+<ol>
+<li>What is file handling?</li>
+<li>Explain different file modes.</li>
+<li>Differentiate read(), readline() and readlines().</li>
+<li>What is the purpose of seek() and tell()?</li>
+<li>Write a program to store student details in a file.</li>
+<li>Write a program to count words in a file.</li>
+</ol>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>Remember file modes (r, w, a).</li>
+<li>Always close files after use.</li>
+<li>Understand read(), readline() and readlines().</li>
+<li>Learn seek() and tell() functions.</li>
+<li>File programs are important for practical exams.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Open and close files.</li>
+<li>Read and write file contents.</li>
+<li>Append data to files.</li>
+<li>Use file pointer functions.</li>
+<li>Develop file-based applications.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

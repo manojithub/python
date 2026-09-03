@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn python operators with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Python Operators | Manojithub">
+<meta property="og:description" content="Learn python operators with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/operators.html">
+<link rel="canonical" href="https://manojithub.github.io/python/operators.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Python Operators | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="operators">
+<h2>➕ Operators in Python</h2>
+<div class="content-box">
+<h3>What is an Operator?</h3>
+<p>
+            An operator is a special symbol used to perform operations on values
+            and variables. Operators help us perform calculations, comparisons,
+            logical decisions and assignments in a program.
+        </p>
+<pre><code>x = 10
+y = 5
+
+print(x + y)</code></pre>
+<p>
+            In the above example, <strong>+</strong> is an operator used for addition.
+        </p>
+<h3>Types of Operators in Python</h3>
+<table>
+<thead>
+<tr>
+<th>Operator Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arithmetic Operators</td>
+<td>Perform mathematical calculations</td>
+</tr>
+<tr>
+<td>Relational Operators</td>
+<td>Compare values</td>
+</tr>
+<tr>
+<td>Logical Operators</td>
+<td>Combine conditions</td>
+</tr>
+<tr>
+<td>Assignment Operators</td>
+<td>Assign values to variables</td>
+</tr>
+</tbody>
+</table>
+<h3>1️⃣ Arithmetic Operators</h3>
+<p>
+            Arithmetic operators are used to perform mathematical calculations.
+        </p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Operation</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Addition</td>
+<td>10 + 5 = 15</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtraction</td>
+<td>10 - 5 = 5</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication</td>
+<td>10 * 5 = 50</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Division</td>
+<td>10 / 5 = 2.0</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Modulus</td>
+<td>10 % 3 = 1</td>
+</tr>
+<tr>
+<td>//</td>
+<td>Floor Division</td>
+<td>10 // 3 = 3</td>
+</tr>
+<tr>
+<td>**</td>
+<td>Exponent</td>
+<td>2 ** 3 = 8</td>
+</tr>
+</tbody>
+</table>
+<pre><code>a = 20
+b = 6
+
+print("Addition =", a + b)
+print("Subtraction =", a - b)
+print("Multiplication =", a * b)
+print("Division =", a / b)
+print("Modulus =", a % b)</code></pre>
+<h3>Output</h3>
+<pre><code>Addition = 26
+Subtraction = 14
+Multiplication = 120
+Division = 3.3333333333333335
+Modulus = 2</code></pre>
+<h3>2️⃣ Relational Operators</h3>
+<p>
+            Relational operators compare two values and return either
+            <strong>True</strong> or <strong>False</strong>.
+        </p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>Equal To</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Not Equal To</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater Than</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Less Than</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater Than or Equal To</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less Than or Equal To</td>
+</tr>
+</tbody>
+</table>
+<pre><code>x = 10
+y = 20
+
+print(x == y)
+print(x != y)
+print(x &lt; y)
+print(x &gt; y)</code></pre>
+<h3>Output</h3>
+<pre><code>False
+True
+True
+False</code></pre>
+<h3>3️⃣ Logical Operators</h3>
+<p>
+            Logical operators are used to combine two or more conditions.
+        </p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td>True if both conditions are true</td>
+</tr>
+<tr>
+<td>or</td>
+<td>True if at least one condition is true</td>
+</tr>
+<tr>
+<td>not</td>
+<td>Reverses the result</td>
+</tr>
+</tbody>
+</table>
+<pre><code>a = 10
+b = 20
+
+print(a &lt; b and b &gt; 15)
+print(a &gt; b or b &gt; 15)
+print(not(a &lt; b))</code></pre>
+<h3>Output</h3>
+<pre><code>True
+True
+False</code></pre>
+<h3>Truth Table for AND Operator</h3>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A and B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h3>4️⃣ Assignment Operators</h3>
+<p>
+            Assignment operators are used to assign values to variables.
+        </p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Example</th>
+<th>Equivalent To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>x = 5</td>
+<td>x = 5</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>x += 3</td>
+<td>x = x + 3</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>x -= 3</td>
+<td>x = x - 3</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>x *= 3</td>
+<td>x = x * 3</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>x /= 3</td>
+<td>x = x / 3</td>
+</tr>
+</tbody>
+</table>
+<pre><code>x = 10
+
+x += 5
+print(x)
+
+x *= 2
+print(x)</code></pre>
+<h3>Output</h3>
+<pre><code>15
+30</code></pre>
+<h3>Operator Precedence</h3>
+<p>
+            Operator precedence determines the order in which operations are performed.
+        </p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>()</td>
+</tr>
+<tr>
+<td>2</td>
+<td>**</td>
+</tr>
+<tr>
+<td>3</td>
+<td>*, /, //, %</td>
+</tr>
+<tr>
+<td>4</td>
+<td>+, -</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Relational Operators</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Logical Operators</td>
+</tr>
+</tbody>
+</table>
+<pre><code>result = 10 + 5 * 2
+print(result)</code></pre>
+<h3>Output</h3>
+<pre><code>20</code></pre>
+<p>
+            Multiplication is performed before addition.
+        </p>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Which operator is used to find the remainder?</strong></p>
+<div class="quiz-option">A. //</div>
+<div class="quiz-option">B. % ✅</div>
+<div class="quiz-option">C. **</div>
+<div class="quiz-option">D. /</div>
+<br/>
+<p><strong>2. What is the result of 10 // 3?</strong></p>
+<div class="quiz-option">A. 3 ✅</div>
+<div class="quiz-option">B. 3.33</div>
+<div class="quiz-option">C. 1</div>
+<div class="quiz-option">D. 30</div>
+<br/>
+<p><strong>3. Which logical operator returns True if both conditions are True?</strong></p>
+<div class="quiz-option">A. or</div>
+<div class="quiz-option">B. not</div>
+<div class="quiz-option">C. and ✅</div>
+<div class="quiz-option">D. xor</div>
+</div>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>% gives the remainder after division.</li>
+<li>// gives the integer quotient.</li>
+<li>** is used for exponentiation.</li>
+<li>Relational operators return True or False.</li>
+<li>Remember operator precedence for calculations.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Define an operator.</li>
+<li>Use arithmetic operators in calculations.</li>
+<li>Compare values using relational operators.</li>
+<li>Combine conditions using logical operators.</li>
+<li>Apply assignment operators effectively.</li>
+<li>Understand operator precedence.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

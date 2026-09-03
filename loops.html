@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn loops in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Loops in Python | Manojithub">
+<meta property="og:description" content="Learn loops in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/loops.html">
+<link rel="canonical" href="https://manojithub.github.io/python/loops.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Loops in Python | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="loops">
+<h2>🔁 Loops in Python</h2>
+<div class="content-box">
+<h3>Introduction to Loops</h3>
+<p>
+            In programming, a loop is used to execute a block of code repeatedly.
+            Loops help reduce the amount of code and make programs more efficient.
+        </p>
+<p>
+            For example, instead of writing the same print statement ten times,
+            we can use a loop to repeat it automatically.
+        </p>
+<pre><code>print("Python")
+print("Python")
+print("Python")
+print("Python")
+print("Python")</code></pre>
+<p>
+            The above code can be replaced by a loop.
+        </p>
+<h3>Types of Loops in Python</h3>
+<table>
+<thead>
+<tr>
+<th>Loop Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>while loop</td>
+<td>Repeats while a condition is True</td>
+</tr>
+<tr>
+<td>for loop</td>
+<td>Repeats for a fixed sequence of values</td>
+</tr>
+<tr>
+<td>Nested Loop</td>
+<td>A loop inside another loop</td>
+</tr>
+</tbody>
+</table>
+<h3>1️⃣ The while Loop</h3>
+<p>
+            The while loop executes a block of code repeatedly as long as the
+            specified condition remains True.
+        </p>
+<h4>Syntax</h4>
+<pre><code>while condition:
+    statement</code></pre>
+<h4>Example 1: Print Numbers 1 to 5</h4>
+<pre><code>i = 1
+
+while i &lt;= 5:
+    print(i)
+    i = i + 1</code></pre>
+<h4>Output</h4>
+<pre><code>1
+2
+3
+4
+5</code></pre>
+<h4>Dry Run Table</h4>
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>Condition</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>True</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>True</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>True</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>True</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>True</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h3>Infinite Loop</h3>
+<p>
+            If the loop condition never becomes False, the loop runs forever.
+            This is called an Infinite Loop.
+        </p>
+<pre><code>while True:
+    print("Hello")</code></pre>
+<h3>2️⃣ The for Loop</h3>
+<p>
+            The for loop is used to iterate through a sequence such as a range,
+            string, list or tuple.
+        </p>
+<h4>Syntax</h4>
+<pre><code>for variable in sequence:
+    statement</code></pre>
+<h4>Example 1: Print Numbers 1 to 5</h4>
+<pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+<h4>Output</h4>
+<pre><code>1
+2
+3
+4
+5</code></pre>
+<h3>Understanding range()</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>range(5)</td>
+<td>0,1,2,3,4</td>
+</tr>
+<tr>
+<td>range(1,5)</td>
+<td>1,2,3,4</td>
+</tr>
+<tr>
+<td>range(1,10,2)</td>
+<td>1,3,5,7,9</td>
+</tr>
+</tbody>
+</table>
+<h4>Example 2: Print Even Numbers</h4>
+<pre><code>for i in range(2, 11, 2):
+    print(i)</code></pre>
+<h4>Output</h4>
+<pre><code>2
+4
+6
+8
+10</code></pre>
+<h4>Example 3: Print Characters of a String</h4>
+<pre><code>name = "PYTHON"
+
+for ch in name:
+    print(ch)</code></pre>
+<h4>Output</h4>
+<pre><code>P
+Y
+T
+H
+O
+N</code></pre>
+<h3>3️⃣ Nested Loops</h3>
+<p>
+            A nested loop is a loop inside another loop.
+        </p>
+<h4>Syntax</h4>
+<pre><code>for i in range(3):
+
+    for j in range(2):
+        statement</code></pre>
+<h4>Example</h4>
+<pre><code>for i in range(3):
+
+    for j in range(2):
+        print("*", end=" ")
+
+    print()</code></pre>
+<h4>Output</h4>
+<pre><code>* *
+* *
+* *</code></pre>
+<h3>Pattern Programs</h3>
+<h4>Star Pattern</h4>
+<pre><code>for i in range(1,6):
+
+    for j in range(i):
+        print("*", end=" ")
+
+    print()</code></pre>
+<h4>Output</h4>
+<pre><code>*
+* *
+* * *
+* * * *
+* * * * *</code></pre>
+<h3>4️⃣ break Statement</h3>
+<p>
+            The break statement immediately terminates the loop.
+        </p>
+<pre><code>for i in range(1,11):
+
+    if i == 6:
+        break
+
+    print(i)</code></pre>
+<h4>Output</h4>
+<pre><code>1
+2
+3
+4
+5</code></pre>
+<p>
+            When i becomes 6, the loop stops completely.
+        </p>
+<h3>5️⃣ continue Statement</h3>
+<p>
+            The continue statement skips the current iteration and moves to the
+            next iteration.
+        </p>
+<pre><code>for i in range(1,6):
+
+    if i == 3:
+        continue
+
+    print(i)</code></pre>
+<h4>Output</h4>
+<pre><code>1
+2
+4
+5</code></pre>
+<p>
+            Number 3 is skipped.
+        </p>
+<h3>6️⃣ pass Statement</h3>
+<p>
+            The pass statement does nothing. It acts as a placeholder for future code.
+        </p>
+<pre><code>for i in range(5):
+
+    if i == 3:
+        pass
+
+    print(i)</code></pre>
+<h4>Output</h4>
+<pre><code>0
+1
+2
+3
+4</code></pre>
+<h3>Program 1: Sum of First 10 Numbers</h3>
+<pre><code>sum = 0
+
+for i in range(1,11):
+    sum = sum + i
+
+print("Sum =", sum)</code></pre>
+<h4>Output</h4>
+<pre><code>Sum = 55</code></pre>
+<h3>Program 2: Multiplication Table</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+for i in range(1,11):
+    print(num, "x", i, "=", num*i)</code></pre>
+<h3>Program 3: Factorial of a Number</h3>
+<pre><code>n = int(input("Enter Number: "))
+
+fact = 1
+
+for i in range(1,n+1):
+    fact = fact * i
+
+print("Factorial =", fact)</code></pre>
+<h3>Program 4: Reverse Counting</h3>
+<pre><code>for i in range(10,0,-1):
+    print(i)</code></pre>
+<h4>Output</h4>
+<pre><code>10
+9
+8
+7
+6
+5
+4
+3
+2
+1</code></pre>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Which loop executes while a condition remains True?</strong></p>
+<div class="quiz-option">A. for</div>
+<div class="quiz-option">B. while ✅</div>
+<div class="quiz-option">C. do while</div>
+<div class="quiz-option">D. repeat</div>
+<br/>
+<p><strong>2. Which statement immediately exits a loop?</strong></p>
+<div class="quiz-option">A. continue</div>
+<div class="quiz-option">B. stop</div>
+<div class="quiz-option">C. break ✅</div>
+<div class="quiz-option">D. pass</div>
+<br/>
+<p><strong>3. Which statement skips the current iteration?</strong></p>
+<div class="quiz-option">A. pass</div>
+<div class="quiz-option">B. break</div>
+<div class="quiz-option">C. continue ✅</div>
+<div class="quiz-option">D. exit</div>
+<br/>
+<p><strong>4. What is the output of range(5)?</strong></p>
+<div class="quiz-option">A. 1,2,3,4,5</div>
+<div class="quiz-option">B. 0,1,2,3,4 ✅</div>
+<div class="quiz-option">C. 0,1,2,3,4,5</div>
+<div class="quiz-option">D. 1,2,3,4</div>
+</div>
+<h3>📝 Practice Questions</h3>
+<ol>
+<li>Write a program to print numbers from 1 to 100.</li>
+<li>Write a program to find the sum of first N numbers.</li>
+<li>Write a program to generate multiplication tables.</li>
+<li>Write a program to find factorial of a number.</li>
+<li>Differentiate break and continue.</li>
+<li>Explain nested loops with an example.</li>
+</ol>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>while loop is condition-based.</li>
+<li>for loop is sequence-based.</li>
+<li>range(start, stop, step) is very important.</li>
+<li>break exits the loop immediately.</li>
+<li>continue skips the current iteration.</li>
+<li>pass is a placeholder statement.</li>
+<li>Factorial and multiplication table programs are frequently asked.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Use while loops for repetitive tasks.</li>
+<li>Use for loops with range().</li>
+<li>Create nested loops and patterns.</li>
+<li>Apply break, continue and pass statements.</li>
+<li>Develop practical looping programs.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

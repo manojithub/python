@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn lists in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Lists in Python | Manojithub">
+<meta property="og:description" content="Learn lists in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/lists.html">
+<link rel="canonical" href="https://manojithub.github.io/python/lists.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Lists in Python | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="lists">
+<h2>📋 Lists in Python</h2>
+<div class="content-box">
+<h3>Introduction to Lists</h3>
+<p>
+            A List is a collection of multiple values stored in a single variable.
+            Lists are one of the most commonly used data structures in Python.
+        </p>
+<p>
+            Unlike strings, lists can store different types of data such as
+            integers, floats, strings and even other lists.
+        </p>
+<pre><code>numbers = [10, 20, 30, 40, 50]
+
+print(numbers)</code></pre>
+<h3>Output</h3>
+<pre><code>[10, 20, 30, 40, 50]</code></pre>
+<h3>Characteristics of Lists</h3>
+<ul>
+<li>Lists are ordered collections.</li>
+<li>Lists are mutable (can be modified).</li>
+<li>Lists allow duplicate values.</li>
+<li>Lists can store different data types.</li>
+<li>Lists are enclosed within square brackets [ ].</li>
+</ul>
+<h3>Creating Lists</h3>
+<pre><code>list1 = [1, 2, 3, 4]
+list2 = ["Apple", "Orange", "Mango"]
+list3 = [10, "Python", 12.5]
+
+print(list1)
+print(list2)
+print(list3)</code></pre>
+<h3>Accessing List Elements</h3>
+<p>
+            Each element in a list has an index position starting from 0.
+        </p>
+<pre><code>fruits = ["Apple", "Orange", "Mango"]
+
+print(fruits[0])
+print(fruits[1])
+print(fruits[2])</code></pre>
+<h3>Output</h3>
+<pre><code>Apple
+Orange
+Mango</code></pre>
+<h3>Negative Indexing</h3>
+<pre><code>fruits = ["Apple", "Orange", "Mango"]
+
+print(fruits[-1])
+print(fruits[-2])</code></pre>
+<h3>Output</h3>
+<pre><code>Mango
+Orange</code></pre>
+<h3>List Slicing</h3>
+<p>
+            Slicing extracts a portion of a list.
+        </p>
+<pre><code>numbers = [10,20,30,40,50,60]
+
+print(numbers[1:4])
+print(numbers[:3])
+print(numbers[3:])</code></pre>
+<h3>Output</h3>
+<pre><code>[20, 30, 40]
+[10, 20, 30]
+[40, 50, 60]</code></pre>
+<h3>Modifying List Elements</h3>
+<p>
+            Lists are mutable, so their elements can be changed.
+        </p>
+<pre><code>numbers = [10,20,30]
+
+numbers[1] = 50
+
+print(numbers)</code></pre>
+<h3>Output</h3>
+<pre><code>[10, 50, 30]</code></pre>
+<h3>Traversing a List</h3>
+<pre><code>numbers = [10,20,30,40]
+
+for item in numbers:
+    print(item)</code></pre>
+<h3>Output</h3>
+<pre><code>10
+20
+30
+40</code></pre>
+<h3>Common List Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len()</td>
+<td>Returns number of elements</td>
+</tr>
+<tr>
+<td>max()</td>
+<td>Returns largest element</td>
+</tr>
+<tr>
+<td>min()</td>
+<td>Returns smallest element</td>
+</tr>
+<tr>
+<td>sum()</td>
+<td>Returns total of elements</td>
+</tr>
+<tr>
+<td>sorted()</td>
+<td>Returns sorted list</td>
+</tr>
+</tbody>
+</table>
+<pre><code>numbers = [5,10,15,20]
+
+print(len(numbers))
+print(max(numbers))
+print(min(numbers))
+print(sum(numbers))</code></pre>
+<h3>Output</h3>
+<pre><code>4
+20
+5
+50</code></pre>
+<h3>Important List Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>append()</td>
+<td>Add element at end</td>
+</tr>
+<tr>
+<td>insert()</td>
+<td>Insert element at specified position</td>
+</tr>
+<tr>
+<td>remove()</td>
+<td>Remove specified element</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>Remove element by index</td>
+</tr>
+<tr>
+<td>sort()</td>
+<td>Sort the list</td>
+</tr>
+<tr>
+<td>reverse()</td>
+<td>Reverse the list</td>
+</tr>
+<tr>
+<td>count()</td>
+<td>Count occurrences</td>
+</tr>
+<tr>
+<td>index()</td>
+<td>Find position of element</td>
+</tr>
+</tbody>
+</table>
+<h3>append()</h3>
+<pre><code>fruits = ["Apple", "Orange"]
+
+fruits.append("Mango")
+
+print(fruits)</code></pre>
+<h3>Output</h3>
+<pre><code>['Apple', 'Orange', 'Mango']</code></pre>
+<h3>insert()</h3>
+<pre><code>numbers = [10,20,30]
+
+numbers.insert(1,15)
+
+print(numbers)</code></pre>
+<h3>Output</h3>
+<pre><code>[10, 15, 20, 30]</code></pre>
+<h3>remove()</h3>
+<pre><code>numbers = [10,20,30]
+
+numbers.remove(20)
+
+print(numbers)</code></pre>
+<h3>Output</h3>
+<pre><code>[10, 30]</code></pre>
+<h3>sort()</h3>
+<pre><code>numbers = [40,10,50,20]
+
+numbers.sort()
+
+print(numbers)</code></pre>
+<h3>Output</h3>
+<pre><code>[10, 20, 40, 50]</code></pre>
+<h3>reverse()</h3>
+<pre><code>numbers = [10,20,30]
+
+numbers.reverse()
+
+print(numbers)</code></pre>
+<h3>Output</h3>
+<pre><code>[30, 20, 10]</code></pre>
+<h3>Searching an Element</h3>
+<pre><code>numbers = [10,20,30,40]
+
+if 30 in numbers:
+    print("Found")
+else:
+    print("Not Found")</code></pre>
+<h3>Output</h3>
+<pre><code>Found</code></pre>
+<h3>Nested Lists</h3>
+<p>
+            A list inside another list is called a Nested List.
+        </p>
+<pre><code>marks = [
+    [75,80,90],
+    [65,70,85]
+]
+
+print(marks[0])
+print(marks[1])</code></pre>
+<h3>Output</h3>
+<pre><code>[75, 80, 90]
+[65, 70, 85]</code></pre>
+<h3>Program 1: Find Largest Number</h3>
+<pre><code>numbers = [15,25,10,40,30]
+
+print("Largest =", max(numbers))</code></pre>
+<h3>Program 2: Calculate Sum of List Elements</h3>
+<pre><code>numbers = [10,20,30,40]
+
+print("Sum =", sum(numbers))</code></pre>
+<h3>Program 3: Count Occurrences</h3>
+<pre><code>numbers = [10,20,10,30,10]
+
+print(numbers.count(10))</code></pre>
+<h3>Output</h3>
+<pre><code>3</code></pre>
+<h3>Program 4: Linear Search</h3>
+<pre><code>numbers = [5,10,15,20,25]
+
+key = int(input("Enter Number to Search: "))
+
+if key in numbers:
+    print("Element Found")
+else:
+    print("Element Not Found")</code></pre>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Which brackets are used for lists?</strong></p>
+<div class="quiz-option">A. ( )</div>
+<div class="quiz-option">B. { }</div>
+<div class="quiz-option">C. [ ] ✅</div>
+<div class="quiz-option">D. &lt; &gt;</div>
+<br/>
+<p><strong>2. Which method adds an element at the end of a list?</strong></p>
+<div class="quiz-option">A. insert()</div>
+<div class="quiz-option">B. append() ✅</div>
+<div class="quiz-option">C. add()</div>
+<div class="quiz-option">D. extend()</div>
+<br/>
+<p><strong>3. Which function returns the largest element?</strong></p>
+<div class="quiz-option">A. min()</div>
+<div class="quiz-option">B. len()</div>
+<div class="quiz-option">C. sum()</div>
+<div class="quiz-option">D. max() ✅</div>
+<br/>
+<p><strong>4. Lists are:</strong></p>
+<div class="quiz-option">A. Immutable</div>
+<div class="quiz-option">B. Mutable ✅</div>
+<div class="quiz-option">C. Fixed Size</div>
+<div class="quiz-option">D. Read Only</div>
+</div>
+<h3>📝 Practice Questions</h3>
+<ol>
+<li>What is a list? Explain its characteristics.</li>
+<li>Differentiate indexing and slicing in lists.</li>
+<li>Explain append(), insert() and remove() methods.</li>
+<li>Write a program to find the largest element in a list.</li>
+<li>Write a program to search an element in a list.</li>
+<li>What is a nested list? Explain with example.</li>
+</ol>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>Lists are mutable whereas strings are immutable.</li>
+<li>Indexing starts from 0.</li>
+<li>append() adds at the end of the list.</li>
+<li>insert() adds at a specific position.</li>
+<li>sort() arranges elements in ascending order.</li>
+<li>Linear search using 'in' operator is important.</li>
+<li>List programs are commonly asked in practical exams.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Create and manipulate lists.</li>
+<li>Use indexing and slicing on lists.</li>
+<li>Apply list functions and methods.</li>
+<li>Search and sort list elements.</li>
+<li>Develop programs using lists.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

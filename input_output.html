@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn input & output with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Input & Output | Manojithub">
+<meta property="og:description" content="Learn input & output with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/input_output.html">
+<link rel="canonical" href="https://manojithub.github.io/python/input_output.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Input & Output | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="input-output">
+<h2>⌨ Input and Output in Python</h2>
+<div class="content-box">
+<h3>Introduction</h3>
+<p>
+            Every computer program needs a way to receive data from the user
+            and display the results. In Python, this is achieved using
+            <strong>Input</strong> and <strong>Output</strong> operations.
+        </p>
+<ul>
+<li><strong>Input</strong> – Data entered by the user.</li>
+<li><strong>Output</strong> – Information displayed to the user.</li>
+</ul>
+<h3>Output Using print()</h3>
+<p>
+            The <strong>print()</strong> function is used to display output on
+            the screen.
+        </p>
+<pre><code>print("Hello World")</code></pre>
+<h3>Output</h3>
+<pre><code>Hello World</code></pre>
+<h3>Printing Multiple Values</h3>
+<pre><code>name = "Anu"
+age = 17
+
+print(name, age)</code></pre>
+<h3>Output</h3>
+<pre><code>Anu 17</code></pre>
+<h3>Printing Messages and Variables</h3>
+<pre><code>name = "Rahul"
+
+print("Welcome", name)</code></pre>
+<h3>Output</h3>
+<pre><code>Welcome Rahul</code></pre>
+<h3>Input Using input()</h3>
+<p>
+            The <strong>input()</strong> function is used to accept data from
+            the user through the keyboard.
+        </p>
+<pre><code>name = input("Enter your name: ")
+
+print("Hello", name)</code></pre>
+<h3>Sample Output</h3>
+<pre><code>Enter your name: Arun
+Hello Arun</code></pre>
+<h3>How input() Works</h3>
+<ol>
+<li>The program displays a message.</li>
+<li>The user enters data.</li>
+<li>The entered value is stored in a variable.</li>
+<li>The program processes the value.</li>
+</ol>
+<h3>Important Note</h3>
+<div class="quiz-card">
+<p>
+                By default, the <strong>input()</strong> function stores data as
+                a <strong>string</strong>.
+            </p>
+</div>
+<pre><code>age = input("Enter Age: ")
+
+print(type(age))</code></pre>
+<h3>Output</h3>
+<pre><code>&lt;class 'str'&gt;</code></pre>
+<h3>Type Conversion</h3>
+<p>
+            Type conversion is used to convert data from one type to another.
+        </p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int()</td>
+<td>Convert to Integer</td>
+</tr>
+<tr>
+<td>float()</td>
+<td>Convert to Float</td>
+</tr>
+<tr>
+<td>str()</td>
+<td>Convert to String</td>
+</tr>
+</tbody>
+</table>
+<h3>Using int()</h3>
+<pre><code>age = int(input("Enter Age: "))
+
+print(age)
+print(type(age))</code></pre>
+<h3>Sample Output</h3>
+<pre><code>Enter Age: 17
+17
+&lt;class 'int'&gt;</code></pre>
+<h3>Using float()</h3>
+<pre><code>salary = float(input("Enter Salary: "))
+
+print(salary)</code></pre>
+<h3>Sample Output</h3>
+<pre><code>Enter Salary: 25000.50
+25000.5</code></pre>
+<h3>Program: Addition of Two Numbers</h3>
+<pre><code>num1 = int(input("Enter First Number: "))
+num2 = int(input("Enter Second Number: "))
+
+sum = num1 + num2
+
+print("Sum =", sum)</code></pre>
+<h3>Sample Output</h3>
+<pre><code>Enter First Number: 10
+Enter Second Number: 20
+Sum = 30</code></pre>
+<h3>Program Explanation</h3>
+<ol>
+<li>Read first number using input().</li>
+<li>Convert it into integer using int().</li>
+<li>Read second number.</li>
+<li>Add the two numbers.</li>
+<li>Display the result using print().</li>
+</ol>
+<h3>Reading Multiple Inputs</h3>
+<pre><code>name = input("Enter Name: ")
+age = int(input("Enter Age: "))
+mark = float(input("Enter Mark: "))
+
+print(name)
+print(age)
+print(mark)</code></pre>
+<h3>Formatted Output</h3>
+<p>
+            Output can be formatted to make it more readable.
+        </p>
+<pre><code>name = "Anu"
+mark = 95
+
+print("Student Name:", name)
+print("Mark:", mark)</code></pre>
+<h3>Output</h3>
+<pre><code>Student Name: Anu
+Mark: 95</code></pre>
+<h3>Using f-Strings</h3>
+<p>
+            F-strings provide a modern and convenient way to format output.
+        </p>
+<pre><code>name = "Arun"
+mark = 98
+
+print(f"{name} scored {mark} marks")</code></pre>
+<h3>Output</h3>
+<pre><code>Arun scored 98 marks</code></pre>
+<h3>Real-Life Example</h3>
+<pre><code>name = input("Enter Student Name: ")
+mark1 = int(input("Enter Mark 1: "))
+mark2 = int(input("Enter Mark 2: "))
+
+total = mark1 + mark2
+
+print("Student:", name)
+print("Total Marks:", total)</code></pre>
+<h3>Sample Output</h3>
+<pre><code>Enter Student Name: Rahul
+Enter Mark 1: 75
+Enter Mark 2: 80
+
+Student: Rahul
+Total Marks: 155</code></pre>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Which function is used to display output?</strong></p>
+<div class="quiz-option">A. show()</div>
+<div class="quiz-option">B. print() ✅</div>
+<div class="quiz-option">C. output()</div>
+<div class="quiz-option">D. display()</div>
+<br/>
+<p><strong>2. Which function is used to accept input?</strong></p>
+<div class="quiz-option">A. get()</div>
+<div class="quiz-option">B. read()</div>
+<div class="quiz-option">C. input() ✅</div>
+<div class="quiz-option">D. enter()</div>
+<br/>
+<p><strong>3. By default, input() returns:</strong></p>
+<div class="quiz-option">A. int</div>
+<div class="quiz-option">B. float</div>
+<div class="quiz-option">C. bool</div>
+<div class="quiz-option">D. str ✅</div>
+</div>
+<h3>Common Errors</h3>
+<ul>
+<li>Forgetting to convert input values before calculations.</li>
+<li>Using int() on non-numeric values.</li>
+<li>Missing quotation marks in print().</li>
+<li>Incorrect indentation.</li>
+</ul>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>print() is used for output.</li>
+<li>input() is used for input.</li>
+<li>input() returns a string by default.</li>
+<li>Use int() and float() for numeric calculations.</li>
+<li>Practice writing programs using user input.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Use print() to display output.</li>
+<li>Use input() to accept user data.</li>
+<li>Perform type conversion.</li>
+<li>Create simple interactive programs.</li>
+<li>Format output effectively.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

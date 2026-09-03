@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn variables & data types with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Variables & Data Types | Manojithub">
+<meta property="og:description" content="Learn variables & data types with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/variables.html">
+<link rel="canonical" href="https://manojithub.github.io/python/variables.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Variables & Data Types | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="variables">
+<h2>🔢 Variables and Data Types</h2>
+<div class="content-box">
+<h3>What is a Variable?</h3>
+<p>
+            A variable is a named memory location used to store data temporarily
+            during the execution of a program. The value stored in a variable
+            can be changed whenever required.
+        </p>
+<p>
+            Variables help programmers store and manipulate information such as
+            numbers, names, marks, and calculations.
+        </p>
+<h3>Creating Variables in Python</h3>
+<p>
+            In Python, a variable is created when a value is assigned to it using
+            the assignment operator (=).
+        </p>
+<pre><code>x = 10
+name = "Rahul"
+marks = 95.5</code></pre>
+<h3>Variable Assignment</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value Stored</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>10</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Rahul</td>
+</tr>
+<tr>
+<td>marks</td>
+<td>95.5</td>
+</tr>
+</tbody>
+</table>
+<h3>Rules for Naming Variables</h3>
+<ul>
+<li>Variable names can contain letters, digits and underscore (_).</li>
+<li>Variable names cannot begin with a digit.</li>
+<li>Spaces are not allowed.</li>
+<li>Python keywords cannot be used as variable names.</li>
+<li>Variable names are case-sensitive.</li>
+</ul>
+<h3>Valid Variable Names</h3>
+<pre><code>age = 17
+student_name = "Anu"
+totalMarks = 450
+_count = 25</code></pre>
+<h3>Invalid Variable Names</h3>
+<pre><code>2age = 17        # Starts with digit
+student name     # Contains space
+class = 10       # Python keyword</code></pre>
+<h3>Case Sensitivity</h3>
+<p>
+            Python treats uppercase and lowercase letters differently.
+        </p>
+<pre><code>name = "Rahul"
+Name = "Anu"
+
+print(name)
+print(Name)</code></pre>
+<h3>Output</h3>
+<pre><code>Rahul
+Anu</code></pre>
+<h3>What are Data Types?</h3>
+<p>
+            A data type specifies the type of value stored in a variable.
+            Python automatically identifies the data type based on the assigned value.
+        </p>
+<h3>Common Data Types in Python</h3>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>Integer values</td>
+<td>25, 100, -8</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Decimal values</td>
+<td>10.5, 98.25</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Text/String values</td>
+<td>"Python"</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>Logical values</td>
+<td>True, False</td>
+</tr>
+</tbody>
+</table>
+<h3>Integer (int)</h3>
+<p>
+            Integer values are whole numbers without decimal points.
+        </p>
+<pre><code>age = 17
+year = 2026
+
+print(age)
+print(year)</code></pre>
+<h3>Float (float)</h3>
+<p>
+            Float values contain decimal points.
+        </p>
+<pre><code>height = 5.8
+price = 125.50
+
+print(height)
+print(price)</code></pre>
+<h3>String (str)</h3>
+<p>
+            Strings are sequences of characters enclosed within quotation marks.
+        </p>
+<pre><code>name = "Python"
+city = "Kollam"
+
+print(name)
+print(city)</code></pre>
+<h3>Boolean (bool)</h3>
+<p>
+            Boolean values represent logical conditions.
+        </p>
+<pre><code>isStudent = True
+isPassed = False
+
+print(isStudent)
+print(isPassed)</code></pre>
+<h3>Checking Data Type Using type()</h3>
+<p>
+            The type() function is used to identify the data type of a variable.
+        </p>
+<pre><code>x = 10
+y = 12.5
+name = "Python"
+
+print(type(x))
+print(type(y))
+print(type(name))</code></pre>
+<h3>Output</h3>
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</code></pre>
+<h3>Type Conversion</h3>
+<p>
+            Type conversion means changing one data type into another.
+        </p>
+<pre><code>x = "25"
+
+num = int(x)
+
+print(num)
+print(type(num))</code></pre>
+<h3>Output</h3>
+<pre><code>25
+&lt;class 'int'&gt;</code></pre>
+<h3>Real-Life Example</h3>
+<pre><code>student = "Arun"
+age = 17
+mark = 95.5
+passed = True
+
+print(student)
+print(age)
+print(mark)
+print(passed)</code></pre>
+<h3>Program Explanation</h3>
+<ol>
+<li>student stores a string value.</li>
+<li>age stores an integer value.</li>
+<li>mark stores a float value.</li>
+<li>passed stores a boolean value.</li>
+<li>All values are displayed using print().</li>
+</ol>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Which symbol is used for assignment in Python?</strong></p>
+<div class="quiz-option">A. ==</div>
+<div class="quiz-option">B. = ✅</div>
+<div class="quiz-option">C. :=</div>
+<div class="quiz-option">D. !=</div>
+<br/>
+<p><strong>2. Which data type stores decimal values?</strong></p>
+<div class="quiz-option">A. int</div>
+<div class="quiz-option">B. bool</div>
+<div class="quiz-option">C. float ✅</div>
+<div class="quiz-option">D. str</div>
+<br/>
+<p><strong>3. Which function is used to identify the data type?</strong></p>
+<div class="quiz-option">A. print()</div>
+<div class="quiz-option">B. input()</div>
+<div class="quiz-option">C. type() ✅</div>
+<div class="quiz-option">D. len()</div>
+</div>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>A variable stores data temporarily in memory.</li>
+<li>Python is case-sensitive.</li>
+<li>Common data types are int, float, str and bool.</li>
+<li>Use type() to identify the data type.</li>
+<li>Type conversion can be done using int(), float() and str().</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Define a variable.</li>
+<li>Write valid variable names.</li>
+<li>Identify different data types.</li>
+<li>Use the type() function.</li>
+<li>Perform basic type conversion.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

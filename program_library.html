@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn python program library with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Python Program Library | Manojithub">
+<meta property="og:description" content="Learn python program library with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/program_library.html">
+<link rel="canonical" href="https://manojithub.github.io/python/program_library.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Python Program Library | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="programs">
+<h2>💻 Python Program Library</h2>
+<div class="content-box">
+<h3>Introduction</h3>
+<p>
+            The Program Library contains frequently asked Python programs that are
+            important for examinations, practical records and programming practice.
+            Students should understand the logic, algorithm and output of each program.
+        </p>
+<h3>Program 1: Check Even or Odd Number</h3>
+<pre><code>num = int(input("Enter a Number: "))
+
+if num % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")</code></pre>
+<h3>Output</h3>
+<pre><code>Enter a Number: 12
+Even Number</code></pre>
+<h3>Program 2: Find Largest of Two Numbers</h3>
+<pre><code>a = int(input("Enter First Number: "))
+b = int(input("Enter Second Number: "))
+
+if a &gt; b:
+    print("Largest =", a)
+else:
+    print("Largest =", b)</code></pre>
+<h3>Program 3: Find Largest of Three Numbers</h3>
+<pre><code>a = int(input("Enter First Number: "))
+b = int(input("Enter Second Number: "))
+c = int(input("Enter Third Number: "))
+
+if a &gt; b and a &gt; c:
+    print(a)
+elif b &gt; c:
+    print(b)
+else:
+    print(c)</code></pre>
+<h3>Program 4: Check Prime Number</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+flag = True
+
+if num &lt;= 1:
+    flag = False
+
+for i in range(2, num):
+    if num % i == 0:
+        flag = False
+        break
+
+if flag:
+    print("Prime Number")
+else:
+    print("Not Prime Number")</code></pre>
+<h3>Program 5: Multiplication Table</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+for i in range(1,11):
+    print(num, "x", i, "=", num*i)</code></pre>
+<h3>Program 6: Factorial of a Number</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+fact = 1
+
+for i in range(1, num+1):
+    fact *= i
+
+print("Factorial =", fact)</code></pre>
+<h3>Output</h3>
+<pre><code>Enter Number: 5
+Factorial = 120</code></pre>
+<h3>Program 7: Fibonacci Series</h3>
+<pre><code>n = int(input("How Many Terms: "))
+
+a = 0
+b = 1
+
+for i in range(n):
+    print(a, end=" ")
+    c = a + b
+    a = b
+    b = c</code></pre>
+<h3>Output</h3>
+<pre><code>0 1 1 2 3 5 8 13</code></pre>
+<h3>Program 8: Reverse a Number</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+rev = 0
+
+while num &gt; 0:
+    digit = num % 10
+    rev = rev * 10 + digit
+    num = num // 10
+
+print("Reverse =", rev)</code></pre>
+<h3>Program 9: Palindrome Number</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+temp = num
+rev = 0
+
+while num &gt; 0:
+    digit = num % 10
+    rev = rev * 10 + digit
+    num = num // 10
+
+if temp == rev:
+    print("Palindrome")
+else:
+    print("Not Palindrome")</code></pre>
+<h3>Program 10: Armstrong Number</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+temp = num
+total = 0
+
+while num &gt; 0:
+    digit = num % 10
+    total += digit ** 3
+    num = num // 10
+
+if temp == total:
+    print("Armstrong Number")
+else:
+    print("Not Armstrong Number")</code></pre>
+<h3>Program 11: Sum of Digits</h3>
+<pre><code>num = int(input("Enter Number: "))
+
+total = 0
+
+while num &gt; 0:
+    total += num % 10
+    num = num // 10
+
+print("Sum =", total)</code></pre>
+<h3>Program 12: Count Vowels in a String</h3>
+<pre><code>text = input("Enter String: ")
+
+count = 0
+
+for ch in text.lower():
+    if ch in "aeiou":
+        count += 1
+
+print("Vowels =", count)</code></pre>
+<h3>Program 13: Find Length of a List</h3>
+<pre><code>numbers = [10,20,30,40,50]
+
+print("Length =", len(numbers))</code></pre>
+<h3>Program 14: Find Maximum Element in List</h3>
+<pre><code>numbers = [15,45,23,89,12]
+
+print("Maximum =", max(numbers))</code></pre>
+<h3>Program 15: Student Mark List Using Dictionary</h3>
+<pre><code>student = {
+    "Name":"Arun",
+    "Mark":95,
+    "Grade":"A+"
+}
+
+print(student)</code></pre>
+<div class="quiz-card">
+<h3>🎯 Program Practice Quiz</h3>
+<p><strong>1. Which loop is commonly used for factorial programs?</strong></p>
+<div class="quiz-option">A. if</div>
+<div class="quiz-option">B. for ✅</div>
+<div class="quiz-option">C. try</div>
+<div class="quiz-option">D. lambda</div>
+<br/>
+<p><strong>2. Which operator is used for modulus?</strong></p>
+<div class="quiz-option">A. /</div>
+<div class="quiz-option">B. *</div>
+<div class="quiz-option">C. % ✅</div>
+<div class="quiz-option">D. //</div>
+<br/>
+<p><strong>3. Which data structure stores key-value pairs?</strong></p>
+<div class="quiz-option">A. List</div>
+<div class="quiz-option">B. Tuple</div>
+<div class="quiz-option">C. Dictionary ✅</div>
+<div class="quiz-option">D. Set</div>
+</div>
+<h3>📝 Practical Exam Preparation</h3>
+<ul>
+<li>Prime Number Program</li>
+<li>Factorial Program</li>
+<li>Fibonacci Series</li>
+<li>Palindrome Program</li>
+<li>Armstrong Number Program</li>
+<li>File Handling Programs</li>
+<li>Functions and Modules Programs</li>
+<li>Dictionary and List Programs</li>
+</ul>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>Understand program logic before memorizing code.</li>
+<li>Practice tracing outputs.</li>
+<li>Learn common algorithms such as factorial and Fibonacci.</li>
+<li>Be familiar with string and list operations.</li>
+<li>Practice writing programs without referring to notes.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Develop problem-solving skills.</li>
+<li>Write complete Python programs independently.</li>
+<li>Understand program logic and debugging.</li>
+<li>Prepare for practical examinations.</li>
+<li>Create real-world Python applications.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

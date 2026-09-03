@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn dictionaries in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Dictionaries in Python | Manojithub">
+<meta property="og:description" content="Learn dictionaries in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/dictionary.html">
+<link rel="canonical" href="https://manojithub.github.io/python/dictionary.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Dictionaries in Python | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="dictionary">
+<h2>📖 Dictionaries in Python</h2>
+<div class="content-box">
+<h3>Introduction to Dictionaries</h3>
+<p>
+            A Dictionary is a collection of data stored in the form of
+            <strong>key-value pairs</strong>.
+        </p>
+<p>
+            Each key is unique and is used to access its corresponding value.
+            Dictionaries are widely used for storing structured data such as
+            student records, employee details and product information.
+        </p>
+<pre><code>student = {
+    "name": "Arun",
+    "age": 17,
+    "mark": 95
+}
+
+print(student)</code></pre>
+<h3>Output</h3>
+<pre><code>{'name': 'Arun', 'age': 17, 'mark': 95}</code></pre>
+<h3>Characteristics of Dictionaries</h3>
+<ul>
+<li>Dictionaries store data as key-value pairs.</li>
+<li>Keys must be unique.</li>
+<li>Values can be duplicated.</li>
+<li>Dictionaries are mutable.</li>
+<li>Dictionaries are enclosed within curly braces { }.</li>
+<li>Elements are accessed using keys instead of indexes.</li>
+</ul>
+<h3>Creating a Dictionary</h3>
+<pre><code>student = {
+    "name": "Anu",
+    "class": "XI",
+    "mark": 98
+}
+
+print(student)</code></pre>
+<h3>Accessing Dictionary Elements</h3>
+<p>
+            Values are accessed using their keys.
+        </p>
+<pre><code>student = {
+    "name": "Rahul",
+    "age": 17,
+    "mark": 90
+}
+
+print(student["name"])
+print(student["mark"])</code></pre>
+<h3>Output</h3>
+<pre><code>Rahul
+90</code></pre>
+<h3>Using get() Method</h3>
+<p>
+            The get() method safely retrieves values from a dictionary.
+        </p>
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(student.get("name"))</code></pre>
+<h3>Output</h3>
+<pre><code>Arun</code></pre>
+<h3>Adding New Elements</h3>
+<pre><code>student = {
+    "name": "Anu",
+    "mark": 90
+}
+
+student["age"] = 17
+
+print(student)</code></pre>
+<h3>Output</h3>
+<pre><code>{'name': 'Anu', 'mark': 90, 'age': 17}</code></pre>
+<h3>Modifying Values</h3>
+<pre><code>student = {
+    "name": "Anu",
+    "mark": 90
+}
+
+student["mark"] = 95
+
+print(student)</code></pre>
+<h3>Output</h3>
+<pre><code>{'name': 'Anu', 'mark': 95}</code></pre>
+<h3>Removing Elements</h3>
+<pre><code>student = {
+    "name": "Anu",
+    "mark": 90,
+    "age": 17
+}
+
+del student["age"]
+
+print(student)</code></pre>
+<h3>Output</h3>
+<pre><code>{'name': 'Anu', 'mark': 90}</code></pre>
+<h3>Dictionary Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len()</td>
+<td>Returns number of key-value pairs</td>
+</tr>
+<tr>
+<td>type()</td>
+<td>Returns data type</td>
+</tr>
+<tr>
+<td>str()</td>
+<td>Converts dictionary to string</td>
+</tr>
+</tbody>
+</table>
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(len(student))
+print(type(student))</code></pre>
+<h3>Output</h3>
+<pre><code>2
+&lt;class 'dict'&gt;</code></pre>
+<h3>Important Dictionary Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keys()</td>
+<td>Returns all keys</td>
+</tr>
+<tr>
+<td>values()</td>
+<td>Returns all values</td>
+</tr>
+<tr>
+<td>items()</td>
+<td>Returns key-value pairs</td>
+</tr>
+<tr>
+<td>update()</td>
+<td>Updates dictionary</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>Removes specified key</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>Removes all elements</td>
+</tr>
+</tbody>
+</table>
+<h3>keys()</h3>
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(student.keys())</code></pre>
+<h3>Output</h3>
+<pre><code>dict_keys(['name', 'mark'])</code></pre>
+<h3>values()</h3>
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(student.values())</code></pre>
+<h3>Output</h3>
+<pre><code>dict_values(['Arun', 95])</code></pre>
+<h3>items()</h3>
+<pre><code>student = {
+    "name": "Arun",
+    "mark": 95
+}
+
+print(student.items())</code></pre>
+<h3>Output</h3>
+<pre><code>dict_items([('name', 'Arun'), ('mark', 95)])</code></pre>
+<h3>Traversing a Dictionary</h3>
+<pre><code>student = {
+    "name": "Arun",
+    "age": 17,
+    "mark": 95
+}
+
+for key in student:
+    print(key, ":", student[key])</code></pre>
+<h3>Output</h3>
+<pre><code>name : Arun
+age : 17
+mark : 95</code></pre>
+<h3>Nested Dictionary</h3>
+<p>
+            A dictionary inside another dictionary is called a nested dictionary.
+        </p>
+<pre><code>students = {
+    "s1": {"name":"Arun", "mark":90},
+    "s2": {"name":"Anu", "mark":95}
+}
+
+print(students["s1"]["name"])</code></pre>
+<h3>Output</h3>
+<pre><code>Arun</code></pre>
+<h3>Program 1: Student Record</h3>
+<pre><code>student = {
+    "name": "Rahul",
+    "age": 17,
+    "mark": 92
+}
+
+print("Name =", student["name"])
+print("Mark =", student["mark"])</code></pre>
+<h3>Program 2: Display Keys and Values</h3>
+<pre><code>data = {
+    "A": 10,
+    "B": 20,
+    "C": 30
+}
+
+for k, v in data.items():
+    print(k, "=", v)</code></pre>
+<h3>Program 3: Search a Key</h3>
+<pre><code>student = {
+    "name": "Arun",
+    "age": 17,
+    "mark": 95
+}
+
+key = input("Enter Key: ")
+
+if key in student:
+    print("Key Found")
+else:
+    print("Key Not Found")</code></pre>
+<h3>Difference Between List, Tuple and Dictionary</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>List</th>
+<th>Tuple</th>
+<th>Dictionary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bracket</td>
+<td>[ ]</td>
+<td>( )</td>
+<td>{ }</td>
+</tr>
+<tr>
+<td>Mutable</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Index Based</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key-Value Pair</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Dictionary elements are stored as:</strong></p>
+<div class="quiz-option">A. Index Values</div>
+<div class="quiz-option">B. Key-Value Pairs ✅</div>
+<div class="quiz-option">C. Objects</div>
+<div class="quiz-option">D. Arrays</div>
+<br/>
+<p><strong>2. Which method returns all keys?</strong></p>
+<div class="quiz-option">A. values()</div>
+<div class="quiz-option">B. items()</div>
+<div class="quiz-option">C. keys() ✅</div>
+<div class="quiz-option">D. get()</div>
+<br/>
+<p><strong>3. Dictionaries are:</strong></p>
+<div class="quiz-option">A. Immutable</div>
+<div class="quiz-option">B. Mutable ✅</div>
+<div class="quiz-option">C. Fixed</div>
+<div class="quiz-option">D. Read Only</div>
+<br/>
+<p><strong>4. Which method returns both keys and values?</strong></p>
+<div class="quiz-option">A. items() ✅</div>
+<div class="quiz-option">B. keys()</div>
+<div class="quiz-option">C. values()</div>
+<div class="quiz-option">D. get()</div>
+</div>
+<h3>📝 Practice Questions</h3>
+<ol>
+<li>What is a dictionary? Explain its characteristics.</li>
+<li>How are dictionary elements accessed?</li>
+<li>Explain keys(), values() and items() methods.</li>
+<li>Write a program to search a key in a dictionary.</li>
+<li>What is a nested dictionary?</li>
+<li>Differentiate List, Tuple and Dictionary.</li>
+</ol>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>Dictionaries store data as key-value pairs.</li>
+<li>Keys must be unique.</li>
+<li>Dictionaries are mutable.</li>
+<li>Use keys() to get all keys.</li>
+<li>Use values() to get all values.</li>
+<li>Use items() to get both keys and values.</li>
+<li>Dictionary programs are frequently asked in practical exams.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Create and manipulate dictionaries.</li>
+<li>Access dictionary values using keys.</li>
+<li>Use dictionary methods effectively.</li>
+<li>Traverse dictionaries using loops.</li>
+<li>Create programs using dictionaries.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

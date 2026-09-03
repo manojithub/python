@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn modules in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Modules in Python | Manojithub">
+<meta property="og:description" content="Learn modules in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/modules.html">
+<link rel="canonical" href="https://manojithub.github.io/python/modules.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Modules in Python | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="modules">
+<h2>🧩 Modules in Python</h2>
+<div class="content-box">
+<h3>Introduction to Modules</h3>
+<p>
+            A Module is a file containing Python functions, variables and statements
+            that can be reused in other programs.
+        </p>
+<p>
+            Modules help organize large programs into smaller manageable files and
+            promote code reusability.
+        </p>
+<pre><code>import math
+
+print(math.sqrt(25))</code></pre>
+<h3>Output</h3>
+<pre><code>5.0</code></pre>
+<h3>Advantages of Modules</h3>
+<ul>
+<li>Code Reusability</li>
+<li>Easy Maintenance</li>
+<li>Improved Readability</li>
+<li>Reduces Program Size</li>
+<li>Supports Modular Programming</li>
+</ul>
+<h3>Types of Modules</h3>
+<ol>
+<li>Built-in Modules</li>
+<li>User Defined Modules</li>
+</ol>
+<h3>Built-in Modules</h3>
+<p>
+            Python provides many ready-made modules such as:
+        </p>
+<ul>
+<li>math</li>
+<li>random</li>
+<li>datetime</li>
+<li>os</li>
+<li>statistics</li>
+</ul>
+<h3>Importing a Module</h3>
+<h4>Syntax</h4>
+<pre><code>import module_name</code></pre>
+<h4>Example</h4>
+<pre><code>import math
+
+print(math.factorial(5))</code></pre>
+<h3>Output</h3>
+<pre><code>120</code></pre>
+<h3>Import Specific Functions</h3>
+<pre><code>from math import sqrt
+
+print(sqrt(81))</code></pre>
+<h3>Output</h3>
+<pre><code>9.0</code></pre>
+<h3>Import Multiple Functions</h3>
+<pre><code>from math import sqrt, factorial
+
+print(sqrt(64))
+print(factorial(4))</code></pre>
+<h3>Output</h3>
+<pre><code>8.0
+24</code></pre>
+<h3>Using Alias Names</h3>
+<pre><code>import math as m
+
+print(m.sqrt(49))</code></pre>
+<h3>Output</h3>
+<pre><code>7.0</code></pre>
+<h3>The math Module</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sqrt()</td>
+<td>Square Root</td>
+</tr>
+<tr>
+<td>factorial()</td>
+<td>Factorial</td>
+</tr>
+<tr>
+<td>pow()</td>
+<td>Power Calculation</td>
+</tr>
+<tr>
+<td>ceil()</td>
+<td>Round Up</td>
+</tr>
+<tr>
+<td>floor()</td>
+<td>Round Down</td>
+</tr>
+</tbody>
+</table>
+<pre><code>import math
+
+print(math.pow(2,3))
+print(math.sqrt(16))</code></pre>
+<h3>Output</h3>
+<pre><code>8.0
+4.0</code></pre>
+<h3>The random Module</h3>
+<p>
+            The random module generates random numbers and selections.
+        </p>
+<pre><code>import random
+
+print(random.randint(1,10))</code></pre>
+<h3>Output</h3>
+<pre><code>Random number between 1 and 10</code></pre>
+<h3>User Defined Modules</h3>
+<p>
+            Programmers can create their own modules and use them in other programs.
+        </p>
+<h4>Step 1: Create a Module</h4>
+<b>File: mymodule.py</b>
+<pre><code>def add(a,b):
+    return a+b</code></pre>
+<h4>Step 2: Import the Module</h4>
+<pre><code>import mymodule
+
+print(mymodule.add(10,20))</code></pre>
+<h3>Output</h3>
+<pre><code>30</code></pre>
+<h3>Program 1: Square Root Calculator</h3>
+<pre><code>import math
+
+num = int(input("Enter Number: "))
+
+print("Square Root =", math.sqrt(num))</code></pre>
+<h3>Program 2: Random Number Generator</h3>
+<pre><code>import random
+
+print(random.randint(1,100))</code></pre>
+<h3>Program 3: Factorial Using math Module</h3>
+<pre><code>import math
+
+n = int(input("Enter Number: "))
+
+print("Factorial =", math.factorial(n))</code></pre>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. A module is:</strong></p>
+<div class="quiz-option">A. Function</div>
+<div class="quiz-option">B. Variable</div>
+<div class="quiz-option">C. Python File ✅</div>
+<div class="quiz-option">D. Loop</div>
+<br/>
+<p><strong>2. Which keyword imports a module?</strong></p>
+<div class="quiz-option">A. include</div>
+<div class="quiz-option">B. import ✅</div>
+<div class="quiz-option">C. using</div>
+<div class="quiz-option">D. package</div>
+<br/>
+<p><strong>3. Which module provides sqrt()?</strong></p>
+<div class="quiz-option">A. random</div>
+<div class="quiz-option">B. os</div>
+<div class="quiz-option">C. math ✅</div>
+<div class="quiz-option">D. statistics</div>
+<br/>
+<p><strong>4. Which module generates random numbers?</strong></p>
+<div class="quiz-option">A. math</div>
+<div class="quiz-option">B. random ✅</div>
+<div class="quiz-option">C. os</div>
+<div class="quiz-option">D. datetime</div>
+</div>
+<h3>📝 Practice Questions</h3>
+<ol>
+<li>What is a module?</li>
+<li>Explain the advantages of modules.</li>
+<li>Differentiate built-in and user-defined modules.</li>
+<li>Explain the import statement with examples.</li>
+<li>Write a program using the math module.</li>
+<li>How do you create a user-defined module?</li>
+</ol>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>Remember the syntax of import statement.</li>
+<li>math and random modules are important.</li>
+<li>Know how to create a user-defined module.</li>
+<li>Understand alias names using "as".</li>
+<li>Practice module-based programs.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Understand modules and their importance.</li>
+<li>Use built-in modules.</li>
+<li>Create user-defined modules.</li>
+<li>Import modules in different ways.</li>
+<li>Develop reusable Python programs.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

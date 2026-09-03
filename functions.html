@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn functions in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Functions in Python | Manojithub">
+<meta property="og:description" content="Learn functions in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/functions.html">
+<link rel="canonical" href="https://manojithub.github.io/python/functions.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Functions in Python | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="functions">
+<h2>📁 Functions in Python</h2>
+<div class="content-box">
+<h3>Introduction to Functions</h3>
+<p>
+            A Function is a block of reusable code designed to perform a specific task.
+            Functions help reduce code repetition, improve readability and make programs easier to maintain.
+        </p>
+<p>
+            Python provides built-in functions such as <code>print()</code>,
+            <code>input()</code>, <code>len()</code> and also allows users to create their own functions.
+        </p>
+<pre><code>print("Welcome to Python")
+print(len("Python"))</code></pre>
+<h3>Advantages of Functions</h3>
+<ul>
+<li>Reduces repetition of code.</li>
+<li>Improves readability.</li>
+<li>Makes debugging easier.</li>
+<li>Supports modular programming.</li>
+<li>Allows code reusability.</li>
+</ul>
+<h3>Defining a Function</h3>
+<h4>Syntax</h4>
+<pre><code>def function_name():
+    statements</code></pre>
+<pre><code>def greet():
+    print("Hello Python")
+
+greet()</code></pre>
+<h3>Output</h3>
+<pre><code>Hello Python</code></pre>
+<h3>Components of a Function</h3>
+<ul>
+<li><strong>def</strong> – Keyword used to define a function.</li>
+<li><strong>Function Name</strong> – Name given to the function.</li>
+<li><strong>Parameters</strong> – Values received by the function.</li>
+<li><strong>Function Body</strong> – Statements inside the function.</li>
+<li><strong>Return Statement</strong> – Returns a value.</li>
+</ul>
+<h3>Function Call</h3>
+<p>
+            A function executes only when it is called.
+        </p>
+<pre><code>def message():
+    print("Function Executed")
+
+message()</code></pre>
+<h3>Output</h3>
+<pre><code>Function Executed</code></pre>
+<h3>Types of Functions</h3>
+<ol>
+<li>Built-in Functions</li>
+<li>User Defined Functions</li>
+</ol>
+<h3>Built-in Functions</h3>
+<pre><code>numbers = [10,20,30]
+
+print(len(numbers))
+print(max(numbers))
+print(min(numbers))</code></pre>
+<h3>Output</h3>
+<pre><code>3
+30
+10</code></pre>
+<h3>User Defined Functions</h3>
+<pre><code>def display():
+    print("Welcome to Python")
+
+display()</code></pre>
+<h3>Functions with Parameters</h3>
+<p>
+            Parameters allow values to be passed into a function.
+        </p>
+<pre><code>def greet(name):
+    print("Hello", name)
+
+greet("Arun")</code></pre>
+<h3>Output</h3>
+<pre><code>Hello Arun</code></pre>
+<h3>Functions with Multiple Parameters</h3>
+<pre><code>def add(a, b):
+    print(a + b)
+
+add(10, 20)</code></pre>
+<h3>Output</h3>
+<pre><code>30</code></pre>
+<h3>Arguments and Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Argument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variable in function definition</td>
+<td>Actual value passed</td>
+</tr>
+<tr>
+<td>def add(a,b)</td>
+<td>add(10,20)</td>
+</tr>
+</tbody>
+</table>
+<h3>Function Returning a Value</h3>
+<p>
+            The <code>return</code> statement sends a value back to the caller.
+        </p>
+<pre><code>def square(n):
+    return n * n
+
+result = square(5)
+
+print(result)</code></pre>
+<h3>Output</h3>
+<pre><code>25</code></pre>
+<h3>Function Without Return Statement</h3>
+<pre><code>def display():
+    print("Python")
+
+display()</code></pre>
+<h3>Actual and Formal Arguments</h3>
+<pre><code>def add(a, b):   # Formal Arguments
+    print(a + b)
+
+add(10, 20)      # Actual Arguments</code></pre>
+<h3>Scope of Variables</h3>
+<p>
+            Scope refers to the area where a variable can be accessed.
+        </p>
+<h4>Local Variable</h4>
+<pre><code>def demo():
+    x = 10
+    print(x)
+
+demo()</code></pre>
+<h4>Global Variable</h4>
+<pre><code>x = 100
+
+def demo():
+    print(x)
+
+demo()</code></pre>
+<h3>Output</h3>
+<pre><code>100</code></pre>
+<h3>Recursive Functions</h3>
+<p>
+            A recursive function is a function that calls itself.
+        </p>
+<pre><code>def countdown(n):
+
+    if n &gt; 0:
+        print(n)
+        countdown(n-1)
+
+countdown(5)</code></pre>
+<h3>Output</h3>
+<pre><code>5
+4
+3
+2
+1</code></pre>
+<h3>Lambda Functions</h3>
+<p>
+            Lambda functions are small anonymous functions created using the
+            lambda keyword.
+        </p>
+<pre><code>square = lambda x: x * x
+
+print(square(6))</code></pre>
+<h3>Output</h3>
+<pre><code>36</code></pre>
+<h3>Program 1: Find Sum Using Function</h3>
+<pre><code>def add(a, b):
+    return a + b
+
+result = add(10, 20)
+
+print("Sum =", result)</code></pre>
+<h3>Program 2: Find Largest Number</h3>
+<pre><code>def largest(a, b):
+
+    if a &gt; b:
+        return a
+    else:
+        return b
+
+print(largest(50, 30))</code></pre>
+<h3>Output</h3>
+<pre><code>50</code></pre>
+<h3>Program 3: Calculate Factorial</h3>
+<pre><code>def factorial(n):
+
+    fact = 1
+
+    for i in range(1, n+1):
+        fact *= i
+
+    return fact
+
+print(factorial(5))</code></pre>
+<h3>Output</h3>
+<pre><code>120</code></pre>
+<h3>Program 4: Check Even or Odd</h3>
+<pre><code>def check(num):
+
+    if num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+print(check(12))</code></pre>
+<h3>Output</h3>
+<pre><code>Even</code></pre>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. Which keyword is used to define a function?</strong></p>
+<div class="quiz-option">A. function</div>
+<div class="quiz-option">B. define</div>
+<div class="quiz-option">C. def ✅</div>
+<div class="quiz-option">D. fun</div>
+<br/>
+<p><strong>2. Which statement returns a value from a function?</strong></p>
+<div class="quiz-option">A. break</div>
+<div class="quiz-option">B. pass</div>
+<div class="quiz-option">C. return ✅</div>
+<div class="quiz-option">D. continue</div>
+<br/>
+<p><strong>3. A function calling itself is known as:</strong></p>
+<div class="quiz-option">A. Nested Function</div>
+<div class="quiz-option">B. Recursive Function ✅</div>
+<div class="quiz-option">C. Lambda Function</div>
+<div class="quiz-option">D. Built-in Function</div>
+<br/>
+<p><strong>4. Which keyword is used for anonymous functions?</strong></p>
+<div class="quiz-option">A. lambda ✅</div>
+<div class="quiz-option">B. def</div>
+<div class="quiz-option">C. return</div>
+<div class="quiz-option">D. global</div>
+</div>
+<h3>📝 Practice Questions</h3>
+<ol>
+<li>What is a function? Explain its advantages.</li>
+<li>Differentiate built-in and user-defined functions.</li>
+<li>Explain parameters and arguments with examples.</li>
+<li>What is recursion? Explain with an example.</li>
+<li>Differentiate local and global variables.</li>
+<li>Write a function to calculate factorial of a number.</li>
+<li>Write a function to find the largest of two numbers.</li>
+</ol>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>Functions improve code reusability.</li>
+<li>Functions are defined using the <code>def</code> keyword.</li>
+<li>Parameters receive values from arguments.</li>
+<li>return sends a value back to the caller.</li>
+<li>Recursion means a function calls itself.</li>
+<li>Lambda functions are anonymous functions.</li>
+<li>Local and Global variables are frequently asked theory questions.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Define and call functions.</li>
+<li>Use parameters and return values.</li>
+<li>Apply recursion in programs.</li>
+<li>Understand variable scope.</li>
+<li>Create practical programs using functions.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

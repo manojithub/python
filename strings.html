@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn strings in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Strings in Python | Manojithub">
+<meta property="og:description" content="Learn strings in python with clear explanations, examples, programs and revision material on Manojithub Python Portal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manojithub.github.io/python/strings.html">
+<link rel="canonical" href="https://manojithub.github.io/python/strings.html">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Strings in Python | Manojithub</title>
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><h2>🐍 Python Portal</h2><p>Learn • Practice • Master</p></div>
+<nav><ul class="module-list"><li><a href="python_home.html">🏠 Python Home</a></li>
+<li><a href="number_conversion_tool.html">📚 Number Conversion Tool</a></li>
+<li><a href="python_intro.html">🐍 Introduction to Python</a></li>
+<li><a href="variables.html">📦 Variables & Data Types</a></li>
+<li><a href="operators.html">➕ Operators</a></li>
+<li><a href="input_output.html">⌨️ Input & Output</a></li>
+<li><a href="decision_making.html">🔀 Decision Making</a></li>
+<li><a href="loops.html">🔁 Loops</a></li>
+<li><a href="strings.html">📝 Strings</a></li>
+<li><a href="lists.html">📋 Lists</a></li>
+<li><a href="tuples.html">📦 Tuples</a></li>
+<li><a href="sets.html">🎯 Sets</a></li>
+<li><a href="dictionary.html">📖 Dictionaries</a></li>
+<li><a href="functions.html">📁 Functions</a></li>
+<li><a href="modules.html">🧩 Modules</a></li>
+<li><a href="file_handling.html">📂 File Handling</a></li>
+<li><a href="program_library.html">💻 Program Library</a></li>
+<li><a href="quiz.html">📝 Quiz Centre</a></li>
+<li><a href="revision.html">🎯 Revision Centre</a></li>
+<li><a href="programs.html">💻 Program Gallery</a></li>
+<li><a href="textbook_programs.html">📚 Textbook Programs</a></li>
+<li><a href="editor.html">🎯 Python Online Editor</a></li></ul></nav>
+</aside>
+<main class="main-content">
+<header class="topbar"><div class="search-box"><input type="text" id="searchInput" placeholder="Search Python topics..."></div><div class="topbar-buttons"><button id="themeToggle">🌙 Dark Mode</button></div></header>
+<section class="topic-section" id="strings">
+<h2>📝 Strings in Python</h2>
+<div class="content-box">
+<h3>Introduction to Strings</h3>
+<p>
+            A string is a sequence of characters enclosed within single quotes (' '),
+            double quotes (" "), or triple quotes (''' ''' or """ """).
+            Strings are used to store text data such as names, addresses, messages,
+            and sentences.
+        </p>
+<pre><code>name = "Python"
+city = 'Kollam'
+
+print(name)
+print(city)</code></pre>
+<h3>Output</h3>
+<pre><code>Python
+Kollam</code></pre>
+<h3>Creating Strings</h3>
+<pre><code>str1 = "Hello"
+str2 = 'World'
+str3 = """Python Programming"""
+
+print(str1)
+print(str2)
+print(str3)</code></pre>
+<h3>Characteristics of Strings</h3>
+<ul>
+<li>Strings are ordered collections of characters.</li>
+<li>Strings are immutable (cannot be modified directly).</li>
+<li>Each character has an index position.</li>
+<li>Strings can contain letters, digits, symbols and spaces.</li>
+</ul>
+<h3>String Indexing</h3>
+<p>
+            Each character in a string has a position called an index.
+            Indexing starts from 0.
+        </p>
+<pre><code>word = "PYTHON"
+
+Position : 0 1 2 3 4 5
+Characters: P Y T H O N</code></pre>
+<pre><code>word = "PYTHON"
+
+print(word[0])
+print(word[2])
+print(word[5])</code></pre>
+<h3>Output</h3>
+<pre><code>P
+T
+N</code></pre>
+<h3>Negative Indexing</h3>
+<p>
+            Python also supports negative indexing.
+        </p>
+<pre><code>word = "PYTHON"
+
+print(word[-1])
+print(word[-2])</code></pre>
+<h3>Output</h3>
+<pre><code>N
+O</code></pre>
+<h3>String Slicing</h3>
+<p>
+            Slicing is used to extract a portion of a string.
+        </p>
+<h4>Syntax</h4>
+<pre><code>string[start : stop : step]</code></pre>
+<pre><code>word = "PYTHON"
+
+print(word[0:3])
+print(word[2:5])
+print(word[:4])
+print(word[3:])</code></pre>
+<h3>Output</h3>
+<pre><code>PYT
+THO
+PYTH
+HON</code></pre>
+<h3>String Concatenation</h3>
+<p>
+            Concatenation means joining two or more strings using the + operator.
+        </p>
+<pre><code>first = "Hello"
+second = "World"
+
+result = first + " " + second
+
+print(result)</code></pre>
+<h3>Output</h3>
+<pre><code>Hello World</code></pre>
+<h3>String Repetition</h3>
+<p>
+            The * operator is used to repeat strings.
+        </p>
+<pre><code>print("Python " * 3)</code></pre>
+<h3>Output</h3>
+<pre><code>Python Python Python</code></pre>
+<h3>Membership Operators</h3>
+<p>
+            Membership operators check whether a character or substring exists
+            in a string.
+        </p>
+<pre><code>text = "Python Programming"
+
+print("Python" in text)
+print("Java" in text)</code></pre>
+<h3>Output</h3>
+<pre><code>True
+False</code></pre>
+<h3>Length of a String</h3>
+<p>
+            The len() function returns the number of characters in a string.
+        </p>
+<pre><code>name = "Computer"
+
+print(len(name))</code></pre>
+<h3>Output</h3>
+<pre><code>8</code></pre>
+<h3>Common String Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len()</td>
+<td>Returns length of string</td>
+</tr>
+<tr>
+<td>max()</td>
+<td>Returns highest character</td>
+</tr>
+<tr>
+<td>min()</td>
+<td>Returns lowest character</td>
+</tr>
+<tr>
+<td>sorted()</td>
+<td>Sorts characters</td>
+</tr>
+</tbody>
+</table>
+<h3>String Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>upper()</td>
+<td>Convert to uppercase</td>
+</tr>
+<tr>
+<td>lower()</td>
+<td>Convert to lowercase</td>
+</tr>
+<tr>
+<td>title()</td>
+<td>Convert first letter of each word to uppercase</td>
+</tr>
+<tr>
+<td>strip()</td>
+<td>Remove leading and trailing spaces</td>
+</tr>
+<tr>
+<td>replace()</td>
+<td>Replace characters or words</td>
+</tr>
+<tr>
+<td>find()</td>
+<td>Find position of a substring</td>
+</tr>
+<tr>
+<td>count()</td>
+<td>Count occurrences</td>
+</tr>
+</tbody>
+</table>
+<h3>Examples of String Methods</h3>
+<pre><code>text = "python programming"
+
+print(text.upper())
+print(text.title())</code></pre>
+<h3>Output</h3>
+<pre><code>PYTHON PROGRAMMING
+Python Programming</code></pre>
+<pre><code>text = "Python Programming"
+
+print(text.replace("Python", "Java"))</code></pre>
+<h3>Output</h3>
+<pre><code>Java Programming</code></pre>
+<pre><code>text = "banana"
+
+print(text.count("a"))</code></pre>
+<h3>Output</h3>
+<pre><code>3</code></pre>
+<h3>Traversing a String Using Loop</h3>
+<pre><code>word = "PYTHON"
+
+for ch in word:
+    print(ch)</code></pre>
+<h3>Output</h3>
+<pre><code>P
+Y
+T
+H
+O
+N</code></pre>
+<h3>Program 1: Count Vowels</h3>
+<pre><code>text = input("Enter a String: ")
+
+count = 0
+
+for ch in text.lower():
+
+    if ch in "aeiou":
+        count += 1
+
+print("Number of Vowels =", count)</code></pre>
+<h3>Program 2: Reverse a String</h3>
+<pre><code>text = input("Enter a String: ")
+
+print(text[::-1])</code></pre>
+<h3>Program 3: Palindrome Check</h3>
+<pre><code>word = input("Enter a Word: ")
+
+if word == word[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")</code></pre>
+<h3>Program 4: Count Characters</h3>
+<pre><code>text = input("Enter a String: ")
+
+print("Total Characters =", len(text))</code></pre>
+<div class="quiz-card">
+<h3>🎯 Quick Quiz</h3>
+<p><strong>1. What is the index of the first character in a string?</strong></p>
+<div class="quiz-option">A. 0 ✅</div>
+<div class="quiz-option">B. 1</div>
+<div class="quiz-option">C. -1</div>
+<div class="quiz-option">D. 10</div>
+<br/>
+<p><strong>2. Which function returns the length of a string?</strong></p>
+<div class="quiz-option">A. count()</div>
+<div class="quiz-option">B. size()</div>
+<div class="quiz-option">C. len() ✅</div>
+<div class="quiz-option">D. find()</div>
+<br/>
+<p><strong>3. Which operator is used to join strings?</strong></p>
+<div class="quiz-option">A. *</div>
+<div class="quiz-option">B. + ✅</div>
+<div class="quiz-option">C. %</div>
+<div class="quiz-option">D. &amp;</div>
+</div>
+<h3>📝 Practice Questions</h3>
+<ol>
+<li>What is a string? Explain with examples.</li>
+<li>Differentiate indexing and slicing.</li>
+<li>Write a program to count vowels in a string.</li>
+<li>Write a program to reverse a string.</li>
+<li>Write a program to check whether a string is palindrome.</li>
+<li>Explain any five string methods with examples.</li>
+</ol>
+<h3>📚 Exam Tips</h3>
+<ul>
+<li>Strings are immutable.</li>
+<li>Indexing starts from 0.</li>
+<li>Negative indexing starts from -1.</li>
+<li>len() returns the length of a string.</li>
+<li>String slicing is frequently asked in exams.</li>
+<li>Palindrome and vowel counting programs are important.</li>
+</ul>
+<h3>🎓 Learning Outcomes</h3>
+<ul>
+<li>Create and manipulate strings.</li>
+<li>Use indexing and slicing techniques.</li>
+<li>Apply string functions and methods.</li>
+<li>Process strings using loops.</li>
+<li>Develop practical string programs.</li>
+</ul>
+</div>
+</section>
+<footer style="text-align:center;padding:30px 10px;color:#64748b;">© 2026 Manojithub • Developed and Maintained by Manoj Kumar S L • <a href="mailto:slmanojkumar@gmail.com">slmanojkumar@gmail.com</a> • <a href="tel:9745110065">9745110065</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
