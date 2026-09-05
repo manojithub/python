@@ -1,0 +1,8 @@
+Paste this inside the <div class="feature-grid"> of your Manojithub index.html:
+
+<a class="feature" href="html_home.html">
+    <div>🌐</div>
+    <h3>HTML Tutorials</h3>
+    <p>Learn HTML step by step from the Plus Two Computer Science textbook.</p>
+    <b>Start HTML →</b>
+</a>
