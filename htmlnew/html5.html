@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>15. HTML5 – New Tags and Multimedia | Manojithub</title><meta name="description" content="Detailed explanation of the HTML5 tags explicitly introduced in the textbook."><link rel="stylesheet" href="html_tutorial.css"></head><body><header class="top"><div class="topin"><div class="brand">MANOJITHUB <span>HTML Tutorials</span></div><div class="contact">Kerala Plus Two Computer Science • slmanojkumar@gmail.com • 9745110065</div></div></header><nav class="nav"><div class="navin"><a href="../index.html">🏠 Home</a><a href="html_home.html">🌐 HTML Home</a><a href="../python_home.html">🐍 Python</a><a href="../programs.html">💻 Programs</a></div></nav><div class="layout"><aside class="side"><h4>HTML Fundamentals</h4><a href="html_intro.html">Introduction</a><a href="html_structure.html">Document Structure</a><a href="html_body.html">BODY & Attributes</a><a href="html_text.html">Headings, P, BR & HR</a><a href="html_formatting.html">Text Formatting</a><a href="html_images.html">Images</a><a href="html_entities.html">Entities & Comments</a><h4>Web Designing</h4><a href="html_lists.html">Lists</a><a href="html_links.html">Hyperlinks</a><a href="html_multimedia.html">Music & Video</a><a href="html_tables.html">Tables</a><a href="html_table_attributes.html">Table Attributes</a><a href="html_frames.html">Frames</a><a href="html_forms.html">Forms</a><a href="html5.html">HTML5</a><h4>Study Tools</h4><a href="html_reference.html">🏷️ Tag & Attribute Reference</a><a href="html_practicals.html">💻 Practicals</a><a href="html_exam_bank.html">📝 Exam Bank</a><a href="html_revision.html">📌 Revision</a></aside><main><div class="small">Manojithub / HTML Tutorials / Plus Two</div><h1>15. HTML5 – New Tags and Multimedia</h1><p class="intro">Detailed explanation of the HTML5 tags explicitly introduced in the textbook.</p><h2>What is HTML5?</h2><p>The textbook describes HTML5 as a major revision of HTML and highlights multimedia and new structural elements.</p><table><thead><tr><th>HTML5 Tag</th><th>Purpose</th><th>Simple example</th></tr></thead><tbody><tr><td>VIDEO</td><td>Displays video</td><td>&lt;VIDEO Controls&gt;...&lt;/VIDEO&gt;</td></tr><tr><td>AUDIO</td><td>Plays audio</td><td>&lt;AUDIO Controls&gt;...&lt;/AUDIO&gt;</td></tr><tr><td>CANVAS</td><td>Area for graphics/drawing through scripting</td><td>&lt;CANVAS&gt;&lt;/CANVAS&gt;</td></tr><tr><td>HEADER</td><td>Introductory/header content for a page or section</td><td>&lt;HEADER&gt;...&lt;/HEADER&gt;</td></tr><tr><td>FOOTER</td><td>Footer information for a page or section</td><td>&lt;FOOTER&gt;...&lt;/FOOTER&gt;</td></tr><tr><td>ARTICLE</td><td>Self-contained article/content</td><td>&lt;ARTICLE&gt;...&lt;/ARTICLE&gt;</td></tr><tr><td>SECTION</td><td>Thematic section of content</td><td>&lt;SECTION&gt;...&lt;/SECTION&gt;</td></tr></tbody></table><h2>VIDEO and AUDIO attributes</h2><table><thead><tr><th>Attribute</th><th>Purpose</th></tr></thead><tbody><tr><td>Controls</td><td>Shows playback controls</td></tr><tr><td>Autoplay</td><td>Attempts automatic playback</td></tr><tr><td>Loop</td><td>Repeats media</td></tr><tr><td>Muted</td><td>Starts muted</td></tr><tr><td>Width / Height</td><td>Control video dimensions</td></tr></tbody></table><h2>Semantic structure</h2><p>HEADER, SECTION, ARTICLE and FOOTER help describe the role of content more clearly.</p><div class="try"><div class="tryhead">▶ Try It Yourself <span class="pill">Edit the code and Run</span></div><div class="trybody"><textarea id="ta_html5"><HTML>
+<BODY>
+<HEADER><H1>My School Website</H1></HEADER>
+<SECTION>
+  <ARTICLE>
+    <H2>Science Exhibition</H2>
+    <P>Students displayed interesting projects.</P>
+  </ARTICLE>
+</SECTION>
+<FOOTER>School Computer Club</FOOTER>
+</BODY>
+</HTML></textarea><br><button class="btn" onclick="runEx('ta_html5','out_html5')">Run Example</button><button class="btn secondary" onclick="resetEx('ta_html5',`<HTML>
+<BODY>
+<HEADER><H1>My School Website</H1></HEADER>
+<SECTION>
+  <ARTICLE>
+    <H2>Science Exhibition</H2>
+    <P>Students displayed interesting projects.</P>
+  </ARTICLE>
+</SECTION>
+<FOOTER>School Computer Club</FOOTER>
+</BODY>
+</HTML>`)">Reset</button><iframe id="out_html5" class="output" title="Example output"></iframe></div></div><div class="prev"><a href="html_forms.html">← Forms</a><a href="html_reference.html">Tag Reference →</a></div></main></div><footer><div class="foot"><b>MANOJITHUB</b><br>Learn • Practice • Revise<br><small>Textbook-based HTML learning for Plus Two Computer Science students.</small></div></footer><script>
+function resizePreview(f){try{const d=f.contentDocument||f.contentWindow.document;const h=Math.max(d.body?d.body.scrollHeight:0,d.documentElement?d.documentElement.scrollHeight:0,180);f.style.height=Math.min(Math.max(h+24,180),900)+"px";}catch(e){f.style.height="300px";}}
+function runEx(t,o){const ta=document.getElementById(t), f=document.getElementById(o); f.onload=function(){resizePreview(f); setTimeout(()=>resizePreview(f),150);}; f.srcdoc=ta.value;}
+function resetEx(t,c){document.getElementById(t).value=c;const f=document.getElementById(t.replace("ta_","out_"));f.srcdoc="";f.style.height="260px";}
+</script></body></html>

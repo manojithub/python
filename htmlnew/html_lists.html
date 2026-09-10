@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>8. Lists – UL, OL, LI, DL, DT and DD | Manojithub</title><meta name="description" content="Detailed list tutorial covering UL, OL, LI, DL, DT, DD, Type, Start, nested lists and exam practice."><link rel="stylesheet" href="html_tutorial.css"></head><body><header class="top"><div class="topin"><div class="brand">MANOJITHUB <span>HTML Tutorials</span></div><div class="contact">Kerala Plus Two Computer Science • slmanojkumar@gmail.com • 9745110065</div></div></header><nav class="nav"><div class="navin"><a href="../index.html">🏠 Home</a><a href="html_home.html">🌐 HTML Home</a><a href="../python_home.html">🐍 Python</a><a href="../programs.html">💻 Programs</a></div></nav><div class="layout"><aside class="side"><h4>HTML Fundamentals</h4><a href="html_intro.html">Introduction</a><a href="html_structure.html">Document Structure</a><a href="html_body.html">BODY & Attributes</a><a href="html_text.html">Headings, P, BR & HR</a><a href="html_formatting.html">Text Formatting</a><a href="html_images.html">Images</a><a href="html_entities.html">Entities & Comments</a><h4>Web Designing</h4><a href="html_lists.html">Lists</a><a href="html_links.html">Hyperlinks</a><a href="html_multimedia.html">Music & Video</a><a href="html_tables.html">Tables</a><a href="html_table_attributes.html">Table Attributes</a><a href="html_frames.html">Frames</a><a href="html_forms.html">Forms</a><a href="html5.html">HTML5</a><h4>Study Tools</h4><a href="html_reference.html">🏷️ Tag & Attribute Reference</a><a href="html_practicals.html">💻 Practicals</a><a href="html_exam_bank.html">📝 Exam Bank</a><a href="html_revision.html">📌 Revision</a></aside><main><div class="small">Manojithub / HTML Tutorials / Plus Two</div><h1>8. Lists – UL, OL, LI, DL, DT and DD</h1><p class="intro">A complete lesson on unordered lists, ordered lists and description lists, including the textbook attributes, nested lists, syntax and exam-style practice.</p>
+<h2 id="ul" class="section-anchor">1. &lt;UL&gt; – Unordered List</h2><p>The <span class="tag">&lt;UL&gt;</span> tag creates an unordered list. The list items are written using <span class="tag">&lt;LI&gt;</span>. By default, browsers display bullets.</p><h3>Syntax</h3><pre><code>&lt;UL&gt;
+  &lt;LI&gt;Item 1&lt;/LI&gt;
+  &lt;LI&gt;Item 2&lt;/LI&gt;
+&lt;/UL&gt;</code></pre><table><tr><th>Tag / Attribute</th><th>Meaning</th><th>Example</th></tr><tr><td>UL</td><td>Container for an unordered list.</td><td>&lt;UL&gt;...&lt;/UL&gt;</td></tr><tr><td>UL Type</td><td>Specifies bullet style in the textbook treatment.</td><td>disc, circle, square</td></tr><tr><td>LI</td><td>Defines one list item.</td><td>&lt;LI&gt;Kerala&lt;/LI&gt;</td></tr></table>
+<h3>Type attribute of UL</h3><p>The textbook examples use <b>disc</b>, <b>circle</b> and <b>square</b> to control the bullet appearance.</p><pre><code>&lt;UL Type="square"&gt;
+  &lt;LI&gt;HTML&lt;/LI&gt;
+  &lt;LI&gt;Python&lt;/LI&gt;
+&lt;/UL&gt;</code></pre>
+<h2 id="ol" class="section-anchor">2. &lt;OL&gt; – Ordered List</h2><p>The <span class="tag">&lt;OL&gt;</span> tag creates a numbered or ordered list. The <span class="tag">Type</span> attribute changes the numbering style and <span class="tag">Start</span> changes the starting number in the textbook examples.</p><pre><code>&lt;OL Type="A"&gt;
+  &lt;LI&gt;Introduction&lt;/LI&gt;
+  &lt;LI&gt;HTML&lt;/LI&gt;
+  &lt;LI&gt;CSS&lt;/LI&gt;
+&lt;/OL&gt;</code></pre><table><tr><th>Attribute</th><th>Purpose</th><th>Common textbook values</th></tr><tr><td>Type</td><td>Chooses the numbering style.</td><td>1, A, a, I, i</td></tr><tr><td>Start</td><td>Specifies the starting number/value.</td><td>Start="6"</td></tr></table>
+<h2 id="li" class="section-anchor">3. &lt;LI&gt; – List Item</h2><p><span class="tag">&lt;LI&gt;</span> represents an individual item within an ordered or unordered list. It may contain text, links, images and even another list.</p>
+<h2 id="dl" class="section-anchor">4. &lt;DL&gt;, &lt;DT&gt; and &lt;DD&gt; – Description List</h2><p>A description list is used to display terms and their descriptions.</p><pre><code>&lt;DL&gt;
+  &lt;DT&gt;HTML&lt;/DT&gt;
+  &lt;DD&gt;HyperText Markup Language&lt;/DD&gt;
+  &lt;DT&gt;CSS&lt;/DT&gt;
+  &lt;DD&gt;Cascading Style Sheets&lt;/DD&gt;
+&lt;/DL&gt;</code></pre><table><tr><th>Tag</th><th>Role</th></tr><tr><td>DL</td><td>Container for the complete description list.</td></tr><tr><td>DT</td><td>Defines the term or title.</td></tr><tr><td>DD</td><td>Defines the description of that term.</td></tr></table>
+<h2 id="nested" class="section-anchor">5. Nested Lists</h2><p>A list can be placed inside an <span class="tag">&lt;LI&gt;</span> to create sub-items. This is commonly used for questions such as Health Care → Baby Products → Toys and Dress.</p><pre><code>&lt;OL&gt;
+  &lt;LI&gt;Health Care&lt;/LI&gt;
+  &lt;LI&gt;Baby Products
+    &lt;UL Type="square"&gt;
+      &lt;LI&gt;Toys&lt;/LI&gt;
+      &lt;LI&gt;Dress&lt;/LI&gt;
+    &lt;/UL&gt;
+  &lt;/LI&gt;
+&lt;/OL&gt;</code></pre>
+<div class="tip"><b>Exam tip:</b> For ordered lists remember <b>OL + LI</b>; for unordered lists remember <b>UL + LI</b>; for description lists remember <b>DL + DT + DD</b>.</div>
+<div class="try"><div class="tryhead">▶ Try It Yourself <span class="pill">Edit the code and Run</span></div><div class="trybody"><textarea id="ta_lists"><HTML>
+<HEAD><TITLE>My Favourite Subjects</TITLE></HEAD>
+<BODY>
+<H2>Subjects</H2>
+<OL Type="A" Start="2">
+  <LI>Computer Science</LI>
+  <LI>Mathematics
+    <UL Type="square">
+      <LI>Algebra</LI>
+      <LI>Geometry</LI>
+    </UL>
+  </LI>
+</OL>
+<H2>Terms</H2>
+<DL>
+  <DT>HTML</DT><DD>HyperText Markup Language</DD>
+  <DT>CSS</DT><DD>Cascading Style Sheets</DD>
+</DL>
+</BODY>
+</HTML></textarea><br><button class="btn" onclick="runEx('ta_lists','out_lists')">Run Example</button><button class="btn secondary" onclick="resetEx('ta_lists',`<HTML>
+<HEAD><TITLE>My Favourite Subjects</TITLE></HEAD>
+<BODY>
+<H2>Subjects</H2>
+<OL Type="A" Start="2">
+  <LI>Computer Science</LI>
+  <LI>Mathematics
+    <UL Type="square">
+      <LI>Algebra</LI>
+      <LI>Geometry</LI>
+    </UL>
+  </LI>
+</OL>
+<H2>Terms</H2>
+<DL>
+  <DT>HTML</DT><DD>HyperText Markup Language</DD>
+  <DT>CSS</DT><DD>Cascading Style Sheets</DD>
+</DL>
+</BODY>
+</HTML>`)">Reset</button><iframe id="out_lists" class="output" title="Example output"></iframe></div></div>
+<h2>Practice Questions</h2><div class="question"><h3>Question 1</h3><p>Write HTML code to create a list of your best friends.</p><div class="answer"><b>Answer:</b><pre><code>&lt;UL Type="circle"&gt;
+&lt;LI&gt;Akhil&lt;/LI&gt;
+&lt;LI&gt;Rahul&lt;/LI&gt;
+&lt;LI&gt;Anu&lt;/LI&gt;
+&lt;/UL&gt;</code></pre></div></div><div class="question"><h3>Question 2</h3><p>Write an ordered list using uppercase letters and start it from 6.</p><div class="answer"><b>Answer:</b><pre><code>&lt;OL Type="A" Start="6"&gt;
+&lt;LI&gt;HTML&lt;/LI&gt;
+&lt;LI&gt;CSS&lt;/LI&gt;
+&lt;/OL&gt;</code></pre></div></div><div class="prev"><a href="html_entities.html">← Entities</a><a href="html_links.html">Hyperlinks →</a></div></main></div><footer><div class="foot"><b>MANOJITHUB</b><br>Learn • Practice • Revise<br><small>Textbook-based HTML learning for Plus Two Computer Science students.</small></div></footer><script>
+function resizePreview(f){try{const d=f.contentDocument||f.contentWindow.document;const h=Math.max(d.body?d.body.scrollHeight:0,d.documentElement?d.documentElement.scrollHeight:0,180);f.style.height=Math.min(Math.max(h+24,180),900)+"px";}catch(e){f.style.height="300px";}}
+function runEx(t,o){const ta=document.getElementById(t), f=document.getElementById(o); f.onload=function(){resizePreview(f); setTimeout(()=>resizePreview(f),150);}; f.srcdoc=ta.value;}
+function resetEx(t,c){document.getElementById(t).value=c;const f=document.getElementById(t.replace("ta_","out_"));f.srcdoc="";f.style.height="260px";}
+</script></body></html>

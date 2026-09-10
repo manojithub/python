@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>14. Forms – Complete Form Tutorial | Manojithub</title><meta name="description" content="Detailed Plus Two Form tutorial covering FORM, INPUT controls, TEXTAREA, SELECT, OPTION, FIELDSET and LEGEND."><link rel="stylesheet" href="html_tutorial.css"></head><body><header class="top"><div class="topin"><div class="brand">MANOJITHUB <span>HTML Tutorials</span></div><div class="contact">Kerala Plus Two Computer Science • slmanojkumar@gmail.com • 9745110065</div></div></header><nav class="nav"><div class="navin"><a href="../index.html">🏠 Home</a><a href="html_home.html">🌐 HTML Home</a><a href="../python_home.html">🐍 Python</a><a href="../programs.html">💻 Programs</a></div></nav><div class="layout"><aside class="side"><h4>HTML Fundamentals</h4><a href="html_intro.html">Introduction</a><a href="html_structure.html">Document Structure</a><a href="html_body.html">BODY & Attributes</a><a href="html_text.html">Headings, P, BR & HR</a><a href="html_formatting.html">Text Formatting</a><a href="html_images.html">Images</a><a href="html_entities.html">Entities & Comments</a><h4>Web Designing</h4><a href="html_lists.html">Lists</a><a href="html_links.html">Hyperlinks</a><a href="html_multimedia.html">Music & Video</a><a href="html_tables.html">Tables</a><a href="html_table_attributes.html">Table Attributes</a><a href="html_frames.html">Frames</a><a href="html_forms.html">Forms</a><a href="html5.html">HTML5</a><h4>Study Tools</h4><a href="html_reference.html">🏷️ Tag & Attribute Reference</a><a href="html_practicals.html">💻 Practicals</a><a href="html_exam_bank.html">📝 Exam Bank</a><a href="html_revision.html">📌 Revision</a></aside><main><div class="small">Manojithub / HTML Tutorials / Plus Two</div><h1>14. Forms – FORM, INPUT, TEXTAREA, SELECT, OPTION, FIELDSET and LEGEND</h1><p class="intro">The textbook uses Forms to collect information from a webpage viewer. This lesson covers the complete Form section with syntax, controls, attributes, examples and practice.</p><h2 id="form" class="section-anchor">1. &lt;FORM&gt; tag</h2><p>A <span class="tag">&lt;FORM&gt;</span> is a container for form controls. The textbook identifies <b>Action</b>, <b>Method</b> and <b>Target</b> as important attributes.</p><pre><code>&lt;FORM Action="login.php" Method="post" Target="_blank"&gt;
+  ...form controls...
+&lt;/FORM&gt;</code></pre><table><tr><th>Attribute</th><th>Purpose</th></tr><tr><td>Action</td><td>Specifies the URL of the form handler.</td></tr><tr><td>Method</td><td>Specifies the method used to submit data, commonly GET or POST.</td></tr><tr><td>Target</td><td>Specifies the window/frame in which the result is displayed, such as _blank, _self or a named frame.</td></tr></table>
+<h2>&lt;INPUT&gt; tag and controls</h2><p><span class="tag">&lt;INPUT&gt;</span> is used for several single-line and button controls. The textbook examples include text, password, radio, checkbox, submit and reset controls.</p><table><tr><th>Type</th><th>Use</th><th>Typical attributes in textbook examples</th></tr><tr><td>text</td><td>Single-line text input</td><td>Name, Size, Maxlength, Value</td></tr><tr><td>password</td><td>Password entry</td><td>Name, Size, Maxlength</td></tr><tr><td>radio</td><td>Select one option in a group</td><td>Name, Value</td></tr><tr><td>checkbox</td><td>Select zero or more items</td><td>Name, Value</td></tr><tr><td>submit</td><td>Submit the form</td><td>Value</td></tr><tr><td>reset</td><td>Clear/reset form controls</td><td>Value</td></tr></table>
+<h3>Radio button vs Checkbox</h3><p>Radio buttons are grouped through the same <b>Name</b> so that one alternative can be selected. Checkboxes are used where one or more items may be selected.</p>
+<h2>&lt;TEXTAREA&gt; tag</h2><p>The textbook uses <span class="tag">&lt;TEXTAREA&gt;</span> for multi-line input such as an address. Its main attributes are <b>Name</b>, <b>Rows</b> and <b>Cols</b>.</p><pre><code>&lt;TEXTAREA Rows="5" Cols="25" Name="address"&gt;Address&lt;/TEXTAREA&gt;</code></pre>
+<h2>&lt;SELECT&gt; and &lt;OPTION&gt;</h2><p><span class="tag">&lt;SELECT&gt;</span> creates a selection box. <span class="tag">&lt;OPTION&gt;</span> entries are placed inside it. The textbook gives <b>Name</b>, <b>Size</b> and <b>Multiple</b> for SELECT, and <b>Selected</b> and <b>Value</b> for OPTION.</p><table><tr><th>Tag</th><th>Attribute</th><th>Meaning</th></tr><tr><td>SELECT</td><td>Name</td><td>Name used when data is submitted.</td></tr><tr><td>SELECT</td><td>Size</td><td>Controls dropdown/list-box presentation; textbook notes Size=1 as a dropdown.</td></tr><tr><td>SELECT</td><td>Multiple</td><td>Allows multiple selections.</td></tr><tr><td>OPTION</td><td>Selected</td><td>Indicates default selection.</td></tr><tr><td>OPTION</td><td>Value</td><td>Value submitted may differ from displayed text.</td></tr></table>
+<h2>&lt;FIELDSET&gt; and &lt;LEGEND&gt;</h2><p><span class="tag">&lt;FIELDSET&gt;</span> groups related controls. <span class="tag">&lt;LEGEND&gt;</span> provides a caption for that group.</p><pre><code>&lt;FIELDSET&gt;
+  &lt;LEGEND&gt;Nationality&lt;/LEGEND&gt;
+  &lt;SELECT Name="Nationality" Size="4"&gt;
+    &lt;OPTION Value="Indian" Selected&gt;Indian&lt;/OPTION&gt;
+    &lt;OPTION Value="British"&gt;British&lt;/OPTION&gt;
+  &lt;/SELECT&gt;
+&lt;/FIELDSET&gt;</code></pre>
+<div class="note"><b>Textbook connection:</b> The textbook's complete student form combines text, radio, checkbox, SELECT, FIELDSET, LEGEND, TEXTAREA, submit and reset controls in one FORM.</div>
+<h2 id="practice-form" class="section-anchor">Practice: Student Application Form</h2><p>Run this example, then change the labels, options and field sizes. The preview is automatically resized so a long form does not get cut off.</p><div class="try"><div class="tryhead">▶ Try It Yourself <span class="pill">Full form preview</span></div><div class="trybody"><textarea id="ta_forms"><HTML>
+<HEAD><TITLE>Student Application</TITLE></HEAD>
+<BODY class="preview-wrap" Bgcolor="#E9BEE5">
+<CENTER><H2>Enter Your Details</H2></CENTER>
+<FORM Action="#" Method="get" onsubmit="return false">
+Name: <INPUT Type="text" Name="first_name" Size="25" Maxlength="25" Value="First Name Here"><BR><BR>
+Age: <INPUT Type="text" Name="age" Size="3" Maxlength="3"><BR><BR>
+Password: <INPUT Type="password" Name="pwd" Size="20" Maxlength="15"><BR><BR>
+Sex: <INPUT Type="radio" Name="sex" Value="male"> Male <INPUT Type="radio" Name="sex" Value="female"> Female<BR><BR>
+<FIELDSET>
+<LEGEND>Nationality</LEGEND>
+<SELECT Name="Nationality" Size="3">
+<OPTION Value="Indian" Selected>Indian</OPTION>
+<OPTION Value="British">British</OPTION>
+<OPTION Value="German">German</OPTION>
+</SELECT>
+</FIELDSET><BR>
+Hobbies: <INPUT Type="checkbox" Name="Hobby" Value="Games"> Games <INPUT Type="checkbox" Name="Hobby" Value="Reading"> Reading <INPUT Type="checkbox" Name="Hobby" Value="Sports"> Sports<BR><BR>
+Address:<BR><TEXTAREA Rows="6" Cols="35" Name="address">Enter your address</TEXTAREA><BR><BR>
+<INPUT Type="submit" Value="Submit"> <INPUT Type="reset" Value="Reset">
+</FORM>
+</BODY>
+</HTML></textarea><br><button class="btn" onclick="runEx('ta_forms','out_forms')">Run Example</button><button class="btn secondary" onclick="resetEx('ta_forms',`<HTML>
+<HEAD><TITLE>Student Application</TITLE></HEAD>
+<BODY Bgcolor="#E9BEE5">
+<CENTER><H2>Enter Your Details</H2></CENTER>
+<FORM Action="#" Method="get" onsubmit="return false">
+Name: <INPUT Type="text" Name="first_name" Size="25" Maxlength="25" Value="First Name Here"><BR><BR>
+Age: <INPUT Type="text" Name="age" Size="3" Maxlength="3"><BR><BR>
+Password: <INPUT Type="password" Name="pwd" Size="20" Maxlength="15"><BR><BR>
+Sex: <INPUT Type="radio" Name="sex" Value="male"> Male <INPUT Type="radio" Name="sex" Value="female"> Female<BR><BR>
+<FIELDSET><LEGEND>Nationality</LEGEND>
+<SELECT Name="Nationality" Size="3"><OPTION Value="Indian" Selected>Indian</OPTION><OPTION Value="British">British</OPTION><OPTION Value="German">German</OPTION></SELECT>
+</FIELDSET><BR>
+Hobbies: <INPUT Type="checkbox" Name="Hobby" Value="Games"> Games <INPUT Type="checkbox" Name="Hobby" Value="Reading"> Reading <INPUT Type="checkbox" Name="Hobby" Value="Sports"> Sports<BR><BR>
+Address:<BR><TEXTAREA Rows="6" Cols="35" Name="address">Enter your address</TEXTAREA><BR><BR>
+<INPUT Type="submit" Value="Submit"> <INPUT Type="reset" Value="Reset">
+</FORM></BODY>
+</HTML>`)">Reset</button><iframe id="out_forms" class="output tall" title="Form example output"></iframe></div></div>
+<h2>Practice Questions</h2><div class="question"><h3>Q1. What are the main attributes of FORM?</h3><div class="answer"><b>Answer:</b> Action and Method are the main attributes described by the textbook; Target is also used to specify the result window/frame.</div></div><div class="question"><h3>Q2. Differentiate between text control and textarea control.</h3><div class="answer"><b>Answer:</b> Text input is a single-line control using INPUT Type="text", while TEXTAREA provides a multi-line text entry area.</div></div><div class="question"><h3>Q3. Which tag groups data within a Form?</h3><div class="answer"><b>Answer:</b> FIELDSET. LEGEND can be used to give the FIELDSET a caption.</div></div><div class="prev"><a href="html_frames.html">← Frames</a><a href="html5.html">HTML5 →</a></div></main></div><footer><div class="foot"><b>MANOJITHUB</b><br>Learn • Practice • Revise<br><small>Textbook-based HTML learning for Plus Two Computer Science students.</small></div></footer><script>
+function resizePreview(f){try{const d=f.contentDocument||f.contentWindow.document;const h=Math.max(d.body?d.body.scrollHeight:0,d.documentElement?d.documentElement.scrollHeight:0,180);f.style.height=Math.min(Math.max(h+24,180),900)+"px";}catch(e){f.style.height="300px";}}
+function repairFormPreview(f){try{const d=f.contentDocument||f.contentWindow.document;const form=d.querySelector("form");if(!form)return;d.querySelectorAll('input[type="submit"],input[type="reset"]').forEach(function(el){if(!form.contains(el))form.appendChild(el);});let bar=form.querySelector(".preview-button-bar");if(!bar){bar=d.createElement("div");bar.className="preview-button-bar";form.appendChild(bar);}Array.from(form.querySelectorAll('input[type="submit"],input[type="reset"]')).forEach(function(el){if(el.parentElement!==bar)bar.appendChild(el);});}catch(e){}}
+function runEx(t,o){const ta=document.getElementById(t), f=document.getElementById(o); f.onload=function(){repairFormPreview(f);resizePreview(f);setTimeout(function(){repairFormPreview(f);resizePreview(f);},150);}; f.srcdoc=ta.value;}
+function resetEx(t,c){document.getElementById(t).value=c;const f=document.getElementById(t.replace("ta_","out_"));f.srcdoc="";f.style.height="260px";}
+</script></body></html>

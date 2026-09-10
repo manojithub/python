@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>17. HTML Practical Programs | Manojithub</title><meta name="description" content="Step-by-step Plus Two practical exercises with editable Try It Yourself examples."><link rel="stylesheet" href="html_tutorial.css"></head><body><header class="top"><div class="topin"><div class="brand">MANOJITHUB <span>HTML Tutorials</span></div><div class="contact">Kerala Plus Two Computer Science • slmanojkumar@gmail.com • 9745110065</div></div></header><nav class="nav"><div class="navin"><a href="../index.html">🏠 Home</a><a href="html_home.html">🌐 HTML Home</a><a href="../python_home.html">🐍 Python</a><a href="../programs.html">💻 Programs</a></div></nav><div class="layout"><aside class="side"><h4>HTML Fundamentals</h4><a href="html_intro.html">Introduction</a><a href="html_structure.html">Document Structure</a><a href="html_body.html">BODY & Attributes</a><a href="html_text.html">Headings, P, BR & HR</a><a href="html_formatting.html">Text Formatting</a><a href="html_images.html">Images</a><a href="html_entities.html">Entities & Comments</a><h4>Web Designing</h4><a href="html_lists.html">Lists</a><a href="html_links.html">Hyperlinks</a><a href="html_multimedia.html">Music & Video</a><a href="html_tables.html">Tables</a><a href="html_table_attributes.html">Table Attributes</a><a href="html_frames.html">Frames</a><a href="html_forms.html">Forms</a><a href="html5.html">HTML5</a><h4>Study Tools</h4><a href="html_reference.html">🏷️ Tag & Attribute Reference</a><a href="html_practicals.html">💻 Practicals</a><a href="html_exam_bank.html">📝 Exam Bank</a><a href="html_revision.html">📌 Revision</a></aside><main><div class="small">Manojithub / HTML Tutorials / Plus Two</div><h1>17. HTML Practical Programs</h1><p class="intro">Step-by-step Plus Two practical exercises with editable Try It Yourself examples.</p><h2>How to approach an HTML practical</h2><ol><li>Read the required output carefully.</li><li>Identify the tags needed: heading, paragraph, list, image, table, link or form.</li><li>Write the basic HTML structure first.</li><li>Add tags one section at a time.</li><li>Check every opening/closing container tag.</li><li>Test the page in a browser.</li></ol><h2>Practical 1 – School webpage</h2><p>Create a page with a school heading, paragraph, list of co-curricular activities and an image.</p><div class="try"><div class="tryhead">▶ Try It Yourself <span class="pill">Edit the code and Run</span></div><div class="trybody"><textarea id="ta_prac1"><HTML>
+<HEAD><TITLE>My School</TITLE></HEAD>
+<BODY>
+<H1>ABC Higher Secondary School</H1>
+<P>Welcome to our school webpage. Our school encourages academic and co-curricular activities.</P>
+<IMG Src="school.jpg" Alt="School Building" Width="300" Height="200">
+<H2>Activities</H2>
+<UL><LI>NCC</LI><LI>NSS</LI><LI>Sports</LI><LI>Arts Club</LI></UL>
+</BODY>
+</HTML></textarea><br><button class="btn" onclick="runEx('ta_prac1','out_prac1')">Run Example</button><button class="btn secondary" onclick="resetEx('ta_prac1',`<HTML>
+<HEAD><TITLE>My School</TITLE></HEAD>
+<BODY>
+<H1>ABC Higher Secondary School</H1>
+<P>Welcome to our school webpage. Our school encourages academic and co-curricular activities.</P>
+<IMG Src="school.jpg" Alt="School Building" Width="300" Height="200">
+<H2>Activities</H2>
+<UL><LI>NCC</LI><LI>NSS</LI><LI>Sports</LI><LI>Arts Club</LI></UL>
+</BODY>
+</HTML>`)">Reset</button><iframe id="out_prac1" class="output" title="Example output"></iframe></div></div><h2>Practical 2 – Table</h2><p>Create a table showing three years and values under three headings.</p><div class="try"><div class="tryhead">▶ Try It Yourself <span class="pill">Edit the code and Run</span></div><div class="trybody"><textarea id="ta_prac2"><HTML>
+<BODY>
+<TABLE Border="1" Cellspacing="1" Cellpadding="8">
+<CAPTION>Road Accidents</CAPTION>
+<TR><TH>Year</TH><TH>Cases</TH><TH>Persons Killed</TH></TR>
+<TR><TD>2022</TD><TD>100</TD><TD>12</TD></TR>
+<TR><TD>2023</TD><TD>120</TD><TD>14</TD></TR>
+<TR><TD>2024</TD><TD>110</TD><TD>13</TD></TR>
+</TABLE>
+</BODY>
+</HTML></textarea><br><button class="btn" onclick="runEx('ta_prac2','out_prac2')">Run Example</button><button class="btn secondary" onclick="resetEx('ta_prac2',`<HTML>
+<BODY>
+<TABLE Border="1" Cellspacing="1" Cellpadding="8">
+<CAPTION>Road Accidents</CAPTION>
+<TR><TH>Year</TH><TH>Cases</TH><TH>Persons Killed</TH></TR>
+<TR><TD>2022</TD><TD>100</TD><TD>12</TD></TR>
+<TR><TD>2023</TD><TD>120</TD><TD>14</TD></TR>
+<TR><TD>2024</TD><TD>110</TD><TD>13</TD></TR>
+</TABLE>
+</BODY>
+</HTML>`)">Reset</button><iframe id="out_prac2" class="output" title="Example output"></iframe></div></div><h2>Practical 3 – Student form</h2><div class="try"><div class="tryhead">▶ Try It Yourself <span class="pill">Edit the code and Run</span></div><div class="trybody"><textarea id="ta_prac3"><HTML>
+<BODY>
+<H2>Student Application</H2>
+<FORM Action="#" Method="get">
+Name: <INPUT Type="text" Name="name" Size="25"><BR><BR>
+Sex: <INPUT Type="radio" Name="sex" Value="male"> Male <INPUT Type="radio" Name="sex" Value="female"> Female<BR><BR>
+Hobbies: <INPUT Type="checkbox" Name="hobby" Value="sports"> Sports <INPUT Type="checkbox" Name="hobby" Value="reading"> Reading<BR><BR>
+Address:<BR><TEXTAREA Rows="4" Cols="30" Name="address"></TEXTAREA><BR><BR>
+<INPUT Type="submit" Value="Submit"> <INPUT Type="reset" Value="Reset">
+</FORM>
+</BODY>
+</HTML></textarea><br><button class="btn" onclick="runEx('ta_prac3','out_prac3')">Run Example</button><button class="btn secondary" onclick="resetEx('ta_prac3',`<HTML>
+<BODY>
+<H2>Student Application</H2>
+<FORM Action="#" Method="get">
+Name: <INPUT Type="text" Name="name" Size="25"><BR><BR>
+Sex: <INPUT Type="radio" Name="sex" Value="male"> Male <INPUT Type="radio" Name="sex" Value="female"> Female<BR><BR>
+Hobbies: <INPUT Type="checkbox" Name="hobby" Value="sports"> Sports <INPUT Type="checkbox" Name="hobby" Value="reading"> Reading<BR><BR>
+Address:<BR><TEXTAREA Rows="4" Cols="30" Name="address"></TEXTAREA><BR><BR>
+<INPUT Type="submit" Value="Submit"> <INPUT Type="reset" Value="Reset">
+</FORM>
+</BODY>
+</HTML>`)">Reset</button><iframe id="out_prac3" class="output" title="Example output"></iframe></div></div><div class="exam"><b>Exam strategy:</b> Practise writing complete programs without copying. First remember the skeleton, then the tag syntax, then attributes.</div><div class="prev"><a href="html_reference.html">← Tag Reference</a><a href="html_exam_bank.html">Exam Bank →</a></div></main></div><footer><div class="foot"><b>MANOJITHUB</b><br>Learn • Practice • Revise<br><small>Textbook-based HTML learning for Plus Two Computer Science students.</small></div></footer><script>
+function resizePreview(f){try{const d=f.contentDocument||f.contentWindow.document;const h=Math.max(d.body?d.body.scrollHeight:0,d.documentElement?d.documentElement.scrollHeight:0,180);f.style.height=Math.min(Math.max(h+24,180),900)+"px";}catch(e){f.style.height="300px";}}
+function runEx(t,o){const ta=document.getElementById(t), f=document.getElementById(o); f.onload=function(){resizePreview(f); setTimeout(()=>resizePreview(f),150);}; f.srcdoc=ta.value;}
+function resetEx(t,c){document.getElementById(t).value=c;const f=document.getElementById(t.replace("ta_","out_"));f.srcdoc="";f.style.height="260px";}
+</script></body></html>
