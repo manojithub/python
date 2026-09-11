@@ -17,14 +17,12 @@
     <div class="try"><div class="tryhead">▶ Try It Yourself <span class="pill">Edit the code and Run</span></div><div class="trybody">
       <textarea id="ta_images"><HTML>
 <BODY>
-<H2>Maruqee</H2>
+<H2>Maruqe</H2>
 <marquee direction="right" bgcolor="red" Width="600" Height="30">Welcome to Manojithub and Learn HTML,Python and SQL!!"</marquee>
 </BODY>
 </HTML></textarea><br><button class="btn" onclick="runEx('ta_images','out_images')">Run Example</button><button class="btn">Reset</button><HTML>
 <BODY>
-<H2>Maruqee</H2>
-<marquee direction="right" bgcolor="red" Width="600" Height="30">Welcome to Manojithub and Learn HTML,Python and SQL!!"</marquee>
-</BODY>
+
 <iframe id="out_images" class="output" title="Example output"></iframe></div></div><div class="prev"><a href="html_formatting.html">← Formatting</a><a href="html_images.html">Images →</a></div></main></div><footer><div class="foot"><b>MANOJITHUB</b><br>Learn • Practice • Revise<br><small>Textbook-based HTML learning for Plus Two Computer Science students.</small></div></footer><script>
 function resizePreview(f){try{const d=f.contentDocument||f.contentWindow.document;const h=Math.max(d.body?d.body.scrollHeight:0,d.documentElement?d.documentElement.scrollHeight:0,180);f.style.height=Math.min(Math.max(h+24,180),900)+"px";}catch(e){f.style.height="300px";}}
 function runEx(t,o){const ta=document.getElementById(t), f=document.getElementById(o); f.onload=function(){resizePreview(f); setTimeout(()=>resizePreview(f),150);}; f.srcdoc=ta.value;}
